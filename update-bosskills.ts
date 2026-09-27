@@ -43,7 +43,14 @@ export async function updateBosskills(options: {
     console.log(`Loaded ${existingKills.length} existing bosskills from ${filePath} (max ID: ${maxExistingId || "none"})`);
 
     console.log("Fetching latest bosskills catalog from Twinhead...");
-    const latestList = await fetchBosskillsList();
+    let latestList;
+    try {
+        latestList = await fetchBosskillsList();
+    } catch (err: any) {
+        console.error(`Warning: Could not fetch bosskills catalog: ${err?.message ?? err}`);
+        console.log("Skipping update for this cycle; existing records remain untouched.");
+        return { added: 0, total: existingKills.length };
+    }
     console.log(`Fetched ${latestList.length} bosskills in catalog.`);
 
     // If we already have stored kills, only check for kills strictly newer than our highest recorded ID

@@ -1,4 +1,4 @@
-import { getWarriorTanks, type WarriorTank } from "./scrape-bosskill.ts";
+import { getWarriorTanks, fetchHtml, type WarriorTank } from "./scrape-bosskill.ts";
 
 export interface BosskillListItem {
     id: number;
@@ -46,35 +46,28 @@ export function normalizeDate(dateStr: string): string {
  * Fetches the latest bosskills list from Twinhead.
  */
 export async function fetchBosskillsList(): Promise<BosskillListItem[]> {
-    const res = await fetch("https://vanilla-twinhead.twinstar.cz/?latest=bosskills", {
-        credentials: "include",
-        headers: {
-            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:156.0) Gecko/20100101 Firefox/156.0",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en-US,de-DE;q=0.9,en;q=0.8",
-            "Sec-GPC": "1",
-            "Upgrade-Insecure-Requests": "1",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "same-origin",
-            "Priority": "u=0, i",
-            "Pragma": "no-cache",
-            "Cache-Control": "no-cache",
-        },
-        referrer: "https://vanilla-twinhead.twinstar.cz/",
-        method: "GET",
-    });
+    const html = await fetchHtml(
+        "https://vanilla-twinhead.twinstar.cz/?latest=bosskills",
+        "https://vanilla-twinhead.twinstar.cz/"
+    );
 
-    const html = await res.text();
-    const start = html.indexOf("new Listview({template:'bosskill'");
+    let start = html.indexOf("new Listview");
     if (start === -1) {
-        throw new Error("Could not find Listview with bosskills on latest=bosskills page");
+        start = html.indexOf("id: 'kills'");
+    }
+    if (start === -1) {
+        start = html.indexOf('id: "kills"');
+    }
+    if (start === -1) {
+        throw new Error(
+            `Could not find bosskills Listview data on latest=bosskills page. HTML snippet: ${html.slice(0, 300)}`
+        );
     }
 
     const arrayStart = html.indexOf("[", start);
     const arrayEnd = html.indexOf("}]", arrayStart);
     if (arrayStart === -1 || arrayEnd === -1) {
-        throw new Error("Could not find bosskills data array bounds in page");
+        throw new Error(`Could not find bosskills data array bounds in page (start at ${start})`);
     }
 
     const arrayStr = html.slice(arrayStart, arrayEnd + 2);

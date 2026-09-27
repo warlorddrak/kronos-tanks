@@ -8,28 +8,65 @@ export interface WarriorTank {
     dps: string;
 }
 
-export async function getWarriorTanks(bosskillId: number | string): Promise<WarriorTank[]> {
-    const bosskill = await fetch(`https://vanilla-twinhead.twinstar.cz/?boss-kill=${bosskillId}`, {
-        credentials: "include",
-        headers: {
-            "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:156.0) Gecko/20100101 Firefox/156.0",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "en-US,de-DE;q=0.9,en;q=0.8",
-            "Sec-GPC": "1",
-            "Upgrade-Insecure-Requests": "1",
-            "Sec-Fetch-Dest": "document",
-            "Sec-Fetch-Mode": "navigate",
-            "Sec-Fetch-Site": "same-origin",
-            "Priority": "u=0, i",
-            "Pragma": "no-cache",
-            "Cache-Control": "no-cache",
-        },
-        referrer: "https://vanilla-twinhead.twinstar.cz/?latest=bosskills",
-        method: "GET",
-        mode: "cors",
-    });
+export async function fetchHtml(url: string, referrer = "https://vanilla-twinhead.twinstar.cz/"): Promise<string> {
+    const headers: Record<string, string> = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": referrer,
+        "Upgrade-Insecure-Requests": "1",
+        "Pragma": "no-cache",
+        "Cache-Control": "no-cache",
+    };
 
-    const html = await bosskill.text();
+    let html = "";
+    let status = 0;
+
+    // 1. Attempt standard fetch
+    try {
+        const res = await fetch(url, { headers, method: "GET" });
+        status = res.status;
+        if (res.ok) {
+            html = await res.text();
+            if (!html.includes("<title>Just a moment...</title>") && !html.includes("cf-mitigated")) {
+                return html;
+            }
+        }
+    } catch (_) {}
+
+    // 2. Fallback to curl with browser headers (handles Cloudflare when fetch gets challenged)
+    try {
+        const proc = Bun.spawn([
+            "curl",
+            "-sL",
+            "--compressed",
+            "--max-time", "20",
+            "-H", `User-Agent: ${headers["User-Agent"]}`,
+            "-H", `Accept: ${headers["Accept"]}`,
+            "-H", `Accept-Language: ${headers["Accept-Language"]}`,
+            "-H", `Referer: ${referrer}`,
+            url,
+        ]);
+        html = await new Response(proc.stdout).text();
+        if (html && !html.includes("<title>Just a moment...</title>")) {
+            return html;
+        }
+    } catch (_) {}
+
+    if (html.includes("<title>Just a moment...</title>")) {
+        throw new Error(`Cloudflare bot challenge blocked request to ${url}`);
+    }
+    if (!html) {
+        throw new Error(`Failed to fetch HTML from ${url} (HTTP ${status || "unknown"})`);
+    }
+    return html;
+}
+
+export async function getWarriorTanks(bosskillId: number | string): Promise<WarriorTank[]> {
+    const html = await fetchHtml(
+        `https://vanilla-twinhead.twinstar.cz/?boss-kill=${bosskillId}`,
+        "https://vanilla-twinhead.twinstar.cz/?latest=bosskills"
+    );
 
     const bossMatch = html.match(/<td>Boss<\/td>\s*<td><a[^>]*\?npc=[^>]*>([^<]+)<\/a><\/td>/i)
         ?? html.match(/<a[^>]*\?npc=\d+[^>]*>([^<]+)<\/a>/i);
