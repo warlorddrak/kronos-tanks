@@ -97,19 +97,6 @@ export function generateHtml(
     }
     bossLeaderboards.sort((a, b) => a.boss_name.localeCompare(b.boss_name));
 
-    // Stats
-    const totalKills = processedKills.length;
-    let totalTanks = 0;
-    let highestDpsRecord = { name: "N/A", dps: 0, boss: "N/A" };
-    for (const k of processedKills) {
-        totalTanks += k.topTanks.length;
-        for (const t of k.topTanks) {
-            const val = Number(t.dps);
-            if (val > highestDpsRecord.dps) {
-                highestDpsRecord = { name: t.name, dps: val, boss: k.boss_name };
-            }
-        }
-    }
 
     const uniqueBosses = Array.from(bossMap.keys()).sort();
     const activeServerLabel = serverFilter ?? "All Servers";
@@ -173,7 +160,7 @@ export function generateHtml(
 
         header {
             border-bottom: 1px solid var(--border);
-            padding-bottom: 2rem;
+            padding-bottom: 1.5rem;
             margin-bottom: 2rem;
         }
 
@@ -183,7 +170,6 @@ export function generateHtml(
             justify-content: space-between;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1rem;
         }
 
         .brand-title {
@@ -225,35 +211,7 @@ export function generateHtml(
             vertical-align: middle;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
 
-        .stat-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 0.75rem;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            margin-bottom: 0.25rem;
-        }
-
-        .stat-val {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
 
         .stat-sub {
             font-size: 0.8rem;
@@ -521,29 +479,6 @@ export function generateHtml(
             </div>
             <div>
                 <a href="bosskills.json" target="_blank" class="stat-sub">View Raw JSON (bosskills.json) &rarr;</a>
-            </div>
-        </div>
-
-        <div class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-label">Total Bosskills</span>
-                <span class="stat-val">${totalKills}</span>
-                <span class="stat-sub">${uniqueBosses.length} Bosses Tracked</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-label">Tank Records</span>
-                <span class="stat-val">${totalTanks}</span>
-                <span class="stat-sub">Warrior Tanks (Class 1)</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-label">Highest Tank DPS</span>
-                <span class="stat-val">${highestDpsRecord.dps ? formatDps(highestDpsRecord.dps) : "0.0"}</span>
-                <span class="stat-sub">${escapeHtml(highestDpsRecord.name)} (${escapeHtml(highestDpsRecord.boss)})</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-label">Last Updated</span>
-                <span class="stat-val" style="font-size: 1.1rem; padding-top: 0.25rem;">${generatedAt}</span>
-                <span class="stat-sub">Auto-updated via GitHub Actions</span>
             </div>
         </div>
     </header>
