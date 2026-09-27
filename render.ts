@@ -124,6 +124,7 @@ export function generateHtml(
         raid: string;
         guild: string;
         time: string;
+        fight_length?: string;
     }>>();
 
     for (const k of processedKills) {
@@ -137,6 +138,7 @@ export function generateHtml(
                 raid: k.raid,
                 guild: k.guild,
                 time: k.time,
+                fight_length: t.fight_length || k.fight_length,
             });
         }
     }
@@ -407,6 +409,12 @@ export function generateHtml(
             font-weight: 600;
         }
 
+        .duration-tag {
+            color: #93c5fd;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
         /* Table */
         .table-responsive {
             overflow-x: auto;
@@ -630,6 +638,7 @@ export function generateHtml(
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ ${escapeHtml(kill.guild || "No Guild")}</span>
                     <span class="realm-tag">${escapeHtml(kill.realm)}</span>
+                    ${kill.fight_length ? `<span class="duration-tag" title="Fight Length">⏱️ ${escapeHtml(kill.fight_length)}</span>` : ""}
                     <span>${escapeHtml(kill.time)}</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=${kill.id}" target="_blank">Kill #${kill.id} ↗</a>
                 </div>
@@ -697,6 +706,7 @@ export function generateHtml(
                             <th>Damage Taken</th>
                             <th>Damage Absorbed</th>
                             <th>Item Level</th>
+                            <th>Fight Length</th>
                             <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
@@ -717,6 +727,7 @@ export function generateHtml(
                             <td class="dmg-cell">${formatDmg(tank.dmg_taken)}</td>
                             <td class="dmg-cell">${formatDmg(tank.dmg_absorbed || 0)}</td>
                             <td><span class="ilvl-badge">iLvl ${formatIlvl(tank.avg_item_lvl)}</span></td>
+                            <td style="color: var(--text-muted); font-size: 0.85rem;">${escapeHtml(tank.fight_length || "-")}</td>
                             <td><span class="realm-tag">${escapeHtml(tank.realm)}</span></td>
                             <td>${escapeHtml(tank.guild || "No Guild")}</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">${escapeHtml(tank.time ? tank.time.split(' ')[0] : "")}</td>

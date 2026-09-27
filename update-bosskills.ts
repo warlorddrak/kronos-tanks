@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { getTanks, type Tank } from "./scrape-bosskill.ts";
+import { getTanks, formatFightLength, parseFightLengthMs, type Tank } from "./scrape-bosskill.ts";
 import { fetchBosskillsList } from "./scrape-bosskills-for-day.ts";
 import { render } from "./render.ts";
 
@@ -10,6 +10,8 @@ export interface StoredBosskill {
     guild: string;
     realm: string;
     time: string;
+    fight_length?: string;
+    fight_length_ms?: number;
     tanks: Tank[];
     error?: string;
 }
@@ -53,13 +55,40 @@ export async function updateBosskills(options: {
     }
     console.log(`Fetched ${latestList.length} bosskills in catalog.`);
 
+    const catalogMap = new Map(latestList.map((k) => [k.id, k]));
+    let backfilledCount = 0;
+    for (const kill of existingKills) {
+        if (!kill.fight_length && catalogMap.has(kill.id)) {
+            const catItem = catalogMap.get(kill.id)!;
+            if (typeof catItem.length === "number" && catItem.length > 0) {
+                kill.fight_length = formatFightLength(catItem.length);
+                kill.fight_length_ms = catItem.length;
+                for (const t of kill.tanks) {
+                    if (!t.fight_length) {
+                        t.fight_length = kill.fight_length;
+                    }
+                }
+                backfilledCount++;
+            }
+        }
+    }
+    if (backfilledCount > 0) {
+        console.log(`Backfilled fight length for ${backfilledCount} existing bosskill(s).`);
+    }
+
     // If we already have stored kills, only check for kills strictly newer than our highest recorded ID
     let newKillsToScrape = existingKills.length > 0
         ? latestList.filter((k) => k.id > maxExistingId && !existingIds.has(k.id))
         : latestList.slice(0, maxInitial);
 
     if (newKillsToScrape.length === 0) {
-        console.log("No new bosskills found. Repository is up to date.");
+        if (backfilledCount > 0) {
+            writeFileSync(filePath, JSON.stringify(existingKills, null, 2) + "\n", "utf-8");
+            console.log(`Saved ${existingKills.length} bosskills with updated fight lengths to ${filePath}.`);
+            render(filePath, "index.html");
+        } else {
+            console.log("No new bosskills found. Repository is up to date.");
+        }
         return { added: 0, total: existingKills.length };
     }
 
@@ -83,6 +112,12 @@ export async function updateBosskills(options: {
                 errorMsg = err?.message ?? String(err);
             }
 
+            const fightLengthMs = typeof kill.length === "number" && kill.length > 0
+                ? kill.length
+                : parseFightLengthMs(tanks[0]?.fight_length);
+            const fightLengthStr = (typeof kill.length === "number" && kill.length > 0 ? formatFightLength(kill.length) : undefined)
+                ?? tanks[0]?.fight_length;
+
             newlyScraped[idx] = {
                 id: kill.id,
                 boss_name: kill.bossname,
@@ -90,6 +125,8 @@ export async function updateBosskills(options: {
                 guild: kill.guild,
                 realm: kill.realm,
                 time: kill.time,
+                ...(fightLengthStr ? { fight_length: fightLengthStr } : {}),
+                ...(fightLengthMs ? { fight_length_ms: fightLengthMs } : {}),
                 tanks,
                 ...(errorMsg ? { error: errorMsg } : {}),
             };

@@ -75,6 +75,7 @@ export interface Tank {
     dmg_absorbed: string;
     dps: string;
     deaths?: number;         // Must be 0 for qualifying records
+    fight_length?: string;   // e.g. "1min 34sec" or "24.2sec" if available
 }
 ```
 
@@ -87,6 +88,8 @@ export interface StoredBosskill {
     guild: string;
     realm: string;
     time: string;            // Format: "YYYY/MM/DD HH:mm:ss"
+    fight_length?: string;   // Formatted fight length, e.g. "1min 34sec"
+    fight_length_ms?: number;// Fight length in milliseconds, e.g. 94583
     tanks: Tank[];           // Empty array if no qualifying tank or tank died
     error?: string;          // Scraping error message if failed
 }
@@ -136,6 +139,7 @@ Twinhead is protected by Cloudflare bot mitigations. The fetching logic in `scra
    - Encounter participant stats are parsed from the embedded script `var bosskillData = [...]`.
    - Death timelines are parsed from `var chart_data = [...]` (series index 4).
    - Boss name is parsed from the breadcrumb table or anchor tag `?npc=...`.
+   - Fight length is parsed from the detail table (`Fight Length` row) or extracted as milliseconds from the catalog listview (`length` attribute).
 
 ---
 

@@ -10,6 +10,7 @@ export interface Tank {
     dmg_absorbed: string;
     dps: string;
     deaths?: number;
+    fight_length?: string;
 }
 
 export type WarriorTank = Tank;
@@ -68,6 +69,44 @@ export async function fetchHtml(url: string, referrer = "https://vanilla-twinhea
     return html;
 }
 
+export function extractFightLength(html: string): string | undefined {
+    const match = html.match(/<td>Fight Length<\/td>\s*<td>([^<]+)<\/td>/i);
+    return match ? match[1].trim() : undefined;
+}
+
+export function formatFightLength(msOrStr: number | string | undefined | null): string | undefined {
+    if (msOrStr === undefined || msOrStr === null || msOrStr === "") return undefined;
+    if (typeof msOrStr === "string") return msOrStr.trim();
+    const ms = Number(msOrStr);
+    if (isNaN(ms) || ms <= 0) return undefined;
+    const totalSec = Math.floor(ms / 1000);
+    const minutes = Math.floor(totalSec / 60);
+    const seconds = totalSec % 60;
+    if (minutes > 0) {
+        return `${minutes}min ${seconds}sec`;
+    }
+    const secWithDec = (ms / 1000).toFixed(1);
+    return secWithDec.endsWith(".0") ? `${Math.round(ms / 1000)}sec` : `${secWithDec}sec`;
+}
+
+export function parseFightLengthMs(str: string | undefined | null): number | undefined {
+    if (!str) return undefined;
+    const trimmed = str.trim();
+    const minSecMatch = trimmed.match(/^(?:(\d+)\s*min)?\s*(?:([\d.]+)\s*sec)?$/i);
+    if (minSecMatch && (minSecMatch[1] || minSecMatch[2])) {
+        const mins = minSecMatch[1] ? Number(minSecMatch[1]) : 0;
+        const secs = minSecMatch[2] ? Number(minSecMatch[2]) : 0;
+        return Math.round((mins * 60 + secs) * 1000);
+    }
+    const colonMatch = trimmed.match(/^(\d+):(\d+(?:\.\d+)?)$/);
+    if (colonMatch) {
+        const mins = Number(colonMatch[1]);
+        const secs = Number(colonMatch[2]);
+        return Math.round((mins * 60 + secs) * 1000);
+    }
+    return undefined;
+}
+
 export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
     const html = await fetchHtml(
         `https://vanilla-twinhead.twinstar.cz/?boss-kill=${bosskillId}`,
@@ -77,6 +116,8 @@ export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
     const bossMatch = html.match(/<td>Boss<\/td>\s*<td><a[^>]*\?npc=[^>]*>([^<]+)<\/a><\/td>/i)
         ?? html.match(/<a[^>]*\?npc=\d+[^>]*>([^<]+)<\/a>/i);
     const bossName = bossMatch ? bossMatch[1].trim() : "Unknown";
+
+    const fightLength = extractFightLength(html);
 
     const line = html.split("\n").find((l) => l.includes("var bosskillData"));
     if (!line) {
@@ -144,6 +185,7 @@ export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
             dmg_absorbed: primaryTank.player.dmg_absorbed ?? String(primaryTank.dmg_absorbed),
             dps: primaryTank.player.dps,
             deaths: 0,
+            ...(fightLength ? { fight_length: fightLength } : {}),
         });
     }
 
