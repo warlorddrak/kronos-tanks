@@ -678,7 +678,6 @@ export function generateHtml(
             <div class="card-header">
                 <div class="boss-name">
                     <span>${escapeHtml(b.boss_name)}</span>
-                    <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
                     <span>${b.tanks.length} Tank Record(s)</span>
