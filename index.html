@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kronos Tank Logs - Top Warrior Tanks</title>
-    <meta name="description" content="Top 10 warrior tanks ranked by DPS per bosskill on Kronos Vanilla">
+    <title>Kronos Tank Logs - KronosV</title>
+    <meta name="description" content="Top warrior tanks ranked by DPS per bosskill on KronosV">
     <style>
         :root {
             --bg-base: #090d16;
@@ -96,6 +96,19 @@
             margin-top: 0.25rem;
         }
 
+        .server-badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 0.15rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -132,7 +145,7 @@
             margin-top: 0.2rem;
         }
 
-        /* Nav & Controls */
+        /* Controls */
         .controls-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -246,7 +259,7 @@
         .meta-info {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.85rem;
             font-size: 0.85rem;
             color: var(--text-muted);
         }
@@ -254,6 +267,15 @@
         .guild-tag {
             color: #cbd5e1;
             font-weight: 500;
+        }
+
+        .realm-tag {
+            background: rgba(148, 163, 184, 0.1);
+            color: #94a3b8;
+            padding: 0.15rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
 
         /* Table */
@@ -377,8 +399,8 @@
             <div class="brand-title">
                 <span class="shield-icon">🛡️</span>
                 <div>
-                    <h1>Kronos Tank Logs</h1>
-                    <div class="subtitle">Top warrior tanks ranked by DPS per boss encounter</div>
+                    <h1>Kronos Tank Logs <span class="server-badge">KronosV</span></h1>
+                    <div class="subtitle">Top warrior tanks ranked by DPS per boss encounter on KronosV</div>
                 </div>
             </div>
             <div>
@@ -389,12 +411,12 @@
         <div class="stats-grid">
             <div class="stat-card">
                 <span class="stat-label">Total Bosskills</span>
-                <span class="stat-val">40</span>
+                <span class="stat-val">34</span>
                 <span class="stat-sub">11 Bosses Tracked</span>
             </div>
             <div class="stat-card">
                 <span class="stat-label">Tank Records</span>
-                <span class="stat-val">76</span>
+                <span class="stat-val">34</span>
                 <span class="stat-sub">Warrior Tanks (Class 1)</span>
             </div>
             <div class="stat-card">
@@ -404,7 +426,7 @@
             </div>
             <div class="stat-card">
                 <span class="stat-label">Last Updated</span>
-                <span class="stat-val" style="font-size: 1.1rem; padding-top: 0.25rem;">2026-09-27 01:09:30 UTC</span>
+                <span class="stat-val" style="font-size: 1.1rem; padding-top: 0.25rem;">2026-09-27 01:16:56 UTC</span>
                 <span class="stat-sub">Auto-updated via GitHub Actions</span>
             </div>
         </div>
@@ -417,6 +439,18 @@
         </div>
 
         <div class="filters">
+            <select class="input-control" id="server-select" onchange="filterData()">
+                <option value="">All Servers</option>
+                
+                    <option value="Kronos" >
+                        Kronos
+                    </option>
+                
+                    <option value="KronosV" selected>
+                        KronosV
+                    </option>
+                
+            </select>
             <select class="input-control" id="boss-select" onchange="filterData()">
                 <option value="">All Bosses</option>
                 <option value="Baron Geddon">Baron Geddon</option><option value="Garr">Garr</option><option value="Gehennas">Gehennas</option><option value="Golemagg the Incinerator">Golemagg the Incinerator</option><option value="Lucifron">Lucifron</option><option value="Magmadar">Magmadar</option><option value="Majordomo Executus">Majordomo Executus</option><option value="Onyxia">Onyxia</option><option value="Ragnaros">Ragnaros</option><option value="Shazzrah">Shazzrah</option><option value="Sulfuron Harbinger">Sulfuron Harbinger</option>
@@ -428,7 +462,7 @@
     <!-- VIEW 1: Per Bosskill Feed -->
     <div id="view-kills">
         
-        <div class="bosskill-card" data-boss="Onyxia" data-guild="Final Fresh" data-players="Kissen Agaanii">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Onyxia" data-guild="Final Fresh" data-players="Agaanii">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Onyxia</span>
@@ -436,7 +470,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 22:23:09</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944456" target="_blank">Kill #944456 ↗</a>
                 </div>
@@ -459,23 +493,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=27718" target="_blank" class="player-link">
-                                    Kissen
-                                </a>
-                            </td>
-                            <td class="dps-cell">569.9</td>
-                            <td class="dmg-cell">73,583</td>
-                            <td><span class="ilvl-badge">iLvl 61.6</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=27718" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 27718 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
                                 </a>
@@ -495,7 +512,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Ragnaros" data-guild="Final Fresh" data-players="Caesar Agaanii">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Ragnaros" data-guild="Final Fresh" data-players="Agaanii">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Ragnaros</span>
@@ -503,7 +520,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:59:47</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944454" target="_blank">Kill #944454 ↗</a>
                 </div>
@@ -526,23 +543,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=23273" target="_blank" class="player-link">
-                                    Caesar
-                                </a>
-                            </td>
-                            <td class="dps-cell">438.7</td>
-                            <td class="dmg-cell">41,490</td>
-                            <td><span class="ilvl-badge">iLvl 64.5</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=23273" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 23273 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
                                 </a>
@@ -562,7 +562,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Onyxia" data-guild="Endragon" data-players="Wildchief">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Onyxia" data-guild="Endragon" data-players="Wildchief">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Onyxia</span>
@@ -570,7 +570,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:56:20</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944453" target="_blank">Kill #944453 ↗</a>
                 </div>
@@ -612,7 +612,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Majordomo Executus" data-guild="Final Fresh" data-players="Kissen Perseverance Nanohc Agaanii">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Majordomo Executus" data-guild="Final Fresh" data-players="Nanohc">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Majordomo Executus</span>
@@ -620,7 +620,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:51:47</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944452" target="_blank">Kill #944452 ↗</a>
                 </div>
@@ -643,40 +643,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=27718" target="_blank" class="player-link">
-                                    Kissen
-                                </a>
-                            </td>
-                            <td class="dps-cell">889.5</td>
-                            <td class="dmg-cell">74,592</td>
-                            <td><span class="ilvl-badge">iLvl 61.6</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=27718" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 27718 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" class="player-link">
-                                    Perseverance
-                                </a>
-                            </td>
-                            <td class="dps-cell">286.4</td>
-                            <td class="dmg-cell">24,014</td>
-                            <td><span class="ilvl-badge">iLvl 60.5</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 75340 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" class="player-link">
                                     Nanohc
                                 </a>
@@ -691,29 +657,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
-                                    Agaanii
-                                </a>
-                            </td>
-                            <td class="dps-cell">159.2</td>
-                            <td class="dmg-cell">13,352</td>
-                            <td><span class="ilvl-badge">iLvl 66.9</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 4983 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Golemagg the Incinerator" data-guild="Final Fresh" data-players="Nanohc Agaanii">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Golemagg the Incinerator" data-guild="Final Fresh" data-players="Nanohc">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Golemagg the Incinerator</span>
@@ -721,7 +670,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:46:25</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944450" target="_blank">Kill #944450 ↗</a>
                 </div>
@@ -758,29 +707,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
-                                    Agaanii
-                                </a>
-                            </td>
-                            <td class="dps-cell">376.5</td>
-                            <td class="dmg-cell">23,985</td>
-                            <td><span class="ilvl-badge">iLvl 67.0</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 4983 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Sulfuron Harbinger" data-guild="Final Fresh" data-players="Caesar Nanohc Agaanii">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Sulfuron Harbinger" data-guild="Final Fresh" data-players="Agaanii">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Sulfuron Harbinger</span>
@@ -788,7 +720,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:42:31</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944449" target="_blank">Kill #944449 ↗</a>
                 </div>
@@ -811,40 +743,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=23273" target="_blank" class="player-link">
-                                    Caesar
-                                </a>
-                            </td>
-                            <td class="dps-cell">1,047.4</td>
-                            <td class="dmg-cell">52,325</td>
-                            <td><span class="ilvl-badge">iLvl 68.9</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=23273" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 23273 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" class="player-link">
-                                    Nanohc
-                                </a>
-                            </td>
-                            <td class="dps-cell">295.4</td>
-                            <td class="dmg-cell">14,759</td>
-                            <td><span class="ilvl-badge">iLvl 62.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 1923 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
                                 </a>
@@ -864,7 +762,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Shazzrah" data-guild="Final Fresh" data-players="Perseverance Agaanii">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Shazzrah" data-guild="Final Fresh" data-players="Agaanii">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Shazzrah</span>
@@ -872,7 +770,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:36:20</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944448" target="_blank">Kill #944448 ↗</a>
                 </div>
@@ -895,23 +793,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" class="player-link">
-                                    Perseverance
-                                </a>
-                            </td>
-                            <td class="dps-cell">688.8</td>
-                            <td class="dmg-cell">16,703</td>
-                            <td><span class="ilvl-badge">iLvl 60.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 75340 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
                                 </a>
@@ -931,7 +812,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Baron Geddon" data-guild="Final Fresh" data-players="Thebutcher Agaanii">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Baron Geddon" data-guild="Final Fresh" data-players="Agaanii">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Baron Geddon</span>
@@ -939,7 +820,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:32:29</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944447" target="_blank">Kill #944447 ↗</a>
                 </div>
@@ -962,23 +843,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=56816" target="_blank" class="player-link">
-                                    Thebutcher
-                                </a>
-                            </td>
-                            <td class="dps-cell">850.9</td>
-                            <td class="dmg-cell">35,189</td>
-                            <td><span class="ilvl-badge">iLvl 60.9</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=56816" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 56816 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
                                 </a>
@@ -998,7 +862,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Onyxia" data-guild="Sixth Sunder" data-players="Brickerz Draka">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Onyxia" data-guild="Sixth Sunder" data-players="Draka">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Onyxia</span>
@@ -1006,7 +870,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:28:41</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944446" target="_blank">Kill #944446 ↗</a>
                 </div>
@@ -1029,23 +893,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=24939" target="_blank" class="player-link">
-                                    Brickerz
-                                </a>
-                            </td>
-                            <td class="dps-cell">491.7</td>
-                            <td class="dmg-cell">61,869</td>
-                            <td><span class="ilvl-badge">iLvl 64.6</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=24939" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 24939 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
                                     Draka
                                 </a>
@@ -1065,7 +912,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Ragnaros" data-guild="Endragon" data-players="Wildchief">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Ragnaros" data-guild="Endragon" data-players="Wildchief">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Ragnaros</span>
@@ -1073,7 +920,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:25:39</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944445" target="_blank">Kill #944445 ↗</a>
                 </div>
@@ -1115,7 +962,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Garr" data-guild="Final Fresh" data-players="Caesar Nanohc Agaanii">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Garr" data-guild="Final Fresh" data-players="Nanohc">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Garr</span>
@@ -1123,7 +970,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:25:22</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944444" target="_blank">Kill #944444 ↗</a>
                 </div>
@@ -1146,23 +993,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=23273" target="_blank" class="player-link">
-                                    Caesar
-                                </a>
-                            </td>
-                            <td class="dps-cell">670.9</td>
-                            <td class="dmg-cell">29,578</td>
-                            <td><span class="ilvl-badge">iLvl 68.9</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=23273" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 23273 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" class="player-link">
                                     Nanohc
                                 </a>
@@ -1177,29 +1007,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
-                                    Agaanii
-                                </a>
-                            </td>
-                            <td class="dps-cell">157.0</td>
-                            <td class="dmg-cell">6,923</td>
-                            <td><span class="ilvl-badge">iLvl 67.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 4983 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Gehennas" data-guild="Final Fresh" data-players="Agaanii Perseverance">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Gehennas" data-guild="Final Fresh" data-players="Agaanii">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Gehennas</span>
@@ -1207,7 +1020,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:19:01</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944442" target="_blank">Kill #944442 ↗</a>
                 </div>
@@ -1244,29 +1057,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" class="player-link">
-                                    Perseverance
-                                </a>
-                            </td>
-                            <td class="dps-cell">201.4</td>
-                            <td class="dmg-cell">6,397</td>
-                            <td><span class="ilvl-badge">iLvl 60.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 75340 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Magmadar" data-guild="Final Fresh" data-players="Agaanii Melaniny">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Magmadar" data-guild="Final Fresh" data-players="Agaanii">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Magmadar</span>
@@ -1274,7 +1070,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:14:23</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944441" target="_blank">Kill #944441 ↗</a>
                 </div>
@@ -1311,29 +1107,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=36080" target="_blank" class="player-link">
-                                    Melaniny
-                                </a>
-                            </td>
-                            <td class="dps-cell">693.0</td>
-                            <td class="dmg-cell">37,255</td>
-                            <td><span class="ilvl-badge">iLvl 61.1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=36080" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 36080 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Ragnaros" data-guild="Sixth Sunder" data-players="Draka">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Ragnaros" data-guild="Sixth Sunder" data-players="Draka">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Ragnaros</span>
@@ -1341,7 +1120,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:11:52</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944440" target="_blank">Kill #944440 ↗</a>
                 </div>
@@ -1383,7 +1162,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Lucifron" data-guild="Final Fresh" data-players="Perseverance Nanohc Agaanii">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Lucifron" data-guild="Final Fresh" data-players="Agaanii">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Lucifron</span>
@@ -1391,7 +1170,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Final Fresh</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:11:37</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944439" target="_blank">Kill #944439 ↗</a>
                 </div>
@@ -1414,40 +1193,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" class="player-link">
-                                    Perseverance
-                                </a>
-                            </td>
-                            <td class="dps-cell">970.7</td>
-                            <td class="dmg-cell">33,465</td>
-                            <td><span class="ilvl-badge">iLvl 60.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 75340 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" class="player-link">
-                                    Nanohc
-                                </a>
-                            </td>
-                            <td class="dps-cell">435.3</td>
-                            <td class="dmg-cell">15,006</td>
-                            <td><span class="ilvl-badge">iLvl 62.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 1923 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
                                 </a>
@@ -1467,7 +1212,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Majordomo Executus" data-guild="Sixth Sunder" data-players="Draka Toncho Sliggy Oika">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Majordomo Executus" data-guild="Sixth Sunder" data-players="Sliggy">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Majordomo Executus</span>
@@ -1475,7 +1220,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 21:00:21</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944436" target="_blank">Kill #944436 ↗</a>
                 </div>
@@ -1498,40 +1243,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
-                                    Draka
-                                </a>
-                            </td>
-                            <td class="dps-cell">423.6</td>
-                            <td class="dmg-cell">40,224</td>
-                            <td><span class="ilvl-badge">iLvl 65.7</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 16240 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" class="player-link">
-                                    Toncho
-                                </a>
-                            </td>
-                            <td class="dps-cell">268.8</td>
-                            <td class="dmg-cell">25,525</td>
-                            <td><span class="ilvl-badge">iLvl 60.0</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 5900 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" class="player-link">
                                     Sliggy
                                 </a>
@@ -1546,29 +1257,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=778" target="_blank" class="player-link">
-                                    Oika
-                                </a>
-                            </td>
-                            <td class="dps-cell">193.8</td>
-                            <td class="dmg-cell">18,405</td>
-                            <td><span class="ilvl-badge">iLvl 62.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=778" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 778 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Garr" data-guild="Sixth Sunder" data-players="Oika Nobleknight Toncho Sliggy">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Garr" data-guild="Sixth Sunder" data-players="Nobleknight">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Garr</span>
@@ -1576,7 +1270,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:53:02</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944435" target="_blank">Kill #944435 ↗</a>
                 </div>
@@ -1599,23 +1293,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=778" target="_blank" class="player-link">
-                                    Oika
-                                </a>
-                            </td>
-                            <td class="dps-cell">389.6</td>
-                            <td class="dmg-cell">21,823</td>
-                            <td><span class="ilvl-badge">iLvl 62.5</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=778" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 778 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=29984" target="_blank" class="player-link">
                                     Nobleknight
                                 </a>
@@ -1630,46 +1307,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" class="player-link">
-                                    Toncho
-                                </a>
-                            </td>
-                            <td class="dps-cell">280.0</td>
-                            <td class="dmg-cell">15,685</td>
-                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 5900 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" class="player-link">
-                                    Sliggy
-                                </a>
-                            </td>
-                            <td class="dps-cell">237.1</td>
-                            <td class="dmg-cell">13,283</td>
-                            <td><span class="ilvl-badge">iLvl 64.5</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 29061 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Majordomo Executus" data-guild="Endragon" data-players="Wildchief Rvota">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Majordomo Executus" data-guild="Endragon" data-players="Wildchief">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Majordomo Executus</span>
@@ -1677,7 +1320,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:47:56</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944434" target="_blank">Kill #944434 ↗</a>
                 </div>
@@ -1714,29 +1357,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=44623" target="_blank" class="player-link">
-                                    Rvota
-                                </a>
-                            </td>
-                            <td class="dps-cell">88.4</td>
-                            <td class="dmg-cell">13,069</td>
-                            <td><span class="ilvl-badge">iLvl 61.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=44623" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 44623 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Golemagg the Incinerator" data-guild="Sixth Sunder" data-players="Draka Oika Sliggy Toncho">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Golemagg the Incinerator" data-guild="Sixth Sunder" data-players="Draka">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Golemagg the Incinerator</span>
@@ -1744,7 +1370,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:46:26</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944433" target="_blank">Kill #944433 ↗</a>
                 </div>
@@ -1781,63 +1407,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=778" target="_blank" class="player-link">
-                                    Oika
-                                </a>
-                            </td>
-                            <td class="dps-cell">308.7</td>
-                            <td class="dmg-cell">24,689</td>
-                            <td><span class="ilvl-badge">iLvl 62.5</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=778" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 778 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" class="player-link">
-                                    Sliggy
-                                </a>
-                            </td>
-                            <td class="dps-cell">238.5</td>
-                            <td class="dmg-cell">19,079</td>
-                            <td><span class="ilvl-badge">iLvl 64.5</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 29061 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" class="player-link">
-                                    Toncho
-                                </a>
-                            </td>
-                            <td class="dps-cell">181.7</td>
-                            <td class="dmg-cell">14,530</td>
-                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 5900 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Sulfuron Harbinger" data-guild="Sixth Sunder" data-players="Brickerz Iradora Draka Sliggy">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Sulfuron Harbinger" data-guild="Sixth Sunder" data-players="Draka">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Sulfuron Harbinger</span>
@@ -1845,7 +1420,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:42:01</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944432" target="_blank">Kill #944432 ↗</a>
                 </div>
@@ -1868,40 +1443,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=24939" target="_blank" class="player-link">
-                                    Brickerz
-                                </a>
-                            </td>
-                            <td class="dps-cell">1,051.4</td>
-                            <td class="dmg-cell">58,821</td>
-                            <td><span class="ilvl-badge">iLvl 64.6</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=24939" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 24939 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=3353" target="_blank" class="player-link">
-                                    Iradora
-                                </a>
-                            </td>
-                            <td class="dps-cell">688.6</td>
-                            <td class="dmg-cell">38,522</td>
-                            <td><span class="ilvl-badge">iLvl 62.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=3353" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 3353 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
                                     Draka
                                 </a>
@@ -1916,29 +1457,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" class="player-link">
-                                    Sliggy
-                                </a>
-                            </td>
-                            <td class="dps-cell">357.2</td>
-                            <td class="dmg-cell">19,983</td>
-                            <td><span class="ilvl-badge">iLvl 64.3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 29061 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Golemagg the Incinerator" data-guild="Endragon" data-players="Behemoth Wildchief Rvota">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Golemagg the Incinerator" data-guild="Endragon" data-players="Rvota">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Golemagg the Incinerator</span>
@@ -1946,7 +1470,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:39:13</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944431" target="_blank">Kill #944431 ↗</a>
                 </div>
@@ -1969,40 +1493,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=25695" target="_blank" class="player-link">
-                                    Behemoth
-                                </a>
-                            </td>
-                            <td class="dps-cell">605.1</td>
-                            <td class="dmg-cell">52,576</td>
-                            <td><span class="ilvl-badge">iLvl 60.1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=25695" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 25695 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
-                                    Wildchief
-                                </a>
-                            </td>
-                            <td class="dps-cell">357.9</td>
-                            <td class="dmg-cell">31,096</td>
-                            <td><span class="ilvl-badge">iLvl 64.2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 71370 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=44623" target="_blank" class="player-link">
                                     Rvota
                                 </a>
@@ -2022,7 +1512,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Shazzrah" data-guild="Sixth Sunder" data-players="Draka">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Shazzrah" data-guild="Sixth Sunder" data-players="Draka">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Shazzrah</span>
@@ -2030,7 +1520,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:33:26</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944430" target="_blank">Kill #944430 ↗</a>
                 </div>
@@ -2072,7 +1562,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Sulfuron Harbinger" data-guild="Endragon" data-players="Adzemawg">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Sulfuron Harbinger" data-guild="Endragon" data-players="Adzemawg">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Sulfuron Harbinger</span>
@@ -2080,7 +1570,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:31:23</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944429" target="_blank">Kill #944429 ↗</a>
                 </div>
@@ -2122,7 +1612,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Baron Geddon" data-guild="Sixth Sunder" data-players="Draka">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Baron Geddon" data-guild="Sixth Sunder" data-players="Draka">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Baron Geddon</span>
@@ -2130,7 +1620,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:29:54</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944428" target="_blank">Kill #944428 ↗</a>
                 </div>
@@ -2172,7 +1662,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Gehennas" data-guild="Sixth Sunder" data-players="Draka Toncho">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Gehennas" data-guild="Sixth Sunder" data-players="Draka">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Gehennas</span>
@@ -2180,7 +1670,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:21:43</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944427" target="_blank">Kill #944427 ↗</a>
                 </div>
@@ -2217,29 +1707,12 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" class="player-link">
-                                    Toncho
-                                </a>
-                            </td>
-                            <td class="dps-cell">402.6</td>
-                            <td class="dmg-cell">11,888</td>
-                            <td><span class="ilvl-badge">iLvl 60.3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 5900 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Shazzrah" data-guild="Endragon" data-players="Adzemawg">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Shazzrah" data-guild="Endragon" data-players="Adzemawg">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Shazzrah</span>
@@ -2247,7 +1720,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:20:23</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944426" target="_blank">Kill #944426 ↗</a>
                 </div>
@@ -2289,7 +1762,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Baron Geddon" data-guild="Endragon" data-players="Nyften">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Baron Geddon" data-guild="Endragon" data-players="Nyften">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Baron Geddon</span>
@@ -2297,7 +1770,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:16:14</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944425" target="_blank">Kill #944425 ↗</a>
                 </div>
@@ -2339,7 +1812,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Magmadar" data-guild="Sixth Sunder" data-players="Draka">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Magmadar" data-guild="Sixth Sunder" data-players="Draka">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Magmadar</span>
@@ -2347,7 +1820,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:16:10</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944424" target="_blank">Kill #944424 ↗</a>
                 </div>
@@ -2389,7 +1862,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Lucifron" data-guild="Sixth Sunder" data-players="Draka">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Lucifron" data-guild="Sixth Sunder" data-players="Draka">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Lucifron</span>
@@ -2397,7 +1870,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Sixth Sunder</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:12:03</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944423" target="_blank">Kill #944423 ↗</a>
                 </div>
@@ -2439,7 +1912,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Gehennas" data-guild="Endragon" data-players="Rvota">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Gehennas" data-guild="Endragon" data-players="Rvota">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Gehennas</span>
@@ -2447,7 +1920,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:07:49</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944422" target="_blank">Kill #944422 ↗</a>
                 </div>
@@ -2489,7 +1962,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Magmadar" data-guild="Endragon" data-players="Nyften Adzemawg Wildchief">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Magmadar" data-guild="Endragon" data-players="Wildchief">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Magmadar</span>
@@ -2497,7 +1970,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 20:01:20</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944421" target="_blank">Kill #944421 ↗</a>
                 </div>
@@ -2520,40 +1993,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=76446" target="_blank" class="player-link">
-                                    Nyften
-                                </a>
-                            </td>
-                            <td class="dps-cell">855.9</td>
-                            <td class="dmg-cell">59,470</td>
-                            <td><span class="ilvl-badge">iLvl 61.0</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=76446" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 76446 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=83939" target="_blank" class="player-link">
-                                    Adzemawg
-                                </a>
-                            </td>
-                            <td class="dps-cell">829.6</td>
-                            <td class="dmg-cell">57,642</td>
-                            <td><span class="ilvl-badge">iLvl 61.3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=83939" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 83939 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
                                     Wildchief
                                 </a>
@@ -2573,7 +2012,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Lucifron" data-guild="Endragon" data-players="Wildchief">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Lucifron" data-guild="Endragon" data-players="Wildchief">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Lucifron</span>
@@ -2581,7 +2020,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 19:54:36</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944420" target="_blank">Kill #944420 ↗</a>
                 </div>
@@ -2623,7 +2062,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Garr" data-guild="Endragon" data-players="Rvota Wildchief">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Garr" data-guild="Endragon" data-players="Wildchief">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Garr</span>
@@ -2631,7 +2070,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Endragon</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 19:39:53</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944419" target="_blank">Kill #944419 ↗</a>
                 </div>
@@ -2654,23 +2093,6 @@
                         <tr>
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=44623" target="_blank" class="player-link">
-                                    Rvota
-                                </a>
-                            </td>
-                            <td class="dps-cell">324.0</td>
-                            <td class="dmg-cell">26,302</td>
-                            <td><span class="ilvl-badge">iLvl 61.3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=44623" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 44623 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
                                     Wildchief
                                 </a>
@@ -2690,7 +2112,7 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Onyxia" data-guild="Rage Quit" data-players="Orwell">
+        <div class="bosskill-card" data-realm="KronosV" data-boss="Onyxia" data-guild="Rage Quit" data-players="Orwell">
             <div class="card-header">
                 <div class="boss-name">
                     <span>Onyxia</span>
@@ -2698,7 +2120,7 @@
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ Rage Quit</span>
-                    <span>KronosV</span>
+                    <span class="realm-tag">KronosV</span>
                     <span>2026/09/26 19:25:24</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944418" target="_blank">Kill #944418 ↗</a>
                 </div>
@@ -2740,306 +2162,6 @@
             </div>
         </div>
         
-        <div class="bosskill-card" data-boss="Garr" data-guild="" data-players="Steelmuscle">
-            <div class="card-header">
-                <div class="boss-name">
-                    <span>Garr</span>
-                    <span class="raid-tag">Molten Core</span>
-                </div>
-                <div class="meta-info">
-                    <span class="guild-tag">⚔️ No Guild</span>
-                    <span>Kronos</span>
-                    <span>2026/09/26 19:04:10</span>
-                    <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938520" target="_blank">Kill #938520 ↗</a>
-                </div>
-            </div>
-
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 4rem;">Rank</th>
-                            <th>Tank</th>
-                            <th>DPS</th>
-                            <th>Damage Done</th>
-                            <th>Item Level</th>
-                            <th>Profile</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1912873" target="_blank" class="player-link">
-                                    Steelmuscle
-                                </a>
-                            </td>
-                            <td class="dps-cell">150.3</td>
-                            <td class="dmg-cell">78,148</td>
-                            <td><span class="ilvl-badge">iLvl 84.1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1912873" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 1912873 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <div class="bosskill-card" data-boss="Garr" data-guild="" data-players="Protiva">
-            <div class="card-header">
-                <div class="boss-name">
-                    <span>Garr</span>
-                    <span class="raid-tag">Molten Core</span>
-                </div>
-                <div class="meta-info">
-                    <span class="guild-tag">⚔️ No Guild</span>
-                    <span>Kronos</span>
-                    <span>2026/09/26 18:04:13</span>
-                    <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938518" target="_blank">Kill #938518 ↗</a>
-                </div>
-            </div>
-
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 4rem;">Rank</th>
-                            <th>Tank</th>
-                            <th>DPS</th>
-                            <th>Damage Done</th>
-                            <th>Item Level</th>
-                            <th>Profile</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1320666" target="_blank" class="player-link">
-                                    Protiva
-                                </a>
-                            </td>
-                            <td class="dps-cell">232.9</td>
-                            <td class="dmg-cell">104,873</td>
-                            <td><span class="ilvl-badge">iLvl 82.4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1320666" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 1320666 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <div class="bosskill-card" data-boss="Baron Geddon" data-guild="" data-players="Protiva">
-            <div class="card-header">
-                <div class="boss-name">
-                    <span>Baron Geddon</span>
-                    <span class="raid-tag">Molten Core</span>
-                </div>
-                <div class="meta-info">
-                    <span class="guild-tag">⚔️ No Guild</span>
-                    <span>Kronos</span>
-                    <span>2026/09/26 17:54:25</span>
-                    <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938515" target="_blank">Kill #938515 ↗</a>
-                </div>
-            </div>
-
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 4rem;">Rank</th>
-                            <th>Tank</th>
-                            <th>DPS</th>
-                            <th>Damage Done</th>
-                            <th>Item Level</th>
-                            <th>Profile</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1320666" target="_blank" class="player-link">
-                                    Protiva
-                                </a>
-                            </td>
-                            <td class="dps-cell">231.3</td>
-                            <td class="dmg-cell">209,529</td>
-                            <td><span class="ilvl-badge">iLvl 72.3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1320666" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 1320666 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <div class="bosskill-card" data-boss="Gehennas" data-guild="" data-players="Kolotun">
-            <div class="card-header">
-                <div class="boss-name">
-                    <span>Gehennas</span>
-                    <span class="raid-tag">Molten Core</span>
-                </div>
-                <div class="meta-info">
-                    <span class="guild-tag">⚔️ No Guild</span>
-                    <span>Kronos</span>
-                    <span>2026/09/26 14:48:31</span>
-                    <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938513" target="_blank">Kill #938513 ↗</a>
-                </div>
-            </div>
-
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 4rem;">Rank</th>
-                            <th>Tank</th>
-                            <th>DPS</th>
-                            <th>Damage Done</th>
-                            <th>Item Level</th>
-                            <th>Profile</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=444404" target="_blank" class="player-link">
-                                    Kolotun
-                                </a>
-                            </td>
-                            <td class="dps-cell">451.0</td>
-                            <td class="dmg-cell">270,462</td>
-                            <td><span class="ilvl-badge">iLvl 74.8</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=444404" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 444404 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <div class="bosskill-card" data-boss="Garr" data-guild="" data-players="Kolotun">
-            <div class="card-header">
-                <div class="boss-name">
-                    <span>Garr</span>
-                    <span class="raid-tag">Molten Core</span>
-                </div>
-                <div class="meta-info">
-                    <span class="guild-tag">⚔️ No Guild</span>
-                    <span>Kronos</span>
-                    <span>2026/09/26 13:53:10</span>
-                    <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938505" target="_blank">Kill #938505 ↗</a>
-                </div>
-            </div>
-
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 4rem;">Rank</th>
-                            <th>Tank</th>
-                            <th>DPS</th>
-                            <th>Damage Done</th>
-                            <th>Item Level</th>
-                            <th>Profile</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=444404" target="_blank" class="player-link">
-                                    Kolotun
-                                </a>
-                            </td>
-                            <td class="dps-cell">263.6</td>
-                            <td class="dmg-cell">169,109</td>
-                            <td><span class="ilvl-badge">iLvl 70.1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=444404" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 444404 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <div class="bosskill-card" data-boss="Baron Geddon" data-guild="" data-players="Kolotun">
-            <div class="card-header">
-                <div class="boss-name">
-                    <span>Baron Geddon</span>
-                    <span class="raid-tag">Molten Core</span>
-                </div>
-                <div class="meta-info">
-                    <span class="guild-tag">⚔️ No Guild</span>
-                    <span>Kronos</span>
-                    <span>2026/09/26 13:00:59</span>
-                    <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938500" target="_blank">Kill #938500 ↗</a>
-                </div>
-            </div>
-
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="width: 4rem;">Rank</th>
-                            <th>Tank</th>
-                            <th>DPS</th>
-                            <th>Damage Done</th>
-                            <th>Item Level</th>
-                            <th>Profile</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=444404" target="_blank" class="player-link">
-                                    Kolotun
-                                </a>
-                            </td>
-                            <td class="dps-cell">522.7</td>
-                            <td class="dmg-cell">587,770</td>
-                            <td><span class="ilvl-badge">iLvl 70.8</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=444404" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID 444404 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
     </div>
 
     <!-- VIEW 2: Top 10 Tanks per Boss Leaderboard -->
@@ -3052,7 +2174,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>6 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -3065,6 +2187,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -3072,46 +2195,8 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=56816" target="_blank" class="player-link">
-                                    Thebutcher
-                                </a>
-                            </td>
-                            <td class="dps-cell">850.9</td>
-                            <td class="dmg-cell">35,189</td>
-                            <td><span class="ilvl-badge">iLvl 60.9</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944447" target="_blank">
-                                    #944447 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=444404" target="_blank" class="player-link">
-                                    Kolotun
-                                </a>
-                            </td>
-                            <td class="dps-cell">522.7</td>
-                            <td class="dmg-cell">587,770</td>
-                            <td><span class="ilvl-badge">iLvl 70.8</span></td>
-                            <td>No Guild</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938500" target="_blank">
-                                    #938500 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
                                     Draka
@@ -3120,6 +2205,7 @@
                             <td class="dps-cell">495.8</td>
                             <td class="dmg-cell">22,882</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3129,8 +2215,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=76446" target="_blank" class="player-link">
                                     Nyften
@@ -3139,6 +2225,7 @@
                             <td class="dps-cell">389.0</td>
                             <td class="dmg-cell">21,389</td>
                             <td><span class="ilvl-badge">iLvl 61.0</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3148,8 +2235,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-5">#5</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
@@ -3158,30 +2245,12 @@
                             <td class="dps-cell">348.0</td>
                             <td class="dmg-cell">14,390</td>
                             <td><span class="ilvl-badge">iLvl 64.9</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944447" target="_blank">
                                     #944447 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-6">#6</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1320666" target="_blank" class="player-link">
-                                    Protiva
-                                </a>
-                            </td>
-                            <td class="dps-cell">231.3</td>
-                            <td class="dmg-cell">209,529</td>
-                            <td><span class="ilvl-badge">iLvl 72.3</span></td>
-                            <td>No Guild</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938515" target="_blank">
-                                    #938515 ↗
                                 </a>
                             </td>
                         </tr>
@@ -3198,7 +2267,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>10 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -3211,6 +2280,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -3218,65 +2288,8 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=23273" target="_blank" class="player-link">
-                                    Caesar
-                                </a>
-                            </td>
-                            <td class="dps-cell">670.9</td>
-                            <td class="dmg-cell">29,578</td>
-                            <td><span class="ilvl-badge">iLvl 68.9</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944444" target="_blank">
-                                    #944444 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=778" target="_blank" class="player-link">
-                                    Oika
-                                </a>
-                            </td>
-                            <td class="dps-cell">389.6</td>
-                            <td class="dmg-cell">21,823</td>
-                            <td><span class="ilvl-badge">iLvl 62.5</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944435" target="_blank">
-                                    #944435 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=44623" target="_blank" class="player-link">
-                                    Rvota
-                                </a>
-                            </td>
-                            <td class="dps-cell">324.0</td>
-                            <td class="dmg-cell">26,302</td>
-                            <td><span class="ilvl-badge">iLvl 61.3</span></td>
-                            <td>Endragon</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944419" target="_blank">
-                                    #944419 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=29984" target="_blank" class="player-link">
                                     Nobleknight
@@ -3285,6 +2298,7 @@
                             <td class="dps-cell">313.9</td>
                             <td class="dmg-cell">17,584</td>
                             <td><span class="ilvl-badge">iLvl 62.2</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3294,8 +2308,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-5">#5</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
                                     Wildchief
@@ -3304,6 +2318,7 @@
                             <td class="dps-cell">297.6</td>
                             <td class="dmg-cell">24,160</td>
                             <td><span class="ilvl-badge">iLvl 64.2</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3313,84 +2328,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-6">#6</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" class="player-link">
-                                    Toncho
-                                </a>
-                            </td>
-                            <td class="dps-cell">280.0</td>
-                            <td class="dmg-cell">15,685</td>
-                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944435" target="_blank">
-                                    #944435 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-7">#7</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=444404" target="_blank" class="player-link">
-                                    Kolotun
-                                </a>
-                            </td>
-                            <td class="dps-cell">263.6</td>
-                            <td class="dmg-cell">169,109</td>
-                            <td><span class="ilvl-badge">iLvl 70.1</span></td>
-                            <td>No Guild</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938505" target="_blank">
-                                    #938505 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-8">#8</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" class="player-link">
-                                    Sliggy
-                                </a>
-                            </td>
-                            <td class="dps-cell">237.1</td>
-                            <td class="dmg-cell">13,283</td>
-                            <td><span class="ilvl-badge">iLvl 64.5</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944435" target="_blank">
-                                    #944435 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-9">#9</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1320666" target="_blank" class="player-link">
-                                    Protiva
-                                </a>
-                            </td>
-                            <td class="dps-cell">232.9</td>
-                            <td class="dmg-cell">104,873</td>
-                            <td><span class="ilvl-badge">iLvl 82.4</span></td>
-                            <td>No Guild</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938518" target="_blank">
-                                    #938518 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-10">#10</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" class="player-link">
                                     Nanohc
@@ -3399,6 +2338,7 @@
                             <td class="dps-cell">187.0</td>
                             <td class="dmg-cell">8,246</td>
                             <td><span class="ilvl-badge">iLvl 62.2</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3420,7 +2360,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>6 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -3433,6 +2373,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -3440,7 +2381,7 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
@@ -3450,6 +2391,7 @@
                             <td class="dps-cell">733.7</td>
                             <td class="dmg-cell">21,664</td>
                             <td><span class="ilvl-badge">iLvl 65.5</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3459,7 +2401,7 @@
                             </td>
                         </tr>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
@@ -3469,6 +2411,7 @@
                             <td class="dps-cell">518.8</td>
                             <td class="dmg-cell">16,476</td>
                             <td><span class="ilvl-badge">iLvl 65.8</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3478,46 +2421,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=444404" target="_blank" class="player-link">
-                                    Kolotun
-                                </a>
-                            </td>
-                            <td class="dps-cell">451.0</td>
-                            <td class="dmg-cell">270,462</td>
-                            <td><span class="ilvl-badge">iLvl 74.8</span></td>
-                            <td>No Guild</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=938513" target="_blank">
-                                    #938513 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" class="player-link">
-                                    Toncho
-                                </a>
-                            </td>
-                            <td class="dps-cell">402.6</td>
-                            <td class="dmg-cell">11,888</td>
-                            <td><span class="ilvl-badge">iLvl 60.3</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944427" target="_blank">
-                                    #944427 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-5">#5</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=44623" target="_blank" class="player-link">
                                     Rvota
@@ -3526,30 +2431,12 @@
                             <td class="dps-cell">304.9</td>
                             <td class="dmg-cell">15,849</td>
                             <td><span class="ilvl-badge">iLvl 62.4</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944422" target="_blank">
                                     #944422 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-6">#6</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" class="player-link">
-                                    Perseverance
-                                </a>
-                            </td>
-                            <td class="dps-cell">201.4</td>
-                            <td class="dmg-cell">6,397</td>
-                            <td><span class="ilvl-badge">iLvl 60.2</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944442" target="_blank">
-                                    #944442 ↗
                                 </a>
                             </td>
                         </tr>
@@ -3566,7 +2453,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>9 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -3579,6 +2466,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -3586,27 +2474,8 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=25695" target="_blank" class="player-link">
-                                    Behemoth
-                                </a>
-                            </td>
-                            <td class="dps-cell">605.1</td>
-                            <td class="dmg-cell">52,576</td>
-                            <td><span class="ilvl-badge">iLvl 60.1</span></td>
-                            <td>Endragon</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944431" target="_blank">
-                                    #944431 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
                                     Draka
@@ -3615,6 +2484,7 @@
                             <td class="dps-cell">442.4</td>
                             <td class="dmg-cell">35,382</td>
                             <td><span class="ilvl-badge">iLvl 65.5</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3624,8 +2494,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" class="player-link">
                                     Nanohc
@@ -3634,6 +2504,7 @@
                             <td class="dps-cell">382.3</td>
                             <td class="dmg-cell">24,354</td>
                             <td><span class="ilvl-badge">iLvl 62.2</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3643,84 +2514,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
-                                    Agaanii
-                                </a>
-                            </td>
-                            <td class="dps-cell">376.5</td>
-                            <td class="dmg-cell">23,985</td>
-                            <td><span class="ilvl-badge">iLvl 67.0</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944450" target="_blank">
-                                    #944450 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-5">#5</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
-                                    Wildchief
-                                </a>
-                            </td>
-                            <td class="dps-cell">357.9</td>
-                            <td class="dmg-cell">31,096</td>
-                            <td><span class="ilvl-badge">iLvl 64.2</span></td>
-                            <td>Endragon</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944431" target="_blank">
-                                    #944431 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-6">#6</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=778" target="_blank" class="player-link">
-                                    Oika
-                                </a>
-                            </td>
-                            <td class="dps-cell">308.7</td>
-                            <td class="dmg-cell">24,689</td>
-                            <td><span class="ilvl-badge">iLvl 62.5</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944433" target="_blank">
-                                    #944433 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-7">#7</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" class="player-link">
-                                    Sliggy
-                                </a>
-                            </td>
-                            <td class="dps-cell">238.5</td>
-                            <td class="dmg-cell">19,079</td>
-                            <td><span class="ilvl-badge">iLvl 64.5</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944433" target="_blank">
-                                    #944433 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-8">#8</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=44623" target="_blank" class="player-link">
                                     Rvota
@@ -3729,30 +2524,12 @@
                             <td class="dps-cell">183.1</td>
                             <td class="dmg-cell">15,913</td>
                             <td><span class="ilvl-badge">iLvl 61.3</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944431" target="_blank">
                                     #944431 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-9">#9</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" class="player-link">
-                                    Toncho
-                                </a>
-                            </td>
-                            <td class="dps-cell">181.7</td>
-                            <td class="dmg-cell">14,530</td>
-                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944433" target="_blank">
-                                    #944433 ↗
                                 </a>
                             </td>
                         </tr>
@@ -3769,7 +2546,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>5 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -3782,6 +2559,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -3789,27 +2567,8 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" class="player-link">
-                                    Perseverance
-                                </a>
-                            </td>
-                            <td class="dps-cell">970.7</td>
-                            <td class="dmg-cell">33,465</td>
-                            <td><span class="ilvl-badge">iLvl 60.2</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944439" target="_blank">
-                                    #944439 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
                                     Draka
@@ -3818,6 +2577,7 @@
                             <td class="dps-cell">713.0</td>
                             <td class="dmg-cell">19,549</td>
                             <td><span class="ilvl-badge">iLvl 65.5</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3827,27 +2587,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" class="player-link">
-                                    Nanohc
-                                </a>
-                            </td>
-                            <td class="dps-cell">435.3</td>
-                            <td class="dmg-cell">15,006</td>
-                            <td><span class="ilvl-badge">iLvl 62.2</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944439" target="_blank">
-                                    #944439 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
@@ -3856,6 +2597,7 @@
                             <td class="dps-cell">393.1</td>
                             <td class="dmg-cell">13,551</td>
                             <td><span class="ilvl-badge">iLvl 65.8</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3865,8 +2607,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-5">#5</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
                                     Wildchief
@@ -3875,6 +2617,7 @@
                             <td class="dps-cell">343.5</td>
                             <td class="dmg-cell">24,351</td>
                             <td><span class="ilvl-badge">iLvl 63.9</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3896,7 +2639,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>6 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -3909,6 +2652,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -3916,46 +2660,8 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=76446" target="_blank" class="player-link">
-                                    Nyften
-                                </a>
-                            </td>
-                            <td class="dps-cell">855.9</td>
-                            <td class="dmg-cell">59,470</td>
-                            <td><span class="ilvl-badge">iLvl 61.0</span></td>
-                            <td>Endragon</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944421" target="_blank">
-                                    #944421 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=83939" target="_blank" class="player-link">
-                                    Adzemawg
-                                </a>
-                            </td>
-                            <td class="dps-cell">829.6</td>
-                            <td class="dmg-cell">57,642</td>
-                            <td><span class="ilvl-badge">iLvl 61.3</span></td>
-                            <td>Endragon</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944421" target="_blank">
-                                    #944421 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
@@ -3964,6 +2670,7 @@
                             <td class="dps-cell">694.0</td>
                             <td class="dmg-cell">37,310</td>
                             <td><span class="ilvl-badge">iLvl 65.8</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -3973,27 +2680,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=36080" target="_blank" class="player-link">
-                                    Melaniny
-                                </a>
-                            </td>
-                            <td class="dps-cell">693.0</td>
-                            <td class="dmg-cell">37,255</td>
-                            <td><span class="ilvl-badge">iLvl 61.1</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944441" target="_blank">
-                                    #944441 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-5">#5</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
                                     Draka
@@ -4002,6 +2690,7 @@
                             <td class="dps-cell">574.8</td>
                             <td class="dmg-cell">33,519</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4011,8 +2700,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-6">#6</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
                                     Wildchief
@@ -4021,6 +2710,7 @@
                             <td class="dps-cell">370.6</td>
                             <td class="dmg-cell">25,746</td>
                             <td><span class="ilvl-badge">iLvl 62.6</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4042,7 +2732,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>10 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -4055,6 +2745,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -4062,46 +2753,8 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=27718" target="_blank" class="player-link">
-                                    Kissen
-                                </a>
-                            </td>
-                            <td class="dps-cell">889.5</td>
-                            <td class="dmg-cell">74,592</td>
-                            <td><span class="ilvl-badge">iLvl 61.6</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944452" target="_blank">
-                                    #944452 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
-                                    Draka
-                                </a>
-                            </td>
-                            <td class="dps-cell">423.6</td>
-                            <td class="dmg-cell">40,224</td>
-                            <td><span class="ilvl-badge">iLvl 65.7</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944436" target="_blank">
-                                    #944436 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
                                     Wildchief
@@ -4110,6 +2763,7 @@
                             <td class="dps-cell">291.7</td>
                             <td class="dmg-cell">43,133</td>
                             <td><span class="ilvl-badge">iLvl 63.9</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4119,46 +2773,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" class="player-link">
-                                    Perseverance
-                                </a>
-                            </td>
-                            <td class="dps-cell">286.4</td>
-                            <td class="dmg-cell">24,014</td>
-                            <td><span class="ilvl-badge">iLvl 60.5</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944452" target="_blank">
-                                    #944452 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-5">#5</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=5900" target="_blank" class="player-link">
-                                    Toncho
-                                </a>
-                            </td>
-                            <td class="dps-cell">268.8</td>
-                            <td class="dmg-cell">25,525</td>
-                            <td><span class="ilvl-badge">iLvl 60.0</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944436" target="_blank">
-                                    #944436 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-6">#6</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" class="player-link">
                                     Sliggy
@@ -4167,6 +2783,7 @@
                             <td class="dps-cell">240.2</td>
                             <td class="dmg-cell">22,807</td>
                             <td><span class="ilvl-badge">iLvl 64.5</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4176,27 +2793,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-7">#7</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=778" target="_blank" class="player-link">
-                                    Oika
-                                </a>
-                            </td>
-                            <td class="dps-cell">193.8</td>
-                            <td class="dmg-cell">18,405</td>
-                            <td><span class="ilvl-badge">iLvl 62.2</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944436" target="_blank">
-                                    #944436 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-8">#8</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" class="player-link">
                                     Nanohc
@@ -4205,49 +2803,12 @@
                             <td class="dps-cell">192.7</td>
                             <td class="dmg-cell">16,158</td>
                             <td><span class="ilvl-badge">iLvl 63.0</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944452" target="_blank">
                                     #944452 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-9">#9</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
-                                    Agaanii
-                                </a>
-                            </td>
-                            <td class="dps-cell">159.2</td>
-                            <td class="dmg-cell">13,352</td>
-                            <td><span class="ilvl-badge">iLvl 66.9</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944452" target="_blank">
-                                    #944452 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-10">#10</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=44623" target="_blank" class="player-link">
-                                    Rvota
-                                </a>
-                            </td>
-                            <td class="dps-cell">88.4</td>
-                            <td class="dmg-cell">13,069</td>
-                            <td><span class="ilvl-badge">iLvl 61.2</span></td>
-                            <td>Endragon</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944434" target="_blank">
-                                    #944434 ↗
                                 </a>
                             </td>
                         </tr>
@@ -4264,7 +2825,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>6 Tank Record(s)</span>
+                    <span>4 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -4277,6 +2838,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -4284,46 +2846,8 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=27718" target="_blank" class="player-link">
-                                    Kissen
-                                </a>
-                            </td>
-                            <td class="dps-cell">569.9</td>
-                            <td class="dmg-cell">73,583</td>
-                            <td><span class="ilvl-badge">iLvl 61.6</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944456" target="_blank">
-                                    #944456 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=24939" target="_blank" class="player-link">
-                                    Brickerz
-                                </a>
-                            </td>
-                            <td class="dps-cell">491.7</td>
-                            <td class="dmg-cell">61,869</td>
-                            <td><span class="ilvl-badge">iLvl 64.6</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944446" target="_blank">
-                                    #944446 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
                                     Draka
@@ -4332,6 +2856,7 @@
                             <td class="dps-cell">285.3</td>
                             <td class="dmg-cell">35,900</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4341,8 +2866,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
                                     Wildchief
@@ -4351,6 +2876,7 @@
                             <td class="dps-cell">160.0</td>
                             <td class="dmg-cell">38,910</td>
                             <td><span class="ilvl-badge">iLvl 63.9</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4360,8 +2886,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-5">#5</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
@@ -4370,6 +2896,7 @@
                             <td class="dps-cell">144.8</td>
                             <td class="dmg-cell">18,696</td>
                             <td><span class="ilvl-badge">iLvl 62.9</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4379,8 +2906,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-6">#6</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-4">#4</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=46438" target="_blank" class="player-link">
                                     Orwell
@@ -4389,6 +2916,7 @@
                             <td class="dps-cell">59.2</td>
                             <td class="dmg-cell">17,661</td>
                             <td><span class="ilvl-badge">iLvl 59.4</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Rage Quit</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4410,7 +2938,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>4 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -4423,6 +2951,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -4430,27 +2959,8 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=23273" target="_blank" class="player-link">
-                                    Caesar
-                                </a>
-                            </td>
-                            <td class="dps-cell">438.7</td>
-                            <td class="dmg-cell">41,490</td>
-                            <td><span class="ilvl-badge">iLvl 64.5</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944454" target="_blank">
-                                    #944454 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
                                     Draka
@@ -4459,6 +2969,7 @@
                             <td class="dps-cell">385.1</td>
                             <td class="dmg-cell">42,470</td>
                             <td><span class="ilvl-badge">iLvl 60.7</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4468,8 +2979,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
@@ -4478,6 +2989,7 @@
                             <td class="dps-cell">197.7</td>
                             <td class="dmg-cell">18,703</td>
                             <td><span class="ilvl-badge">iLvl 61.3</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4487,8 +2999,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=71370" target="_blank" class="player-link">
                                     Wildchief
@@ -4497,6 +3009,7 @@
                             <td class="dps-cell">88.6</td>
                             <td class="dmg-cell">25,340</td>
                             <td><span class="ilvl-badge">iLvl 55.4</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4518,7 +3031,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>4 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -4531,6 +3044,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -4538,7 +3052,7 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=83939" target="_blank" class="player-link">
@@ -4548,6 +3062,7 @@
                             <td class="dps-cell">1,136.6</td>
                             <td class="dmg-cell">32,433</td>
                             <td><span class="ilvl-badge">iLvl 61.3</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4557,7 +3072,7 @@
                             </td>
                         </tr>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
@@ -4567,6 +3082,7 @@
                             <td class="dps-cell">742.4</td>
                             <td class="dmg-cell">19,516</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4576,27 +3092,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=75340" target="_blank" class="player-link">
-                                    Perseverance
-                                </a>
-                            </td>
-                            <td class="dps-cell">688.8</td>
-                            <td class="dmg-cell">16,703</td>
-                            <td><span class="ilvl-badge">iLvl 60.2</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944448" target="_blank">
-                                    #944448 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
@@ -4605,6 +3102,7 @@
                             <td class="dps-cell">570.4</td>
                             <td class="dmg-cell">13,831</td>
                             <td><span class="ilvl-badge">iLvl 66.5</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4626,7 +3124,7 @@
                     <span class="raid-tag">Top 10 Tanks Leaderboard</span>
                 </div>
                 <div class="meta-info">
-                    <span>8 Tank Record(s)</span>
+                    <span>3 Tank Record(s)</span>
                 </div>
             </div>
 
@@ -4639,6 +3137,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -4646,46 +3145,8 @@
                     </thead>
                     <tbody>
                         
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=24939" target="_blank" class="player-link">
-                                    Brickerz
-                                </a>
-                            </td>
-                            <td class="dps-cell">1,051.4</td>
-                            <td class="dmg-cell">58,821</td>
-                            <td><span class="ilvl-badge">iLvl 64.6</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944432" target="_blank">
-                                    #944432 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=23273" target="_blank" class="player-link">
-                                    Caesar
-                                </a>
-                            </td>
-                            <td class="dps-cell">1,047.4</td>
-                            <td class="dmg-cell">52,325</td>
-                            <td><span class="ilvl-badge">iLvl 68.9</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944449" target="_blank">
-                                    #944449 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=83939" target="_blank" class="player-link">
                                     Adzemawg
@@ -4694,6 +3155,7 @@
                             <td class="dps-cell">907.2</td>
                             <td class="dmg-cell">55,919</td>
                             <td><span class="ilvl-badge">iLvl 61.3</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4703,27 +3165,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-4">#4</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=3353" target="_blank" class="player-link">
-                                    Iradora
-                                </a>
-                            </td>
-                            <td class="dps-cell">688.6</td>
-                            <td class="dmg-cell">38,522</td>
-                            <td><span class="ilvl-badge">iLvl 62.2</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944432" target="_blank">
-                                    #944432 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-5">#5</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=16240" target="_blank" class="player-link">
                                     Draka
@@ -4732,6 +3175,7 @@
                             <td class="dps-cell">482.2</td>
                             <td class="dmg-cell">26,976</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4741,46 +3185,8 @@
                             </td>
                         </tr>
                         
-                        <tr>
-                            <td><span class="rank-badge rank-6">#6</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=29061" target="_blank" class="player-link">
-                                    Sliggy
-                                </a>
-                            </td>
-                            <td class="dps-cell">357.2</td>
-                            <td class="dmg-cell">19,983</td>
-                            <td><span class="ilvl-badge">iLvl 64.3</span></td>
-                            <td>Sixth Sunder</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944432" target="_blank">
-                                    #944432 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-7">#7</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=1923" target="_blank" class="player-link">
-                                    Nanohc
-                                </a>
-                            </td>
-                            <td class="dps-cell">295.4</td>
-                            <td class="dmg-cell">14,759</td>
-                            <td><span class="ilvl-badge">iLvl 62.2</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944449" target="_blank">
-                                    #944449 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td><span class="rank-badge rank-8">#8</span></td>
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=4983" target="_blank" class="player-link">
                                     Agaanii
@@ -4789,6 +3195,7 @@
                             <td class="dps-cell">232.0</td>
                             <td class="dmg-cell">11,592</td>
                             <td><span class="ilvl-badge">iLvl 65.6</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
                             <td>
@@ -4806,7 +3213,7 @@
     </div>
 
     <footer>
-        <p>Kronos Vanilla Tank Logs &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; Generated: 2026-09-27 01:09:30 UTC</p>
+        <p>Kronos Vanilla Tank Logs &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; Generated: 2026-09-27 01:16:56 UTC</p>
     </footer>
 </div>
 
@@ -4835,32 +3242,62 @@
     }
 
     function filterData() {
-        const bossFilter = document.getElementById('boss-select').value.toLowerCase();
-        const searchFilter = document.getElementById('search-input').value.toLowerCase().trim();
+        const serverFilter = (document.getElementById('server-select')?.value || '').toLowerCase();
+        const bossFilter = (document.getElementById('boss-select')?.value || '').toLowerCase();
+        const searchFilter = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
 
-        const activeContainer = currentView === 'kills' 
-            ? document.getElementById('view-kills') 
-            : document.getElementById('view-leaderboard');
+        if (currentView === 'kills') {
+            const cards = document.getElementById('view-kills').querySelectorAll('.bosskill-card');
+            cards.forEach(card => {
+                const realm = (card.getAttribute('data-realm') || '').toLowerCase();
+                const boss = (card.getAttribute('data-boss') || '').toLowerCase();
+                const guild = (card.getAttribute('data-guild') || '').toLowerCase();
+                const players = (card.getAttribute('data-players') || '').toLowerCase();
 
-        const cards = activeContainer.querySelectorAll('.bosskill-card');
+                const matchesServer = !serverFilter || realm === serverFilter;
+                const matchesBoss = !bossFilter || boss === bossFilter;
+                const matchesSearch = !searchFilter || 
+                    boss.includes(searchFilter) || 
+                    guild.includes(searchFilter) || 
+                    players.includes(searchFilter) ||
+                    realm.includes(searchFilter);
 
-        cards.forEach(card => {
-            const boss = (card.getAttribute('data-boss') || '').toLowerCase();
-            const guild = (card.getAttribute('data-guild') || '').toLowerCase();
-            const players = (card.getAttribute('data-players') || '').toLowerCase();
+                if (matchesServer && matchesBoss && matchesSearch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        } else {
+            const cards = document.getElementById('view-leaderboard').querySelectorAll('.bosskill-card');
+            cards.forEach(card => {
+                const boss = (card.getAttribute('data-boss') || '').toLowerCase();
+                const matchesBoss = !bossFilter || boss === bossFilter;
 
-            const matchesBoss = !bossFilter || boss === bossFilter;
-            const matchesSearch = !searchFilter || 
-                boss.includes(searchFilter) || 
-                guild.includes(searchFilter) || 
-                players.includes(searchFilter);
+                const rows = card.querySelectorAll('.leaderboard-row');
+                let visibleRows = 0;
+                rows.forEach(row => {
+                    const realm = (row.getAttribute('data-realm') || '').toLowerCase();
+                    const text = row.textContent.toLowerCase();
 
-            if (matchesBoss && matchesSearch) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+                    const matchesServer = !serverFilter || realm === serverFilter;
+                    const matchesSearch = !searchFilter || text.includes(searchFilter);
+
+                    if (matchesServer && matchesSearch) {
+                        row.style.display = '';
+                        visibleRows++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+
+                if (matchesBoss && visibleRows > 0) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     }
 </script>
 

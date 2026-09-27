@@ -26,11 +26,26 @@ function formatIlvl(ilvl: string | number): string {
     return isNaN(n) ? "0.0" : n.toFixed(1);
 }
 
-export function generateHtml(bosskills: StoredBosskill[]): string {
+export function generateHtml(
+    bosskills: StoredBosskill[],
+    options: { server?: string } = {}
+): string {
     const generatedAt = new Date().toISOString().replace("T", " ").replace(/\..+/, " UTC");
 
-    // 1. Process each bosskill: sort tanks by DPS descending and take top 10
-    const processedKills = bosskills.map((k) => {
+    // All available servers in the dataset
+    const allServers = Array.from(new Set(bosskills.map((k) => k.realm))).filter(Boolean).sort();
+
+    // Server filtering
+    const serverFilter = options.server && options.server.toLowerCase() !== "all"
+        ? options.server
+        : undefined;
+
+    const filteredKills = serverFilter
+        ? bosskills.filter((k) => k.realm.toLowerCase() === serverFilter.toLowerCase())
+        : bosskills;
+
+    // 1. Process each bosskill: sort tanks by DPS descending (takes the top tanks, up to 10)
+    const processedKills = filteredKills.map((k) => {
         const sortedTanks = [...k.tanks]
             .sort((a, b) => Number(b.dps) - Number(a.dps))
             .slice(0, 10);
@@ -79,7 +94,6 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
             tanks: tanks.slice(0, 10),
         });
     }
-    // Sort boss leaderboards alphabetically or by fight count
     bossLeaderboards.sort((a, b) => a.boss_name.localeCompare(b.boss_name));
 
     // Stats
@@ -97,14 +111,15 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
     }
 
     const uniqueBosses = Array.from(bossMap.keys()).sort();
+    const activeServerLabel = serverFilter ?? "All Servers";
 
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kronos Tank Logs - Top Warrior Tanks</title>
-    <meta name="description" content="Top 10 warrior tanks ranked by DPS per bosskill on Kronos Vanilla">
+    <title>Kronos Tank Logs - ${escapeHtml(activeServerLabel)}</title>
+    <meta name="description" content="Top warrior tanks ranked by DPS per bosskill on ${escapeHtml(activeServerLabel)}">
     <style>
         :root {
             --bg-base: #090d16;
@@ -196,6 +211,19 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
             margin-top: 0.25rem;
         }
 
+        .server-badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 0.15rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -232,7 +260,7 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
             margin-top: 0.2rem;
         }
 
-        /* Nav & Controls */
+        /* Controls */
         .controls-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -346,7 +374,7 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
         .meta-info {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.85rem;
             font-size: 0.85rem;
             color: var(--text-muted);
         }
@@ -354,6 +382,15 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
         .guild-tag {
             color: #cbd5e1;
             font-weight: 500;
+        }
+
+        .realm-tag {
+            background: rgba(148, 163, 184, 0.1);
+            color: #94a3b8;
+            padding: 0.15rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
 
         /* Table */
@@ -477,8 +514,8 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
             <div class="brand-title">
                 <span class="shield-icon">🛡️</span>
                 <div>
-                    <h1>Kronos Tank Logs</h1>
-                    <div class="subtitle">Top warrior tanks ranked by DPS per boss encounter</div>
+                    <h1>Kronos Tank Logs <span class="server-badge">${escapeHtml(activeServerLabel)}</span></h1>
+                    <div class="subtitle">Top warrior tanks ranked by DPS per boss encounter on ${escapeHtml(activeServerLabel)}</div>
                 </div>
             </div>
             <div>
@@ -517,6 +554,14 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
         </div>
 
         <div class="filters">
+            <select class="input-control" id="server-select" onchange="filterData()">
+                <option value="">All Servers</option>
+                ${allServers.map((s) => `
+                    <option value="${escapeHtml(s)}" ${serverFilter && s.toLowerCase() === serverFilter.toLowerCase() ? "selected" : ""}>
+                        ${escapeHtml(s)}
+                    </option>
+                `).join("")}
+            </select>
             <select class="input-control" id="boss-select" onchange="filterData()">
                 <option value="">All Bosses</option>
                 ${uniqueBosses.map((b) => `<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join("")}
@@ -528,7 +573,7 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
     <!-- VIEW 1: Per Bosskill Feed -->
     <div id="view-kills">
         ${processedKills.map((kill) => `
-        <div class="bosskill-card" data-boss="${escapeHtml(kill.boss_name)}" data-guild="${escapeHtml(kill.guild || '')}" data-players="${escapeHtml(kill.topTanks.map((t) => t.name).join(' '))}">
+        <div class="bosskill-card" data-realm="${escapeHtml(kill.realm)}" data-boss="${escapeHtml(kill.boss_name)}" data-guild="${escapeHtml(kill.guild || '')}" data-players="${escapeHtml(kill.topTanks.map((t) => t.name).join(' '))}">
             <div class="card-header">
                 <div class="boss-name">
                     <span>${escapeHtml(kill.boss_name)}</span>
@@ -536,7 +581,7 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
                 </div>
                 <div class="meta-info">
                     <span class="guild-tag">⚔️ ${escapeHtml(kill.guild || "No Guild")}</span>
-                    <span>${escapeHtml(kill.realm)}</span>
+                    <span class="realm-tag">${escapeHtml(kill.realm)}</span>
                     <span>${escapeHtml(kill.time)}</span>
                     <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=${kill.id}" target="_blank">Kill #${kill.id} ↗</a>
                 </div>
@@ -607,6 +652,7 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
+                            <th>Server</th>
                             <th>Guild</th>
                             <th>Date</th>
                             <th>Log</th>
@@ -614,7 +660,7 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
                     </thead>
                     <tbody>
                         ${b.tanks.map((tank, idx) => `
-                        <tr>
+                        <tr class="leaderboard-row" data-realm="${escapeHtml(tank.realm)}">
                             <td><span class="rank-badge rank-${idx + 1}">#${idx + 1}</span></td>
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?character=${tank.guid}" target="_blank" class="player-link">
@@ -624,6 +670,7 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
                             <td class="dps-cell">${formatDps(tank.dps)}</td>
                             <td class="dmg-cell">${formatDmg(tank.dmg_done)}</td>
                             <td><span class="ilvl-badge">iLvl ${formatIlvl(tank.avg_item_lvl)}</span></td>
+                            <td><span class="realm-tag">${escapeHtml(tank.realm)}</span></td>
                             <td>${escapeHtml(tank.guild || "No Guild")}</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">${escapeHtml(tank.time ? tank.time.split(' ')[0] : "")}</td>
                             <td>
@@ -670,32 +717,62 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
     }
 
     function filterData() {
-        const bossFilter = document.getElementById('boss-select').value.toLowerCase();
-        const searchFilter = document.getElementById('search-input').value.toLowerCase().trim();
+        const serverFilter = (document.getElementById('server-select')?.value || '').toLowerCase();
+        const bossFilter = (document.getElementById('boss-select')?.value || '').toLowerCase();
+        const searchFilter = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
 
-        const activeContainer = currentView === 'kills' 
-            ? document.getElementById('view-kills') 
-            : document.getElementById('view-leaderboard');
+        if (currentView === 'kills') {
+            const cards = document.getElementById('view-kills').querySelectorAll('.bosskill-card');
+            cards.forEach(card => {
+                const realm = (card.getAttribute('data-realm') || '').toLowerCase();
+                const boss = (card.getAttribute('data-boss') || '').toLowerCase();
+                const guild = (card.getAttribute('data-guild') || '').toLowerCase();
+                const players = (card.getAttribute('data-players') || '').toLowerCase();
 
-        const cards = activeContainer.querySelectorAll('.bosskill-card');
+                const matchesServer = !serverFilter || realm === serverFilter;
+                const matchesBoss = !bossFilter || boss === bossFilter;
+                const matchesSearch = !searchFilter || 
+                    boss.includes(searchFilter) || 
+                    guild.includes(searchFilter) || 
+                    players.includes(searchFilter) ||
+                    realm.includes(searchFilter);
 
-        cards.forEach(card => {
-            const boss = (card.getAttribute('data-boss') || '').toLowerCase();
-            const guild = (card.getAttribute('data-guild') || '').toLowerCase();
-            const players = (card.getAttribute('data-players') || '').toLowerCase();
+                if (matchesServer && matchesBoss && matchesSearch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        } else {
+            const cards = document.getElementById('view-leaderboard').querySelectorAll('.bosskill-card');
+            cards.forEach(card => {
+                const boss = (card.getAttribute('data-boss') || '').toLowerCase();
+                const matchesBoss = !bossFilter || boss === bossFilter;
 
-            const matchesBoss = !bossFilter || boss === bossFilter;
-            const matchesSearch = !searchFilter || 
-                boss.includes(searchFilter) || 
-                guild.includes(searchFilter) || 
-                players.includes(searchFilter);
+                const rows = card.querySelectorAll('.leaderboard-row');
+                let visibleRows = 0;
+                rows.forEach(row => {
+                    const realm = (row.getAttribute('data-realm') || '').toLowerCase();
+                    const text = row.textContent.toLowerCase();
 
-            if (matchesBoss && matchesSearch) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+                    const matchesServer = !serverFilter || realm === serverFilter;
+                    const matchesSearch = !searchFilter || text.includes(searchFilter);
+
+                    if (matchesServer && matchesSearch) {
+                        row.style.display = '';
+                        visibleRows++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+
+                if (matchesBoss && visibleRows > 0) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
     }
 </script>
 
@@ -704,7 +781,11 @@ export function generateHtml(bosskills: StoredBosskill[]): string {
 `;
 }
 
-export function render(bosskillsFile = BOSS_KILLS_FILE, outputFile = "index.html"): void {
+export function render(
+    bosskillsFile = BOSS_KILLS_FILE,
+    outputFile = "index.html",
+    options: { server?: string } = { server: "KronosV" }
+): void {
     if (!existsSync(bosskillsFile)) {
         console.error(`Error: Data file ${bosskillsFile} not found.`);
         process.exit(1);
@@ -712,9 +793,10 @@ export function render(bosskillsFile = BOSS_KILLS_FILE, outputFile = "index.html
 
     const raw = readFileSync(bosskillsFile, "utf-8");
     const bosskills: StoredBosskill[] = JSON.parse(raw);
-    console.log(`Rendering ${bosskills.length} bosskills from ${bosskillsFile} into ${outputFile}...`);
+    const serverLabel = options.server ?? "all";
+    console.log(`Rendering bosskills from ${bosskillsFile} (server: ${serverLabel}) into ${outputFile}...`);
 
-    const html = generateHtml(bosskills);
+    const html = generateHtml(bosskills, options);
     writeFileSync(outputFile, html, "utf-8");
     console.log(`Successfully generated ${outputFile} (${Buffer.byteLength(html, "utf-8")} bytes).`);
 }
@@ -722,5 +804,6 @@ export function render(bosskillsFile = BOSS_KILLS_FILE, outputFile = "index.html
 if (import.meta.main) {
     const jsonFile = process.argv[2] ?? BOSS_KILLS_FILE;
     const outFile = process.argv[3] ?? "index.html";
-    render(jsonFile, outFile);
+    const server = process.argv[4] ?? "KronosV";
+    render(jsonFile, outFile, { server });
 }

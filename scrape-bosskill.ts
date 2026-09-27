@@ -80,35 +80,23 @@ export async function getWarriorTanks(bosskillId: number | string): Promise<Warr
     const jsonStr = line.slice(line.indexOf("["), line.lastIndexOf("]") + 1);
     const bosskillData: any[] = JSON.parse(jsonStr);
 
-    const totalDmgTaken = bosskillData.reduce(
-        (sum: number, player: any) => sum + Number(player.dmg_taken),
-        0
-    );
-    const avgDmgTaken = totalDmgTaken / bosskillData.length;
-
-    // Threshold set to 2.5x the average damage taken, yielding at most 1-4 tanks
-    const tankThreshold = avgDmgTaken * 2.5;
-
-    // Filter warriors (class "1") and sort descending by dmg_taken
+    // Identify the primary warrior tank (highest dmg_taken among warriors)
     const warriors = bosskillData
         .filter((player: any) => player.class === "1")
         .sort((a: any, b: any) => Number(b.dmg_taken) - Number(a.dmg_taken));
 
     const tanks: WarriorTank[] = [];
-    for (let i = 0; i < warriors.length; i++) {
-        const player = warriors[i];
-        const dmg = Number(player.dmg_taken);
-        if (dmg > 0 && i < 4 && (dmg >= tankThreshold || i === 0)) {
-            tanks.push({
-                boss_name: bossName,
-                guid: player.guid,
-                realm: player.realm,
-                name: player.name,
-                avg_item_lvl: player.avg_item_lvl,
-                dmg_done: player.dmg_done,
-                dps: player.dps,
-            });
-        }
+    const topWarrior = warriors[0];
+    if (topWarrior && Number(topWarrior.dmg_taken) > 0) {
+        tanks.push({
+            boss_name: bossName,
+            guid: topWarrior.guid,
+            realm: topWarrior.realm,
+            name: topWarrior.name,
+            avg_item_lvl: topWarrior.avg_item_lvl,
+            dmg_done: topWarrior.dmg_done,
+            dps: topWarrior.dps,
+        });
     }
 
     return tanks;

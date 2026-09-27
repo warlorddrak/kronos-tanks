@@ -21,8 +21,8 @@ jobs:
       - name: Check for new bosskills and tank records
         run: bun run update-bosskills.ts
 
-      - name: Render index.html
-        run: bun run render.ts
+      - name: Render index.html (server: KronosV)
+        run: bun run render.ts bosskills.json index.html KronosV
 
       - name: Commit and push changes
         run: |
