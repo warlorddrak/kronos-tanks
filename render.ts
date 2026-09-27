@@ -596,30 +596,24 @@ export function generateHtml(
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Item Level</th>
-                            <th>Profile</th>
                         </tr>
                     </thead>
                     <tbody>
                         ${kill.topTanks.length === 0 ? `
                         <tr>
-                            <td colspan="6" class="no-data">No qualifying warrior tanks detected for this fight.</td>
+                            <td colspan="5" class="no-data">No qualifying warrior tanks detected for this fight.</td>
                         </tr>
                         ` : kill.topTanks.map((tank, idx) => `
                         <tr>
                             <td><span class="rank-badge rank-${idx + 1}">#${idx + 1}</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=${tank.guid}" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=${encodeURIComponent(tank.name)}&realm=${encodeURIComponent(tank.realm)}" target="_blank" class="player-link">
                                     ${escapeHtml(tank.name)}
                                 </a>
                             </td>
                             <td class="dps-cell">${formatDps(tank.dps)}</td>
                             <td class="dmg-cell">${formatDmg(tank.dmg_done)}</td>
                             <td><span class="ilvl-badge">iLvl ${formatIlvl(tank.avg_item_lvl)}</span></td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=${tank.guid}" target="_blank" style="font-size: 0.8rem; color: var(--text-muted);">
-                                    GUID ${escapeHtml(tank.guid)} ↗
-                                </a>
-                            </td>
                         </tr>
                         `).join("")}
                     </tbody>
@@ -663,7 +657,7 @@ export function generateHtml(
                         <tr class="leaderboard-row" data-realm="${escapeHtml(tank.realm)}">
                             <td><span class="rank-badge rank-${idx + 1}">#${idx + 1}</span></td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?character=${tank.guid}" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=${encodeURIComponent(tank.name)}&realm=${encodeURIComponent(tank.realm)}" target="_blank" class="player-link">
                                     ${escapeHtml(tank.name)}
                                 </a>
                             </td>
