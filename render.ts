@@ -548,6 +548,8 @@ export function generateHtml(
         }
 
         #view-kills td.no-data {
+            padding: 0.85rem 1.25rem;
+            line-height: 1.5rem;
             text-align: center;
             white-space: normal;
         }
@@ -648,7 +650,7 @@ export function generateHtml(
                     <tbody>
                         ${kill.topTanks.length === 0 ? `
                         <tr>
-                            <td colspan="6" class="no-data">No qualifying tanks detected for this fight.</td>
+                            <td colspan="6" class="no-data">No qualifying tank detected for this fight.</td>
                         </tr>
                         ` : kill.topTanks.map((tank) => `
                         <tr>
