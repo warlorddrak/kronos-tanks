@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { getWarriorTanks, type WarriorTank } from "./scrape-bosskill.ts";
+import { getTanks, type Tank } from "./scrape-bosskill.ts";
 import { fetchBosskillsList } from "./scrape-bosskills-for-day.ts";
 import { render } from "./render.ts";
 
@@ -10,7 +10,7 @@ export interface StoredBosskill {
     guild: string;
     realm: string;
     time: string;
-    tanks: WarriorTank[];
+    tanks: Tank[];
     error?: string;
 }
 
@@ -74,11 +74,11 @@ export async function updateBosskills(options: {
             const idx = currentIndex++;
             const kill = newKillsToScrape[idx];
 
-            let tanks: WarriorTank[] = [];
+            let tanks: Tank[] = [];
             let errorMsg: string | undefined;
 
             try {
-                tanks = await getWarriorTanks(kill.id);
+                tanks = await getTanks(kill.id);
             } catch (err: any) {
                 errorMsg = err?.message ?? String(err);
             }

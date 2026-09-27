@@ -1,4 +1,4 @@
-import { getWarriorTanks, fetchHtml, type WarriorTank } from "./scrape-bosskill.ts";
+import { getTanks, fetchHtml, type Tank } from "./scrape-bosskill.ts";
 
 export interface BosskillListItem {
     id: number;
@@ -23,7 +23,7 @@ export interface DayBosskillResult {
     guild: string;
     realm: string;
     time: string;
-    tanks: WarriorTank[];
+    tanks: Tank[];
     error?: string;
 }
 
@@ -106,11 +106,11 @@ export async function scrapeBosskillsForDay(
             const index = currentIndex++;
             const kill = dayKills[index];
 
-            let tanks: WarriorTank[] = [];
+            let tanks: Tank[] = [];
             let errorMsg: string | undefined;
 
             try {
-                tanks = await getWarriorTanks(kill.id);
+                tanks = await getTanks(kill.id);
             } catch (err: any) {
                 errorMsg = err?.message ?? String(err);
             }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kronos Tank Logs - KronosV</title>
-    <meta name="description" content="Top warrior tanks ranked by DPS per bosskill on KronosV">
+    <meta name="description" content="Top tanks ranked by DPS per bosskill on KronosV">
     <style>
         :root {
             --bg-base: #090d16;
@@ -112,7 +112,7 @@
 
         .stat-sub {
             font-size: 0.8rem;
-            color: var(--warrior);
+            color: var(--accent);
             margin-top: 0.2rem;
         }
 
@@ -305,8 +305,14 @@
 
         .player-link {
             font-weight: 600;
-            color: var(--warrior);
+            color: #cbd5e1;
             font-size: 0.95rem;
+            transition: filter 0.15s ease, text-decoration 0.15s ease;
+        }
+
+        .player-link:hover {
+            filter: brightness(1.25);
+            text-decoration: underline;
         }
 
         .dps-cell {
@@ -371,7 +377,7 @@
                 <span class="shield-icon">🛡️</span>
                 <div>
                     <h1>Kronos Tank Logs <span class="server-badge">KronosV</span></h1>
-                    <div class="subtitle">Top warrior tanks ranked by DPS per boss encounter on KronosV</div>
+                    <div class="subtitle">Top tanks ranked by DPS per boss encounter on KronosV</div>
                 </div>
             </div>
             <div>
@@ -431,6 +437,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -438,14 +445,15 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
-                                    Agaanii
+                                <a href="https://armory.twinstar-wow.com/character?name=Kissen&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Kissen
                                 </a>
                             </td>
-                            <td class="dps-cell">144.8</td>
-                            <td class="dmg-cell">18,696</td>
-                            <td class="dmg-cell">26,768</td>
-                            <td><span class="ilvl-badge">iLvl 62.9</span></td>
+                            <td class="dps-cell">569.9</td>
+                            <td class="dmg-cell">73,583</td>
+                            <td class="dmg-cell">18,870</td>
+                            <td class="dmg-cell">1,141</td>
+                            <td><span class="ilvl-badge">iLvl 61.6</span></td>
                         </tr>
                         
                     </tbody>
@@ -475,6 +483,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -482,13 +491,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">197.7</td>
                             <td class="dmg-cell">18,703</td>
                             <td class="dmg-cell">33,730</td>
+                            <td class="dmg-cell">7,703</td>
                             <td><span class="ilvl-badge">iLvl 61.3</span></td>
                         </tr>
                         
@@ -519,6 +529,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -526,13 +537,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">160.0</td>
                             <td class="dmg-cell">38,910</td>
                             <td class="dmg-cell">84,092</td>
+                            <td class="dmg-cell">2,465</td>
                             <td><span class="ilvl-badge">iLvl 63.9</span></td>
                         </tr>
                         
@@ -563,6 +575,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -570,13 +583,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Nanohc
                                 </a>
                             </td>
                             <td class="dps-cell">192.7</td>
                             <td class="dmg-cell">16,158</td>
                             <td class="dmg-cell">54,474</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 63.0</span></td>
                         </tr>
                         
@@ -607,6 +621,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -614,13 +629,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Nanohc
                                 </a>
                             </td>
                             <td class="dps-cell">382.3</td>
                             <td class="dmg-cell">24,354</td>
                             <td class="dmg-cell">46,824</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 62.2</span></td>
                         </tr>
                         
@@ -651,6 +667,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -658,13 +675,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">232.0</td>
                             <td class="dmg-cell">11,592</td>
                             <td class="dmg-cell">24,841</td>
+                            <td class="dmg-cell">2,164</td>
                             <td><span class="ilvl-badge">iLvl 65.6</span></td>
                         </tr>
                         
@@ -695,6 +713,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -702,13 +721,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">570.4</td>
                             <td class="dmg-cell">13,831</td>
                             <td class="dmg-cell">10,203</td>
+                            <td class="dmg-cell">2,640</td>
                             <td><span class="ilvl-badge">iLvl 66.5</span></td>
                         </tr>
                         
@@ -739,6 +759,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -746,13 +767,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">348.0</td>
                             <td class="dmg-cell">14,390</td>
                             <td class="dmg-cell">15,147</td>
+                            <td class="dmg-cell">1,417</td>
                             <td><span class="ilvl-badge">iLvl 64.9</span></td>
                         </tr>
                         
@@ -783,6 +805,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -790,13 +813,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">285.3</td>
                             <td class="dmg-cell">35,900</td>
                             <td class="dmg-cell">28,922</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                         </tr>
                         
@@ -827,6 +851,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -834,13 +859,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">88.6</td>
                             <td class="dmg-cell">25,340</td>
                             <td class="dmg-cell">44,533</td>
+                            <td class="dmg-cell">3,142</td>
                             <td><span class="ilvl-badge">iLvl 55.4</span></td>
                         </tr>
                         
@@ -871,6 +897,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -878,13 +905,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Nanohc
                                 </a>
                             </td>
                             <td class="dps-cell">187.0</td>
                             <td class="dmg-cell">8,246</td>
                             <td class="dmg-cell">23,786</td>
+                            <td class="dmg-cell">629</td>
                             <td><span class="ilvl-badge">iLvl 62.2</span></td>
                         </tr>
                         
@@ -915,6 +943,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -922,13 +951,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">518.8</td>
                             <td class="dmg-cell">16,476</td>
                             <td class="dmg-cell">12,162</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.8</span></td>
                         </tr>
                         
@@ -959,6 +989,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -966,13 +997,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">694.0</td>
                             <td class="dmg-cell">37,310</td>
                             <td class="dmg-cell">34,723</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.8</span></td>
                         </tr>
                         
@@ -1003,6 +1035,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1010,13 +1043,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">385.1</td>
                             <td class="dmg-cell">42,470</td>
                             <td class="dmg-cell">51,535</td>
+                            <td class="dmg-cell">3,064</td>
                             <td><span class="ilvl-badge">iLvl 60.7</span></td>
                         </tr>
                         
@@ -1047,6 +1081,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1054,13 +1089,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">393.1</td>
                             <td class="dmg-cell">13,551</td>
                             <td class="dmg-cell">15,527</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.8</span></td>
                         </tr>
                         
@@ -1091,6 +1127,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1098,13 +1135,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Sliggy&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Sliggy&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Sliggy
                                 </a>
                             </td>
                             <td class="dps-cell">240.2</td>
                             <td class="dmg-cell">22,807</td>
                             <td class="dmg-cell">38,305</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 64.5</span></td>
                         </tr>
                         
@@ -1135,6 +1173,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1142,13 +1181,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nobleknight&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Nobleknight&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Nobleknight
                                 </a>
                             </td>
                             <td class="dps-cell">313.9</td>
                             <td class="dmg-cell">17,584</td>
                             <td class="dmg-cell">25,585</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 62.2</span></td>
                         </tr>
                         
@@ -1179,6 +1219,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1186,13 +1227,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">291.7</td>
                             <td class="dmg-cell">43,133</td>
                             <td class="dmg-cell">47,582</td>
+                            <td class="dmg-cell">2,545</td>
                             <td><span class="ilvl-badge">iLvl 63.9</span></td>
                         </tr>
                         
@@ -1223,6 +1265,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1230,13 +1273,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">442.4</td>
                             <td class="dmg-cell">35,382</td>
                             <td class="dmg-cell">36,276</td>
+                            <td class="dmg-cell">92</td>
                             <td><span class="ilvl-badge">iLvl 65.5</span></td>
                         </tr>
                         
@@ -1267,6 +1311,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1274,13 +1319,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">482.2</td>
                             <td class="dmg-cell">26,976</td>
                             <td class="dmg-cell">23,693</td>
+                            <td class="dmg-cell">564</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                         </tr>
                         
@@ -1311,6 +1357,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1318,14 +1365,15 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Rvota&realm=KronosV" target="_blank" class="player-link">
-                                    Rvota
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
                                 </a>
                             </td>
-                            <td class="dps-cell">183.1</td>
-                            <td class="dmg-cell">15,913</td>
-                            <td class="dmg-cell">33,439</td>
-                            <td><span class="ilvl-badge">iLvl 61.3</span></td>
+                            <td class="dps-cell">224.5</td>
+                            <td class="dmg-cell">19,505</td>
+                            <td class="dmg-cell">39,372</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
                         </tr>
                         
                     </tbody>
@@ -1355,6 +1403,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1362,13 +1411,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">742.4</td>
                             <td class="dmg-cell">19,516</td>
                             <td class="dmg-cell">17,467</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                         </tr>
                         
@@ -1399,6 +1449,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1406,14 +1457,15 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Adzemawg&realm=KronosV" target="_blank" class="player-link">
-                                    Adzemawg
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
                                 </a>
                             </td>
-                            <td class="dps-cell">907.2</td>
-                            <td class="dmg-cell">55,919</td>
-                            <td class="dmg-cell">8,462</td>
-                            <td><span class="ilvl-badge">iLvl 61.3</span></td>
+                            <td class="dps-cell">207.5</td>
+                            <td class="dmg-cell">12,793</td>
+                            <td class="dmg-cell">48,617</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
                         </tr>
                         
                     </tbody>
@@ -1443,6 +1495,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1450,13 +1503,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">495.8</td>
                             <td class="dmg-cell">22,882</td>
                             <td class="dmg-cell">20,477</td>
+                            <td class="dmg-cell">1,144</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                         </tr>
                         
@@ -1487,6 +1541,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1494,13 +1549,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">733.7</td>
                             <td class="dmg-cell">21,664</td>
                             <td class="dmg-cell">13,153</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.5</span></td>
                         </tr>
                         
@@ -1531,6 +1587,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1538,13 +1595,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Adzemawg&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Adzemawg&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Adzemawg
                                 </a>
                             </td>
                             <td class="dps-cell">1,136.6</td>
                             <td class="dmg-cell">32,433</td>
                             <td class="dmg-cell">12,713</td>
+                            <td class="dmg-cell">4,284</td>
                             <td><span class="ilvl-badge">iLvl 61.3</span></td>
                         </tr>
                         
@@ -1575,6 +1633,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1582,14 +1641,15 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nyften&realm=KronosV" target="_blank" class="player-link">
-                                    Nyften
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
                                 </a>
                             </td>
-                            <td class="dps-cell">389.0</td>
-                            <td class="dmg-cell">21,389</td>
-                            <td class="dmg-cell">7,124</td>
-                            <td><span class="ilvl-badge">iLvl 61.0</span></td>
+                            <td class="dps-cell">393.4</td>
+                            <td class="dmg-cell">21,629</td>
+                            <td class="dmg-cell">32,501</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
                         </tr>
                         
                     </tbody>
@@ -1619,6 +1679,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1626,13 +1687,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">574.8</td>
                             <td class="dmg-cell">33,519</td>
                             <td class="dmg-cell">27,271</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                         </tr>
                         
@@ -1663,6 +1725,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1670,13 +1733,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">713.0</td>
                             <td class="dmg-cell">19,549</td>
                             <td class="dmg-cell">9,318</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.5</span></td>
                         </tr>
                         
@@ -1707,6 +1771,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1714,14 +1779,15 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Rvota&realm=KronosV" target="_blank" class="player-link">
-                                    Rvota
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
                                 </a>
                             </td>
-                            <td class="dps-cell">304.9</td>
-                            <td class="dmg-cell">15,849</td>
-                            <td class="dmg-cell">6,214</td>
-                            <td><span class="ilvl-badge">iLvl 62.4</span></td>
+                            <td class="dps-cell">225.9</td>
+                            <td class="dmg-cell">11,742</td>
+                            <td class="dmg-cell">16,081</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
                         </tr>
                         
                     </tbody>
@@ -1751,6 +1817,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1758,13 +1825,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">370.6</td>
                             <td class="dmg-cell">25,746</td>
                             <td class="dmg-cell">37,164</td>
+                            <td class="dmg-cell">2,629</td>
                             <td><span class="ilvl-badge">iLvl 62.6</span></td>
                         </tr>
                         
@@ -1795,6 +1863,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1802,14 +1871,15 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
-                                    Wildchief
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
                                 </a>
                             </td>
-                            <td class="dps-cell">343.5</td>
-                            <td class="dmg-cell">24,351</td>
-                            <td class="dmg-cell">12,764</td>
-                            <td><span class="ilvl-badge">iLvl 63.9</span></td>
+                            <td class="dps-cell">246.0</td>
+                            <td class="dmg-cell">17,438</td>
+                            <td class="dmg-cell">30,434</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
                         </tr>
                         
                     </tbody>
@@ -1839,6 +1909,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1846,13 +1917,14 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">297.6</td>
                             <td class="dmg-cell">24,160</td>
                             <td class="dmg-cell">42,307</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 64.2</span></td>
                         </tr>
                         
@@ -1883,6 +1955,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
@@ -1890,14 +1963,15 @@
                         
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Orwell&realm=KronosV" target="_blank" class="player-link">
-                                    Orwell
+                                <a href="https://armory.twinstar-wow.com/character?name=Grazel&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Grazel
                                 </a>
                             </td>
-                            <td class="dps-cell">59.2</td>
-                            <td class="dmg-cell">17,661</td>
-                            <td class="dmg-cell">31,696</td>
-                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
+                            <td class="dps-cell">146.7</td>
+                            <td class="dmg-cell">43,784</td>
+                            <td class="dmg-cell">17,220</td>
+                            <td class="dmg-cell">2,393</td>
+                            <td><span class="ilvl-badge">iLvl 63.4</span></td>
                         </tr>
                         
                     </tbody>
@@ -1930,6 +2004,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -1942,13 +2017,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">495.8</td>
                             <td class="dmg-cell">22,882</td>
                             <td class="dmg-cell">20,477</td>
+                            <td class="dmg-cell">1,144</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -1963,14 +2039,15 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nyften&realm=KronosV" target="_blank" class="player-link">
-                                    Nyften
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
                                 </a>
                             </td>
-                            <td class="dps-cell">389.0</td>
-                            <td class="dmg-cell">21,389</td>
-                            <td class="dmg-cell">7,124</td>
-                            <td><span class="ilvl-badge">iLvl 61.0</span></td>
+                            <td class="dps-cell">393.4</td>
+                            <td class="dmg-cell">21,629</td>
+                            <td class="dmg-cell">32,501</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
@@ -1984,13 +2061,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">348.0</td>
                             <td class="dmg-cell">14,390</td>
                             <td class="dmg-cell">15,147</td>
+                            <td class="dmg-cell">1,417</td>
                             <td><span class="ilvl-badge">iLvl 64.9</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2027,6 +2105,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2039,13 +2118,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nobleknight&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Nobleknight&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Nobleknight
                                 </a>
                             </td>
                             <td class="dps-cell">313.9</td>
                             <td class="dmg-cell">17,584</td>
                             <td class="dmg-cell">25,585</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 62.2</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2060,13 +2140,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">297.6</td>
                             <td class="dmg-cell">24,160</td>
                             <td class="dmg-cell">42,307</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 64.2</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
@@ -2081,13 +2162,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Nanohc
                                 </a>
                             </td>
                             <td class="dps-cell">187.0</td>
                             <td class="dmg-cell">8,246</td>
                             <td class="dmg-cell">23,786</td>
+                            <td class="dmg-cell">629</td>
                             <td><span class="ilvl-badge">iLvl 62.2</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2124,6 +2206,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2136,13 +2219,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">733.7</td>
                             <td class="dmg-cell">21,664</td>
                             <td class="dmg-cell">13,153</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.5</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2157,13 +2241,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">518.8</td>
                             <td class="dmg-cell">16,476</td>
                             <td class="dmg-cell">12,162</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.8</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2178,14 +2263,15 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Rvota&realm=KronosV" target="_blank" class="player-link">
-                                    Rvota
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
                                 </a>
                             </td>
-                            <td class="dps-cell">304.9</td>
-                            <td class="dmg-cell">15,849</td>
-                            <td class="dmg-cell">6,214</td>
-                            <td><span class="ilvl-badge">iLvl 62.4</span></td>
+                            <td class="dps-cell">225.9</td>
+                            <td class="dmg-cell">11,742</td>
+                            <td class="dmg-cell">16,081</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
@@ -2221,6 +2307,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2233,13 +2320,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">442.4</td>
                             <td class="dmg-cell">35,382</td>
                             <td class="dmg-cell">36,276</td>
+                            <td class="dmg-cell">92</td>
                             <td><span class="ilvl-badge">iLvl 65.5</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2254,13 +2342,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Nanohc
                                 </a>
                             </td>
                             <td class="dps-cell">382.3</td>
                             <td class="dmg-cell">24,354</td>
                             <td class="dmg-cell">46,824</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 62.2</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2275,14 +2364,15 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Rvota&realm=KronosV" target="_blank" class="player-link">
-                                    Rvota
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
                                 </a>
                             </td>
-                            <td class="dps-cell">183.1</td>
-                            <td class="dmg-cell">15,913</td>
-                            <td class="dmg-cell">33,439</td>
-                            <td><span class="ilvl-badge">iLvl 61.3</span></td>
+                            <td class="dps-cell">224.5</td>
+                            <td class="dmg-cell">19,505</td>
+                            <td class="dmg-cell">39,372</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
@@ -2318,6 +2408,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2330,13 +2421,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">713.0</td>
                             <td class="dmg-cell">19,549</td>
                             <td class="dmg-cell">9,318</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.5</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2351,13 +2443,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">393.1</td>
                             <td class="dmg-cell">13,551</td>
                             <td class="dmg-cell">15,527</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.8</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2372,14 +2465,15 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
-                                    Wildchief
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
                                 </a>
                             </td>
-                            <td class="dps-cell">343.5</td>
-                            <td class="dmg-cell">24,351</td>
-                            <td class="dmg-cell">12,764</td>
-                            <td><span class="ilvl-badge">iLvl 63.9</span></td>
+                            <td class="dps-cell">246.0</td>
+                            <td class="dmg-cell">17,438</td>
+                            <td class="dmg-cell">30,434</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
@@ -2415,6 +2509,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2427,13 +2522,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">694.0</td>
                             <td class="dmg-cell">37,310</td>
                             <td class="dmg-cell">34,723</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.8</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2448,13 +2544,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">574.8</td>
                             <td class="dmg-cell">33,519</td>
                             <td class="dmg-cell">27,271</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2469,13 +2566,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">370.6</td>
                             <td class="dmg-cell">25,746</td>
                             <td class="dmg-cell">37,164</td>
+                            <td class="dmg-cell">2,629</td>
                             <td><span class="ilvl-badge">iLvl 62.6</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
@@ -2512,6 +2610,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2524,13 +2623,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">291.7</td>
                             <td class="dmg-cell">43,133</td>
                             <td class="dmg-cell">47,582</td>
+                            <td class="dmg-cell">2,545</td>
                             <td><span class="ilvl-badge">iLvl 63.9</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
@@ -2545,13 +2645,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Sliggy&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Sliggy&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Sliggy
                                 </a>
                             </td>
                             <td class="dps-cell">240.2</td>
                             <td class="dmg-cell">22,807</td>
                             <td class="dmg-cell">38,305</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 64.5</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2566,13 +2667,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Nanohc
                                 </a>
                             </td>
                             <td class="dps-cell">192.7</td>
                             <td class="dmg-cell">16,158</td>
                             <td class="dmg-cell">54,474</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 63.0</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2609,6 +2711,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2621,13 +2724,36 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Kissen&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Kissen
+                                </a>
+                            </td>
+                            <td class="dps-cell">569.9</td>
+                            <td class="dmg-cell">73,583</td>
+                            <td class="dmg-cell">18,870</td>
+                            <td class="dmg-cell">1,141</td>
+                            <td><span class="ilvl-badge">iLvl 61.6</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                            <td>Final Fresh</td>
+                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
+                            <td>
+                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944456" target="_blank">
+                                    #944456 ↗
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">285.3</td>
                             <td class="dmg-cell">35,900</td>
                             <td class="dmg-cell">28,922</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2640,15 +2766,16 @@
                         </tr>
                         
                         <tr class="leaderboard-row" data-realm="KronosV">
-                            <td><span class="rank-badge rank-2">#2</span></td>
+                            <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">160.0</td>
                             <td class="dmg-cell">38,910</td>
                             <td class="dmg-cell">84,092</td>
+                            <td class="dmg-cell">2,465</td>
                             <td><span class="ilvl-badge">iLvl 63.9</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
@@ -2661,37 +2788,17 @@
                         </tr>
                         
                         <tr class="leaderboard-row" data-realm="KronosV">
-                            <td><span class="rank-badge rank-3">#3</span></td>
-                            <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
-                                    Agaanii
-                                </a>
-                            </td>
-                            <td class="dps-cell">144.8</td>
-                            <td class="dmg-cell">18,696</td>
-                            <td class="dmg-cell">26,768</td>
-                            <td><span class="ilvl-badge">iLvl 62.9</span></td>
-                            <td><span class="realm-tag">KronosV</span></td>
-                            <td>Final Fresh</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944456" target="_blank">
-                                    #944456 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-4">#4</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Orwell&realm=KronosV" target="_blank" class="player-link">
-                                    Orwell
+                                <a href="https://armory.twinstar-wow.com/character?name=Grazel&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Grazel
                                 </a>
                             </td>
-                            <td class="dps-cell">59.2</td>
-                            <td class="dmg-cell">17,661</td>
-                            <td class="dmg-cell">31,696</td>
-                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
+                            <td class="dps-cell">146.7</td>
+                            <td class="dmg-cell">43,784</td>
+                            <td class="dmg-cell">17,220</td>
+                            <td class="dmg-cell">2,393</td>
+                            <td><span class="ilvl-badge">iLvl 63.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Rage Quit</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
@@ -2727,6 +2834,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2739,13 +2847,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">385.1</td>
                             <td class="dmg-cell">42,470</td>
                             <td class="dmg-cell">51,535</td>
+                            <td class="dmg-cell">3,064</td>
                             <td><span class="ilvl-badge">iLvl 60.7</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2760,13 +2869,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">197.7</td>
                             <td class="dmg-cell">18,703</td>
                             <td class="dmg-cell">33,730</td>
+                            <td class="dmg-cell">7,703</td>
                             <td><span class="ilvl-badge">iLvl 61.3</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2781,13 +2891,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Wildchief
                                 </a>
                             </td>
                             <td class="dps-cell">88.6</td>
                             <td class="dmg-cell">25,340</td>
                             <td class="dmg-cell">44,533</td>
+                            <td class="dmg-cell">3,142</td>
                             <td><span class="ilvl-badge">iLvl 55.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
@@ -2824,6 +2935,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2836,13 +2948,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Adzemawg&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Adzemawg&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Adzemawg
                                 </a>
                             </td>
                             <td class="dps-cell">1,136.6</td>
                             <td class="dmg-cell">32,433</td>
                             <td class="dmg-cell">12,713</td>
+                            <td class="dmg-cell">4,284</td>
                             <td><span class="ilvl-badge">iLvl 61.3</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Endragon</td>
@@ -2857,13 +2970,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">742.4</td>
                             <td class="dmg-cell">19,516</td>
                             <td class="dmg-cell">17,467</td>
+                            <td class="dmg-cell">0</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2878,13 +2992,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-3">#3</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">570.4</td>
                             <td class="dmg-cell">13,831</td>
                             <td class="dmg-cell">10,203</td>
+                            <td class="dmg-cell">2,640</td>
                             <td><span class="ilvl-badge">iLvl 66.5</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2921,6 +3036,7 @@
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -2933,34 +3049,14 @@
                         <tr class="leaderboard-row" data-realm="KronosV">
                             <td><span class="rank-badge rank-1">#1</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Adzemawg&realm=KronosV" target="_blank" class="player-link">
-                                    Adzemawg
-                                </a>
-                            </td>
-                            <td class="dps-cell">907.2</td>
-                            <td class="dmg-cell">55,919</td>
-                            <td class="dmg-cell">8,462</td>
-                            <td><span class="ilvl-badge">iLvl 61.3</span></td>
-                            <td><span class="realm-tag">KronosV</span></td>
-                            <td>Endragon</td>
-                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
-                            <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944429" target="_blank">
-                                    #944429 ↗
-                                </a>
-                            </td>
-                        </tr>
-                        
-                        <tr class="leaderboard-row" data-realm="KronosV">
-                            <td><span class="rank-badge rank-2">#2</span></td>
-                            <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Draka
                                 </a>
                             </td>
                             <td class="dps-cell">482.2</td>
                             <td class="dmg-cell">26,976</td>
                             <td class="dmg-cell">23,693</td>
+                            <td class="dmg-cell">564</td>
                             <td><span class="ilvl-badge">iLvl 65.4</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Sixth Sunder</td>
@@ -2973,15 +3069,16 @@
                         </tr>
                         
                         <tr class="leaderboard-row" data-realm="KronosV">
-                            <td><span class="rank-badge rank-3">#3</span></td>
+                            <td><span class="rank-badge rank-2">#2</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
                                     Agaanii
                                 </a>
                             </td>
                             <td class="dps-cell">232.0</td>
                             <td class="dmg-cell">11,592</td>
                             <td class="dmg-cell">24,841</td>
+                            <td class="dmg-cell">2,164</td>
                             <td><span class="ilvl-badge">iLvl 65.6</span></td>
                             <td><span class="realm-tag">KronosV</span></td>
                             <td>Final Fresh</td>
@@ -2989,6 +3086,28 @@
                             <td>
                                 <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944449" target="_blank">
                                     #944449 ↗
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr class="leaderboard-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
+                                </a>
+                            </td>
+                            <td class="dps-cell">207.5</td>
+                            <td class="dmg-cell">12,793</td>
+                            <td class="dmg-cell">48,617</td>
+                            <td class="dmg-cell">0</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                            <td>Endragon</td>
+                            <td style="color: var(--text-muted); font-size: 0.8rem;">2026/09/26</td>
+                            <td>
+                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=944429" target="_blank">
+                                    #944429 ↗
                                 </a>
                             </td>
                         </tr>
@@ -3001,7 +3120,7 @@
     </div>
 
     <footer>
-        <p>Kronos Tank Logs by <a href="https://www.vanillawar.com/" target="_blank">Warlord Drak</a> &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; Generated: 2026-09-27 02:43:01 UTC</p>
+        <p>Kronos Tank Logs by <a href="https://www.vanillawar.com/" target="_blank">Warlord Drak</a> &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; Generated: 2026-09-27 02:53:46 UTC</p>
     </footer>
 </div>
 

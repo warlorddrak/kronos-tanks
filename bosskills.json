@@ -9,13 +9,16 @@
     "tanks": [
       {
         "boss_name": "Onyxia",
-        "guid": "4983",
+        "guid": "27718",
         "realm": "KronosV",
-        "name": "Agaanii",
-        "avg_item_lvl": "62.8824",
-        "dmg_done": "18696",
-        "dmg_taken": "26768",
-        "dps": "144.7967"
+        "name": "Kissen",
+        "class": "1",
+        "avg_item_lvl": "61.5882",
+        "dmg_done": "73583",
+        "dmg_taken": "18870",
+        "dmg_absorbed": "1141",
+        "dps": "569.8851",
+        "deaths": 0
       }
     ]
   },
@@ -32,10 +35,13 @@
         "guid": "4983",
         "realm": "KronosV",
         "name": "Agaanii",
+        "class": "1",
         "avg_item_lvl": "61.2941",
         "dmg_done": "18703",
         "dmg_taken": "33730",
-        "dps": "197.7417"
+        "dmg_absorbed": "7703",
+        "dps": "197.7417",
+        "deaths": 0
       }
     ]
   },
@@ -52,10 +58,13 @@
         "guid": "71370",
         "realm": "KronosV",
         "name": "Wildchief",
+        "class": "1",
         "avg_item_lvl": "63.8824",
         "dmg_done": "38910",
         "dmg_taken": "84092",
-        "dps": "159.9997"
+        "dmg_absorbed": "2465",
+        "dps": "159.9997",
+        "deaths": 0
       }
     ]
   },
@@ -72,10 +81,13 @@
         "guid": "1923",
         "realm": "KronosV",
         "name": "Nanohc",
+        "class": "1",
         "avg_item_lvl": "63",
         "dmg_done": "16158",
         "dmg_taken": "54474",
-        "dps": "192.6783"
+        "dmg_absorbed": "0",
+        "dps": "192.6783",
+        "deaths": 0
       }
     ]
   },
@@ -92,10 +104,13 @@
         "guid": "1923",
         "realm": "KronosV",
         "name": "Nanohc",
+        "class": "1",
         "avg_item_lvl": "62.2353",
         "dmg_done": "24354",
         "dmg_taken": "46824",
-        "dps": "382.2934"
+        "dmg_absorbed": "0",
+        "dps": "382.2934",
+        "deaths": 0
       }
     ]
   },
@@ -112,10 +127,13 @@
         "guid": "4983",
         "realm": "KronosV",
         "name": "Agaanii",
+        "class": "1",
         "avg_item_lvl": "65.6471",
         "dmg_done": "11592",
         "dmg_taken": "24841",
-        "dps": "232.0303"
+        "dmg_absorbed": "2164",
+        "dps": "232.0303",
+        "deaths": 0
       }
     ]
   },
@@ -132,10 +150,13 @@
         "guid": "4983",
         "realm": "KronosV",
         "name": "Agaanii",
+        "class": "1",
         "avg_item_lvl": "66.4706",
         "dmg_done": "13831",
         "dmg_taken": "10203",
-        "dps": "570.3976"
+        "dmg_absorbed": "2640",
+        "dps": "570.3976",
+        "deaths": 0
       }
     ]
   },
@@ -152,10 +173,13 @@
         "guid": "4983",
         "realm": "KronosV",
         "name": "Agaanii",
+        "class": "1",
         "avg_item_lvl": "64.9412",
         "dmg_done": "14390",
         "dmg_taken": "15147",
-        "dps": "347.9628"
+        "dmg_absorbed": "1417",
+        "dps": "347.9628",
+        "deaths": 0
       }
     ]
   },
@@ -172,10 +196,13 @@
         "guid": "16240",
         "realm": "KronosV",
         "name": "Draka",
+        "class": "1",
         "avg_item_lvl": "65.3529",
         "dmg_done": "35900",
         "dmg_taken": "28922",
-        "dps": "285.3260"
+        "dmg_absorbed": "0",
+        "dps": "285.3260",
+        "deaths": 0
       }
     ]
   },
@@ -192,10 +219,13 @@
         "guid": "71370",
         "realm": "KronosV",
         "name": "Wildchief",
+        "class": "1",
         "avg_item_lvl": "55.3529",
         "dmg_done": "25340",
         "dmg_taken": "44533",
-        "dps": "88.6023"
+        "dmg_absorbed": "3142",
+        "dps": "88.6023",
+        "deaths": 0
       }
     ]
   },
@@ -212,10 +242,13 @@
         "guid": "1923",
         "realm": "KronosV",
         "name": "Nanohc",
+        "class": "1",
         "avg_item_lvl": "62.2353",
         "dmg_done": "8246",
         "dmg_taken": "23786",
-        "dps": "187.0350"
+        "dmg_absorbed": "629",
+        "dps": "187.0350",
+        "deaths": 0
       }
     ]
   },
@@ -232,10 +265,13 @@
         "guid": "4983",
         "realm": "KronosV",
         "name": "Agaanii",
+        "class": "1",
         "avg_item_lvl": "65.7647",
         "dmg_done": "16476",
         "dmg_taken": "12162",
-        "dps": "518.7657"
+        "dmg_absorbed": "0",
+        "dps": "518.7657",
+        "deaths": 0
       }
     ]
   },
@@ -252,10 +288,13 @@
         "guid": "4983",
         "realm": "KronosV",
         "name": "Agaanii",
+        "class": "1",
         "avg_item_lvl": "65.7647",
         "dmg_done": "37310",
         "dmg_taken": "34723",
-        "dps": "694.0362"
+        "dmg_absorbed": "0",
+        "dps": "694.0362",
+        "deaths": 0
       }
     ]
   },
@@ -272,10 +311,13 @@
         "guid": "16240",
         "realm": "KronosV",
         "name": "Draka",
+        "class": "1",
         "avg_item_lvl": "60.7059",
         "dmg_done": "42470",
         "dmg_taken": "51535",
-        "dps": "385.1456"
+        "dmg_absorbed": "3064",
+        "dps": "385.1456",
+        "deaths": 0
       }
     ]
   },
@@ -292,10 +334,13 @@
         "guid": "4983",
         "realm": "KronosV",
         "name": "Agaanii",
+        "class": "1",
         "avg_item_lvl": "65.7647",
         "dmg_done": "13551",
         "dmg_taken": "15527",
-        "dps": "393.0674"
+        "dmg_absorbed": "0",
+        "dps": "393.0674",
+        "deaths": 0
       }
     ]
   },
@@ -312,10 +357,13 @@
         "guid": "29061",
         "realm": "KronosV",
         "name": "Sliggy",
+        "class": "1",
         "avg_item_lvl": "64.5294",
         "dmg_done": "22807",
         "dmg_taken": "38305",
-        "dps": "240.1723"
+        "dmg_absorbed": "0",
+        "dps": "240.1723",
+        "deaths": 0
       }
     ]
   },
@@ -332,10 +380,13 @@
         "guid": "29984",
         "realm": "KronosV",
         "name": "Nobleknight",
+        "class": "1",
         "avg_item_lvl": "62.1765",
         "dmg_done": "17584",
         "dmg_taken": "25585",
-        "dps": "313.8879"
+        "dmg_absorbed": "0",
+        "dps": "313.8879",
+        "deaths": 0
       }
     ]
   },
@@ -352,10 +403,13 @@
         "guid": "71370",
         "realm": "KronosV",
         "name": "Wildchief",
+        "class": "1",
         "avg_item_lvl": "63.8824",
         "dmg_done": "43133",
         "dmg_taken": "47582",
-        "dps": "291.6520"
+        "dmg_absorbed": "2545",
+        "dps": "291.6520",
+        "deaths": 0
       }
     ]
   },
@@ -372,10 +426,13 @@
         "guid": "16240",
         "realm": "KronosV",
         "name": "Draka",
+        "class": "1",
         "avg_item_lvl": "65.4706",
         "dmg_done": "35382",
         "dmg_taken": "36276",
-        "dps": "442.3856"
+        "dmg_absorbed": "92",
+        "dps": "442.3856",
+        "deaths": 0
       }
     ]
   },
@@ -392,10 +449,13 @@
         "guid": "16240",
         "realm": "KronosV",
         "name": "Draka",
+        "class": "1",
         "avg_item_lvl": "65.3529",
         "dmg_done": "26976",
         "dmg_taken": "23693",
-        "dps": "482.2051"
+        "dmg_absorbed": "564",
+        "dps": "482.2051",
+        "deaths": 0
       }
     ]
   },
@@ -409,13 +469,16 @@
     "tanks": [
       {
         "boss_name": "Golemagg the Incinerator",
-        "guid": "44623",
+        "guid": "20991",
         "realm": "KronosV",
-        "name": "Rvota",
-        "avg_item_lvl": "61.2941",
-        "dmg_done": "15913",
-        "dmg_taken": "33439",
-        "dps": "183.1417"
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.4375",
+        "dmg_done": "19505",
+        "dmg_taken": "39372",
+        "dmg_absorbed": "0",
+        "dps": "224.4818",
+        "deaths": 0
       }
     ]
   },
@@ -432,10 +495,13 @@
         "guid": "16240",
         "realm": "KronosV",
         "name": "Draka",
+        "class": "1",
         "avg_item_lvl": "65.3529",
         "dmg_done": "19516",
         "dmg_taken": "17467",
-        "dps": "742.3920"
+        "dmg_absorbed": "0",
+        "dps": "742.3920",
+        "deaths": 0
       }
     ]
   },
@@ -449,13 +515,16 @@
     "tanks": [
       {
         "boss_name": "Sulfuron Harbinger",
-        "guid": "83939",
+        "guid": "20991",
         "realm": "KronosV",
-        "name": "Adzemawg",
-        "avg_item_lvl": "61.2941",
-        "dmg_done": "55919",
-        "dmg_taken": "8462",
-        "dps": "907.1575"
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.4375",
+        "dmg_done": "12793",
+        "dmg_taken": "48617",
+        "dmg_absorbed": "0",
+        "dps": "207.5371",
+        "deaths": 0
       }
     ]
   },
@@ -472,10 +541,13 @@
         "guid": "16240",
         "realm": "KronosV",
         "name": "Draka",
+        "class": "1",
         "avg_item_lvl": "65.3529",
         "dmg_done": "22882",
         "dmg_taken": "20477",
-        "dps": "495.8395"
+        "dmg_absorbed": "1144",
+        "dps": "495.8395",
+        "deaths": 0
       }
     ]
   },
@@ -492,10 +564,13 @@
         "guid": "16240",
         "realm": "KronosV",
         "name": "Draka",
+        "class": "1",
         "avg_item_lvl": "65.4706",
         "dmg_done": "21664",
         "dmg_taken": "13153",
-        "dps": "733.6517"
+        "dmg_absorbed": "0",
+        "dps": "733.6517",
+        "deaths": 0
       }
     ]
   },
@@ -512,10 +587,13 @@
         "guid": "83939",
         "realm": "KronosV",
         "name": "Adzemawg",
+        "class": "1",
         "avg_item_lvl": "61.2941",
         "dmg_done": "32433",
         "dmg_taken": "12713",
-        "dps": "1136.6042"
+        "dmg_absorbed": "4284",
+        "dps": "1136.6042",
+        "deaths": 0
       }
     ]
   },
@@ -529,13 +607,16 @@
     "tanks": [
       {
         "boss_name": "Baron Geddon",
-        "guid": "76446",
+        "guid": "20991",
         "realm": "KronosV",
-        "name": "Nyften",
-        "avg_item_lvl": "61",
-        "dmg_done": "21389",
-        "dmg_taken": "7124",
-        "dps": "389.0111"
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.4375",
+        "dmg_done": "21629",
+        "dmg_taken": "32501",
+        "dmg_absorbed": "0",
+        "dps": "393.3761",
+        "deaths": 0
       }
     ]
   },
@@ -552,10 +633,13 @@
         "guid": "16240",
         "realm": "KronosV",
         "name": "Draka",
+        "class": "1",
         "avg_item_lvl": "65.3529",
         "dmg_done": "33519",
         "dmg_taken": "27271",
-        "dps": "574.7822"
+        "dmg_absorbed": "0",
+        "dps": "574.7822",
+        "deaths": 0
       }
     ]
   },
@@ -572,10 +656,13 @@
         "guid": "16240",
         "realm": "KronosV",
         "name": "Draka",
+        "class": "1",
         "avg_item_lvl": "65.4706",
         "dmg_done": "19549",
         "dmg_taken": "9318",
-        "dps": "712.9728"
+        "dmg_absorbed": "0",
+        "dps": "712.9728",
+        "deaths": 0
       }
     ]
   },
@@ -589,13 +676,16 @@
     "tanks": [
       {
         "boss_name": "Gehennas",
-        "guid": "44623",
+        "guid": "20991",
         "realm": "KronosV",
-        "name": "Rvota",
-        "avg_item_lvl": "62.4118",
-        "dmg_done": "15849",
-        "dmg_taken": "6214",
-        "dps": "304.8647"
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.375",
+        "dmg_done": "11742",
+        "dmg_taken": "16081",
+        "dmg_absorbed": "0",
+        "dps": "225.8642",
+        "deaths": 0
       }
     ]
   },
@@ -612,10 +702,13 @@
         "guid": "71370",
         "realm": "KronosV",
         "name": "Wildchief",
+        "class": "1",
         "avg_item_lvl": "62.6471",
         "dmg_done": "25746",
         "dmg_taken": "37164",
-        "dps": "370.5580"
+        "dmg_absorbed": "2629",
+        "dps": "370.5580",
+        "deaths": 0
       }
     ]
   },
@@ -629,13 +722,16 @@
     "tanks": [
       {
         "boss_name": "Lucifron",
-        "guid": "71370",
+        "guid": "20991",
         "realm": "KronosV",
-        "name": "Wildchief",
-        "avg_item_lvl": "63.8824",
-        "dmg_done": "24351",
-        "dmg_taken": "12764",
-        "dps": "343.5428"
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.375",
+        "dmg_done": "17438",
+        "dmg_taken": "30434",
+        "dmg_absorbed": "0",
+        "dps": "246.0145",
+        "deaths": 0
       }
     ]
   },
@@ -652,10 +748,13 @@
         "guid": "71370",
         "realm": "KronosV",
         "name": "Wildchief",
+        "class": "1",
         "avg_item_lvl": "64.1765",
         "dmg_done": "24160",
         "dmg_taken": "42307",
-        "dps": "297.6359"
+        "dmg_absorbed": "0",
+        "dps": "297.6359",
+        "deaths": 0
       }
     ]
   },
@@ -669,13 +768,16 @@
     "tanks": [
       {
         "boss_name": "Onyxia",
-        "guid": "46438",
+        "guid": "6180",
         "realm": "KronosV",
-        "name": "Orwell",
-        "avg_item_lvl": "59.3529",
-        "dmg_done": "17661",
-        "dmg_taken": "31696",
-        "dps": "59.1629"
+        "name": "Grazel",
+        "class": "1",
+        "avg_item_lvl": "63.3529",
+        "dmg_done": "43784",
+        "dmg_taken": "17220",
+        "dmg_absorbed": "2393",
+        "dps": "146.6727",
+        "deaths": 0
       }
     ]
   },
@@ -692,10 +794,13 @@
         "guid": "1912873",
         "realm": "Kronos",
         "name": "Steelmuscle",
+        "class": "1",
         "avg_item_lvl": "84.1176",
         "dmg_done": "78148",
         "dmg_taken": "108696",
-        "dps": "150.2508"
+        "dmg_absorbed": "500",
+        "dps": "150.2508",
+        "deaths": 0
       }
     ]
   },
@@ -712,10 +817,13 @@
         "guid": "1320666",
         "realm": "Kronos",
         "name": "Protiva",
+        "class": "1",
         "avg_item_lvl": "82.4118",
         "dmg_done": "104873",
         "dmg_taken": "93926",
-        "dps": "232.9222"
+        "dmg_absorbed": "0",
+        "dps": "232.9222",
+        "deaths": 0
       }
     ]
   },
@@ -732,10 +840,13 @@
         "guid": "1320666",
         "realm": "Kronos",
         "name": "Protiva",
+        "class": "1",
         "avg_item_lvl": "72.2941",
         "dmg_done": "209529",
         "dmg_taken": "238057",
-        "dps": "231.2567"
+        "dmg_absorbed": "10048",
+        "dps": "231.2567",
+        "deaths": 0
       }
     ]
   },
@@ -752,10 +863,13 @@
         "guid": "444404",
         "realm": "Kronos",
         "name": "Kolotun",
+        "class": "1",
         "avg_item_lvl": "74.8235",
         "dmg_done": "270462",
         "dmg_taken": "240117",
-        "dps": "450.9684"
+        "dmg_absorbed": "0",
+        "dps": "450.9684",
+        "deaths": 0
       }
     ]
   },
@@ -772,10 +886,13 @@
         "guid": "444404",
         "realm": "Kronos",
         "name": "Kolotun",
+        "class": "1",
         "avg_item_lvl": "70.1176",
         "dmg_done": "169109",
         "dmg_taken": "199568",
-        "dps": "263.5920"
+        "dmg_absorbed": "0",
+        "dps": "263.5920",
+        "deaths": 0
       }
     ]
   },
@@ -792,10 +909,13 @@
         "guid": "444404",
         "realm": "Kronos",
         "name": "Kolotun",
+        "class": "1",
         "avg_item_lvl": "70.8235",
         "dmg_done": "587770",
         "dmg_taken": "451538",
-        "dps": "522.7220"
+        "dmg_absorbed": "3935",
+        "dps": "522.7220",
+        "deaths": 0
       }
     ]
   }

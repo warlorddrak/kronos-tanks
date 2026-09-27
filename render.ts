@@ -26,6 +26,59 @@ function formatIlvl(ilvl: string | number): string {
     return isNaN(n) ? "0.0" : n.toFixed(1);
 }
 
+export const WOW_CLASS_COLORS: Record<string, string> = {
+    "1": "#C79C6E", // Warrior
+    "2": "#F58CBA", // Paladin
+    "3": "#ABD473", // Hunter
+    "4": "#FFF569", // Rogue
+    "5": "#FFFFFF", // Priest
+    "6": "#C41E3A", // Death Knight
+    "7": "#0070DE", // Shaman
+    "8": "#40C7EB", // Mage
+    "9": "#9482C9", // Warlock
+    "11": "#FF7D0A", // Druid
+};
+
+export const WOW_CLASS_NAMES: Record<string, string> = {
+    "1": "Warrior",
+    "2": "Paladin",
+    "3": "Hunter",
+    "4": "Rogue",
+    "5": "Priest",
+    "6": "Death Knight",
+    "7": "Shaman",
+    "8": "Mage",
+    "9": "Warlock",
+    "11": "Druid",
+};
+
+export function getClassColor(classIdOrName?: string | number): string {
+    if (!classIdOrName) return "#cbd5e1";
+    const key = String(classIdOrName).trim().toLowerCase();
+    if (WOW_CLASS_COLORS[key]) return WOW_CLASS_COLORS[key];
+    const nameMap: Record<string, string> = {
+        warrior: "#C79C6E",
+        paladin: "#F58CBA",
+        hunter: "#ABD473",
+        rogue: "#FFF569",
+        priest: "#FFFFFF",
+        "death knight": "#C41E3A",
+        deathknight: "#C41E3A",
+        shaman: "#0070DE",
+        mage: "#40C7EB",
+        warlock: "#9482C9",
+        druid: "#FF7D0A",
+    };
+    return nameMap[key] || "#cbd5e1";
+}
+
+export function getClassName(classIdOrName?: string | number): string {
+    if (!classIdOrName) return "Unknown";
+    const key = String(classIdOrName).trim().toLowerCase();
+    if (WOW_CLASS_NAMES[key]) return WOW_CLASS_NAMES[key];
+    return String(classIdOrName);
+}
+
 export function generateHtml(
     bosskills: StoredBosskill[],
     options: { server?: string } = {}
@@ -60,9 +113,11 @@ export function generateHtml(
         name: string;
         guid: string;
         realm: string;
+        class?: string;
         dps: string;
         dmg_done: string;
         dmg_taken: string;
+        dmg_absorbed?: string;
         avg_item_lvl: string;
         boss_name: string;
         bosskill_id: number;
@@ -107,7 +162,7 @@ export function generateHtml(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kronos Tank Logs - ${escapeHtml(activeServerLabel)}</title>
-    <meta name="description" content="Top warrior tanks ranked by DPS per bosskill on ${escapeHtml(activeServerLabel)}">
+    <meta name="description" content="Top tanks ranked by DPS per bosskill on ${escapeHtml(activeServerLabel)}">
     <style>
         :root {
             --bg-base: #090d16;
@@ -215,7 +270,7 @@ export function generateHtml(
 
         .stat-sub {
             font-size: 0.8rem;
-            color: var(--warrior);
+            color: var(--accent);
             margin-top: 0.2rem;
         }
 
@@ -408,8 +463,14 @@ export function generateHtml(
 
         .player-link {
             font-weight: 600;
-            color: var(--warrior);
+            color: #cbd5e1;
             font-size: 0.95rem;
+            transition: filter 0.15s ease, text-decoration 0.15s ease;
+        }
+
+        .player-link:hover {
+            filter: brightness(1.25);
+            text-decoration: underline;
         }
 
         .dps-cell {
@@ -474,7 +535,7 @@ export function generateHtml(
                 <span class="shield-icon">🛡️</span>
                 <div>
                     <h1>Kronos Tank Logs <span class="server-badge">${escapeHtml(activeServerLabel)}</span></h1>
-                    <div class="subtitle">Top warrior tanks ranked by DPS per boss encounter on ${escapeHtml(activeServerLabel)}</div>
+                    <div class="subtitle">Top tanks ranked by DPS per boss encounter on ${escapeHtml(activeServerLabel)}</div>
                 </div>
             </div>
             <div>
@@ -530,24 +591,26 @@ export function generateHtml(
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
                     <tbody>
                         ${kill.topTanks.length === 0 ? `
                         <tr>
-                            <td colspan="5" class="no-data">No qualifying warrior tanks detected for this fight.</td>
+                            <td colspan="6" class="no-data">No qualifying tanks detected for this fight.</td>
                         </tr>
                         ` : kill.topTanks.map((tank) => `
                         <tr>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=${encodeURIComponent(tank.name)}&realm=${encodeURIComponent(tank.realm)}" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=${encodeURIComponent(tank.name)}&realm=${encodeURIComponent(tank.realm)}" target="_blank" class="player-link" style="color: ${getClassColor(tank.class)};" title="${escapeHtml(getClassName(tank.class))}">
                                     ${escapeHtml(tank.name)}
                                 </a>
                             </td>
                             <td class="dps-cell">${formatDps(tank.dps)}</td>
                             <td class="dmg-cell">${formatDmg(tank.dmg_done)}</td>
                             <td class="dmg-cell">${formatDmg(tank.dmg_taken)}</td>
+                            <td class="dmg-cell">${formatDmg(tank.dmg_absorbed || 0)}</td>
                             <td><span class="ilvl-badge">iLvl ${formatIlvl(tank.avg_item_lvl)}</span></td>
                         </tr>
                         `).join("")}
@@ -581,6 +644,7 @@ export function generateHtml(
                             <th>DPS</th>
                             <th>Damage Done</th>
                             <th>Damage Taken</th>
+                            <th>Damage Absorbed</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -593,13 +657,14 @@ export function generateHtml(
                         <tr class="leaderboard-row" data-realm="${escapeHtml(tank.realm)}">
                             <td><span class="rank-badge rank-${idx + 1}">#${idx + 1}</span></td>
                             <td>
-                                <a href="https://armory.twinstar-wow.com/character?name=${encodeURIComponent(tank.name)}&realm=${encodeURIComponent(tank.realm)}" target="_blank" class="player-link">
+                                <a href="https://armory.twinstar-wow.com/character?name=${encodeURIComponent(tank.name)}&realm=${encodeURIComponent(tank.realm)}" target="_blank" class="player-link" style="color: ${getClassColor(tank.class)};" title="${escapeHtml(getClassName(tank.class))}">
                                     ${escapeHtml(tank.name)}
                                 </a>
                             </td>
                             <td class="dps-cell">${formatDps(tank.dps)}</td>
                             <td class="dmg-cell">${formatDmg(tank.dmg_done)}</td>
                             <td class="dmg-cell">${formatDmg(tank.dmg_taken)}</td>
+                            <td class="dmg-cell">${formatDmg(tank.dmg_absorbed || 0)}</td>
                             <td><span class="ilvl-badge">iLvl ${formatIlvl(tank.avg_item_lvl)}</span></td>
                             <td><span class="realm-tag">${escapeHtml(tank.realm)}</span></td>
                             <td>${escapeHtml(tank.guild || "No Guild")}</td>
