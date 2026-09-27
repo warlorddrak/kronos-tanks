@@ -499,6 +499,59 @@ export function generateHtml(
             font-style: italic;
         }
 
+        /* Bosskills Feed Table Layout & Column Alignment */
+        #view-kills table {
+            table-layout: fixed;
+            width: 100%;
+            min-width: 760px;
+        }
+
+        #view-kills th,
+        #view-kills td {
+            white-space: nowrap;
+        }
+
+        #view-kills td {
+            font-variant-numeric: tabular-nums;
+        }
+
+        #view-kills .col-tank {
+            width: 20%;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #view-kills .col-dps {
+            width: 12%;
+            text-align: right;
+        }
+
+        #view-kills .col-dmg-done {
+            width: 16%;
+            text-align: right;
+        }
+
+        #view-kills .col-dmg-taken {
+            width: 16%;
+            text-align: right;
+        }
+
+        #view-kills .col-dmg-absorbed {
+            width: 22%;
+            text-align: right;
+        }
+
+        #view-kills .col-ilvl {
+            width: 14%;
+            text-align: right;
+        }
+
+        #view-kills td.no-data {
+            text-align: center;
+            white-space: normal;
+        }
+
         footer {
             margin-top: 3rem;
             padding-top: 1.5rem;
@@ -584,12 +637,12 @@ export function generateHtml(
                 <table>
                     <thead>
                         <tr>
-                            <th>Tank</th>
-                            <th>DPS</th>
-                            <th>Damage Done</th>
-                            <th>Damage Taken</th>
-                            <th>Damage Absorbed</th>
-                            <th>Item Level</th>
+                            <th class="col-tank">Tank</th>
+                            <th class="col-dps">DPS</th>
+                            <th class="col-dmg-done">Damage Done</th>
+                            <th class="col-dmg-taken">Damage Taken</th>
+                            <th class="col-dmg-absorbed">Damage Absorbed</th>
+                            <th class="col-ilvl">Item Level</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -599,16 +652,16 @@ export function generateHtml(
                         </tr>
                         ` : kill.topTanks.map((tank) => `
                         <tr>
-                            <td>
+                            <td class="col-tank">
                                 <a href="https://armory.twinstar-wow.com/character?name=${encodeURIComponent(tank.name)}&realm=${encodeURIComponent(tank.realm)}" target="_blank" class="player-link" style="color: ${getClassColor(tank.class)};" title="${escapeHtml(getClassName(tank.class))}">
                                     ${escapeHtml(tank.name)}
                                 </a>
                             </td>
-                            <td class="dps-cell">${formatDps(tank.dps)}</td>
-                            <td class="dmg-cell">${formatDmg(tank.dmg_done)}</td>
-                            <td class="dmg-cell">${formatDmg(tank.dmg_taken)}</td>
-                            <td class="dmg-cell">${formatDmg(tank.dmg_absorbed || 0)}</td>
-                            <td><span class="ilvl-badge">iLvl ${formatIlvl(tank.avg_item_lvl)}</span></td>
+                            <td class="col-dps dps-cell">${formatDps(tank.dps)}</td>
+                            <td class="col-dmg-done dmg-cell">${formatDmg(tank.dmg_done)}</td>
+                            <td class="col-dmg-taken dmg-cell">${formatDmg(tank.dmg_taken)}</td>
+                            <td class="col-dmg-absorbed dmg-cell">${formatDmg(tank.dmg_absorbed || 0)}</td>
+                            <td class="col-ilvl"><span class="ilvl-badge">iLvl ${formatIlvl(tank.avg_item_lvl)}</span></td>
                         </tr>
                         `).join("")}
                     </tbody>
