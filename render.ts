@@ -526,7 +526,6 @@ export function generateHtml(
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 4rem;">Rank</th>
                             <th>Tank</th>
                             <th>DPS</th>
                             <th>Damage Done</th>
@@ -537,11 +536,10 @@ export function generateHtml(
                     <tbody>
                         ${kill.topTanks.length === 0 ? `
                         <tr>
-                            <td colspan="6" class="no-data">No qualifying warrior tanks detected for this fight.</td>
+                            <td colspan="5" class="no-data">No qualifying warrior tanks detected for this fight.</td>
                         </tr>
-                        ` : kill.topTanks.map((tank, idx) => `
+                        ` : kill.topTanks.map((tank) => `
                         <tr>
-                            <td><span class="rank-badge rank-${idx + 1}">#${idx + 1}</span></td>
                             <td>
                                 <a href="https://armory.twinstar-wow.com/character?name=${encodeURIComponent(tank.name)}&realm=${encodeURIComponent(tank.realm)}" target="_blank" class="player-link">
                                     ${escapeHtml(tank.name)}
