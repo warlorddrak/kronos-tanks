@@ -1,5 +1,173 @@
 [
   {
+    "id": 944545,
+    "boss_name": "Lord Kazzak",
+    "raid": "Eastern Kingdoms",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/09/27 22:46:47",
+    "fight_length": "1min 17sec",
+    "tanks": [
+      {
+        "boss_name": "Lord Kazzak",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "68.1176",
+        "dmg_done": "29797",
+        "dmg_taken": "27366",
+        "dmg_absorbed": "1131",
+        "dps": "383.8880",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944544,
+    "boss_name": "Azuregos",
+    "raid": "Kalimdor",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/09/27 22:30:27",
+    "fight_length": "5min 54sec",
+    "tanks": [
+      {
+        "boss_name": "Azuregos",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "68.2353",
+        "dmg_done": "93092",
+        "dmg_taken": "104283",
+        "dmg_absorbed": "5667",
+        "dps": "262.5268",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944543,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 22:27:58",
+    "fight_length": "3min 43sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "27040",
+        "realm": "KronosV",
+        "name": "Crowfeast",
+        "class": "1",
+        "avg_item_lvl": "65.1765",
+        "dmg_done": "20350",
+        "dmg_taken": "38494",
+        "dmg_absorbed": "1528",
+        "dps": "91.2159",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944539,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 21:48:43",
+    "fight_length": "2min 20sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "27040",
+        "realm": "KronosV",
+        "name": "Crowfeast",
+        "class": "1",
+        "avg_item_lvl": "53.7647",
+        "dmg_done": "31610",
+        "dmg_taken": "54191",
+        "dmg_absorbed": "2420",
+        "dps": "224.3992",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944538,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 21:37:11",
+    "fight_length": "2min 33sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "103345",
+        "realm": "KronosV",
+        "name": "Moomooman",
+        "class": "11",
+        "avg_item_lvl": "56.0625",
+        "dmg_done": "17778",
+        "dmg_taken": "32098",
+        "dmg_absorbed": "0",
+        "dps": "115.9664",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944536,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 21:28:37",
+    "fight_length": "1min 53sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "24169",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "64.5882",
+        "dmg_done": "26147",
+        "dmg_taken": "55023",
+        "dmg_absorbed": "0",
+        "dps": "230.7971",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944535,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 21:24:43",
+    "fight_length": "3min 19sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "26220",
+        "realm": "KronosV",
+        "name": "Zx",
+        "class": "1",
+        "avg_item_lvl": "64.7059",
+        "dmg_done": "60688",
+        "dmg_taken": "72444",
+        "dmg_absorbed": "0",
+        "dps": "304.5531",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 944534,
     "boss_name": "Sulfuron Harbinger",
     "raid": "Molten Core",
