@@ -21,14 +21,17 @@ jobs:
       - name: Check for new bosskills and tank records
         run: bun run update-bosskills.ts
 
+      - name: Render index.html
+        run: bun run render.ts
+
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add bosskills.json
+          git add bosskills.json index.html
           if git diff --staged --quiet; then
-            echo "No new bosskills to commit."
+            echo "No changes to commit."
           else
-            git commit -m "Update bosskills and tank records [skip ci]"
+            git commit -m "Update bosskills, tanks, and index.html [skip ci]"
             git push
           fi

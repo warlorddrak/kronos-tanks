@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
 import { getWarriorTanks, type WarriorTank } from "./scrape-bosskill.ts";
 import { fetchBosskillsList } from "./scrape-bosskills-for-day.ts";
+import { render } from "./render.ts";
 
 export interface StoredBosskill {
     id: number;
@@ -116,6 +117,8 @@ export async function updateBosskills(options: {
     console.log(
         `Successfully saved ${mergedList.length} bosskills (${newlyScraped.length} new) to ${filePath}.`
     );
+
+    render(filePath, "index.html");
 
     return { added: newlyScraped.length, total: mergedList.length };
 }
