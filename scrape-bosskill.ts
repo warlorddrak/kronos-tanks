@@ -5,6 +5,7 @@ export interface WarriorTank {
     name: string;
     avg_item_lvl: string;
     dmg_done: string;
+    dmg_taken: string;
     dps: string;
 }
 
@@ -95,6 +96,7 @@ export async function getWarriorTanks(bosskillId: number | string): Promise<Warr
             name: topWarrior.name,
             avg_item_lvl: topWarrior.avg_item_lvl,
             dmg_done: topWarrior.dmg_done,
+            dmg_taken: topWarrior.dmg_taken,
             dps: topWarrior.dps,
         });
     }

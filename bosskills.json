@@ -14,6 +14,7 @@
         "name": "Agaanii",
         "avg_item_lvl": "62.8824",
         "dmg_done": "18696",
+        "dmg_taken": "26768",
         "dps": "144.7967"
       }
     ]
@@ -33,6 +34,7 @@
         "name": "Agaanii",
         "avg_item_lvl": "61.2941",
         "dmg_done": "18703",
+        "dmg_taken": "33730",
         "dps": "197.7417"
       }
     ]
@@ -52,6 +54,7 @@
         "name": "Wildchief",
         "avg_item_lvl": "63.8824",
         "dmg_done": "38910",
+        "dmg_taken": "84092",
         "dps": "159.9997"
       }
     ]
@@ -71,6 +74,7 @@
         "name": "Nanohc",
         "avg_item_lvl": "63",
         "dmg_done": "16158",
+        "dmg_taken": "54474",
         "dps": "192.6783"
       }
     ]
@@ -90,6 +94,7 @@
         "name": "Nanohc",
         "avg_item_lvl": "62.2353",
         "dmg_done": "24354",
+        "dmg_taken": "46824",
         "dps": "382.2934"
       }
     ]
@@ -109,6 +114,7 @@
         "name": "Agaanii",
         "avg_item_lvl": "65.6471",
         "dmg_done": "11592",
+        "dmg_taken": "24841",
         "dps": "232.0303"
       }
     ]
@@ -128,6 +134,7 @@
         "name": "Agaanii",
         "avg_item_lvl": "66.4706",
         "dmg_done": "13831",
+        "dmg_taken": "10203",
         "dps": "570.3976"
       }
     ]
@@ -147,6 +154,7 @@
         "name": "Agaanii",
         "avg_item_lvl": "64.9412",
         "dmg_done": "14390",
+        "dmg_taken": "15147",
         "dps": "347.9628"
       }
     ]
@@ -166,6 +174,7 @@
         "name": "Draka",
         "avg_item_lvl": "65.3529",
         "dmg_done": "35900",
+        "dmg_taken": "28922",
         "dps": "285.3260"
       }
     ]
@@ -185,6 +194,7 @@
         "name": "Wildchief",
         "avg_item_lvl": "55.3529",
         "dmg_done": "25340",
+        "dmg_taken": "44533",
         "dps": "88.6023"
       }
     ]
@@ -204,6 +214,7 @@
         "name": "Nanohc",
         "avg_item_lvl": "62.2353",
         "dmg_done": "8246",
+        "dmg_taken": "23786",
         "dps": "187.0350"
       }
     ]
@@ -223,6 +234,7 @@
         "name": "Agaanii",
         "avg_item_lvl": "65.7647",
         "dmg_done": "16476",
+        "dmg_taken": "12162",
         "dps": "518.7657"
       }
     ]
@@ -242,6 +254,7 @@
         "name": "Agaanii",
         "avg_item_lvl": "65.7647",
         "dmg_done": "37310",
+        "dmg_taken": "34723",
         "dps": "694.0362"
       }
     ]
@@ -261,6 +274,7 @@
         "name": "Draka",
         "avg_item_lvl": "60.7059",
         "dmg_done": "42470",
+        "dmg_taken": "51535",
         "dps": "385.1456"
       }
     ]
@@ -280,6 +294,7 @@
         "name": "Agaanii",
         "avg_item_lvl": "65.7647",
         "dmg_done": "13551",
+        "dmg_taken": "15527",
         "dps": "393.0674"
       }
     ]
@@ -299,6 +314,7 @@
         "name": "Sliggy",
         "avg_item_lvl": "64.5294",
         "dmg_done": "22807",
+        "dmg_taken": "38305",
         "dps": "240.1723"
       }
     ]
@@ -318,6 +334,7 @@
         "name": "Nobleknight",
         "avg_item_lvl": "62.1765",
         "dmg_done": "17584",
+        "dmg_taken": "25585",
         "dps": "313.8879"
       }
     ]
@@ -337,6 +354,7 @@
         "name": "Wildchief",
         "avg_item_lvl": "63.8824",
         "dmg_done": "43133",
+        "dmg_taken": "47582",
         "dps": "291.6520"
       }
     ]
@@ -356,6 +374,7 @@
         "name": "Draka",
         "avg_item_lvl": "65.4706",
         "dmg_done": "35382",
+        "dmg_taken": "36276",
         "dps": "442.3856"
       }
     ]
@@ -375,6 +394,7 @@
         "name": "Draka",
         "avg_item_lvl": "65.3529",
         "dmg_done": "26976",
+        "dmg_taken": "23693",
         "dps": "482.2051"
       }
     ]
@@ -394,6 +414,7 @@
         "name": "Rvota",
         "avg_item_lvl": "61.2941",
         "dmg_done": "15913",
+        "dmg_taken": "33439",
         "dps": "183.1417"
       }
     ]
@@ -413,6 +434,7 @@
         "name": "Draka",
         "avg_item_lvl": "65.3529",
         "dmg_done": "19516",
+        "dmg_taken": "17467",
         "dps": "742.3920"
       }
     ]
@@ -432,6 +454,7 @@
         "name": "Adzemawg",
         "avg_item_lvl": "61.2941",
         "dmg_done": "55919",
+        "dmg_taken": "8462",
         "dps": "907.1575"
       }
     ]
@@ -451,6 +474,7 @@
         "name": "Draka",
         "avg_item_lvl": "65.3529",
         "dmg_done": "22882",
+        "dmg_taken": "20477",
         "dps": "495.8395"
       }
     ]
@@ -470,6 +494,7 @@
         "name": "Draka",
         "avg_item_lvl": "65.4706",
         "dmg_done": "21664",
+        "dmg_taken": "13153",
         "dps": "733.6517"
       }
     ]
@@ -489,6 +514,7 @@
         "name": "Adzemawg",
         "avg_item_lvl": "61.2941",
         "dmg_done": "32433",
+        "dmg_taken": "12713",
         "dps": "1136.6042"
       }
     ]
@@ -508,6 +534,7 @@
         "name": "Nyften",
         "avg_item_lvl": "61",
         "dmg_done": "21389",
+        "dmg_taken": "7124",
         "dps": "389.0111"
       }
     ]
@@ -527,6 +554,7 @@
         "name": "Draka",
         "avg_item_lvl": "65.3529",
         "dmg_done": "33519",
+        "dmg_taken": "27271",
         "dps": "574.7822"
       }
     ]
@@ -546,6 +574,7 @@
         "name": "Draka",
         "avg_item_lvl": "65.4706",
         "dmg_done": "19549",
+        "dmg_taken": "9318",
         "dps": "712.9728"
       }
     ]
@@ -565,6 +594,7 @@
         "name": "Rvota",
         "avg_item_lvl": "62.4118",
         "dmg_done": "15849",
+        "dmg_taken": "6214",
         "dps": "304.8647"
       }
     ]
@@ -584,6 +614,7 @@
         "name": "Wildchief",
         "avg_item_lvl": "62.6471",
         "dmg_done": "25746",
+        "dmg_taken": "37164",
         "dps": "370.5580"
       }
     ]
@@ -603,6 +634,7 @@
         "name": "Wildchief",
         "avg_item_lvl": "63.8824",
         "dmg_done": "24351",
+        "dmg_taken": "12764",
         "dps": "343.5428"
       }
     ]
@@ -622,6 +654,7 @@
         "name": "Wildchief",
         "avg_item_lvl": "64.1765",
         "dmg_done": "24160",
+        "dmg_taken": "42307",
         "dps": "297.6359"
       }
     ]
@@ -641,6 +674,7 @@
         "name": "Orwell",
         "avg_item_lvl": "59.3529",
         "dmg_done": "17661",
+        "dmg_taken": "31696",
         "dps": "59.1629"
       }
     ]
@@ -660,6 +694,7 @@
         "name": "Steelmuscle",
         "avg_item_lvl": "84.1176",
         "dmg_done": "78148",
+        "dmg_taken": "108696",
         "dps": "150.2508"
       }
     ]
@@ -679,6 +714,7 @@
         "name": "Protiva",
         "avg_item_lvl": "82.4118",
         "dmg_done": "104873",
+        "dmg_taken": "93926",
         "dps": "232.9222"
       }
     ]
@@ -698,6 +734,7 @@
         "name": "Protiva",
         "avg_item_lvl": "72.2941",
         "dmg_done": "209529",
+        "dmg_taken": "238057",
         "dps": "231.2567"
       }
     ]
@@ -717,6 +754,7 @@
         "name": "Kolotun",
         "avg_item_lvl": "74.8235",
         "dmg_done": "270462",
+        "dmg_taken": "240117",
         "dps": "450.9684"
       }
     ]
@@ -736,6 +774,7 @@
         "name": "Kolotun",
         "avg_item_lvl": "70.1176",
         "dmg_done": "169109",
+        "dmg_taken": "199568",
         "dps": "263.5920"
       }
     ]
@@ -755,6 +794,7 @@
         "name": "Kolotun",
         "avg_item_lvl": "70.8235",
         "dmg_done": "587770",
+        "dmg_taken": "451538",
         "dps": "522.7220"
       }
     ]

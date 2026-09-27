@@ -62,6 +62,7 @@ export function generateHtml(
         realm: string;
         dps: string;
         dmg_done: string;
+        dmg_taken: string;
         avg_item_lvl: string;
         boss_name: string;
         bosskill_id: number;
@@ -595,13 +596,14 @@ export function generateHtml(
                             <th>Tank</th>
                             <th>DPS</th>
                             <th>Damage Done</th>
+                            <th>Damage Taken</th>
                             <th>Item Level</th>
                         </tr>
                     </thead>
                     <tbody>
                         ${kill.topTanks.length === 0 ? `
                         <tr>
-                            <td colspan="5" class="no-data">No qualifying warrior tanks detected for this fight.</td>
+                            <td colspan="6" class="no-data">No qualifying warrior tanks detected for this fight.</td>
                         </tr>
                         ` : kill.topTanks.map((tank, idx) => `
                         <tr>
@@ -613,6 +615,7 @@ export function generateHtml(
                             </td>
                             <td class="dps-cell">${formatDps(tank.dps)}</td>
                             <td class="dmg-cell">${formatDmg(tank.dmg_done)}</td>
+                            <td class="dmg-cell">${formatDmg(tank.dmg_taken)}</td>
                             <td><span class="ilvl-badge">iLvl ${formatIlvl(tank.avg_item_lvl)}</span></td>
                         </tr>
                         `).join("")}
@@ -645,6 +648,7 @@ export function generateHtml(
                             <th>Tank</th>
                             <th>DPS</th>
                             <th>Damage Done</th>
+                            <th>Damage Taken</th>
                             <th>Item Level</th>
                             <th>Server</th>
                             <th>Guild</th>
@@ -663,6 +667,7 @@ export function generateHtml(
                             </td>
                             <td class="dps-cell">${formatDps(tank.dps)}</td>
                             <td class="dmg-cell">${formatDmg(tank.dmg_done)}</td>
+                            <td class="dmg-cell">${formatDmg(tank.dmg_taken)}</td>
                             <td><span class="ilvl-badge">iLvl ${formatIlvl(tank.avg_item_lvl)}</span></td>
                             <td><span class="realm-tag">${escapeHtml(tank.realm)}</span></td>
                             <td>${escapeHtml(tank.guild || "No Guild")}</td>
