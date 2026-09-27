@@ -6,21 +6,7 @@
     "guild": "Final Fresh",
     "realm": "KronosV",
     "time": "2026/09/26 22:23:09",
-    "tanks": [
-      {
-        "boss_name": "Onyxia",
-        "guid": "27718",
-        "realm": "KronosV",
-        "name": "Kissen",
-        "class": "1",
-        "avg_item_lvl": "61.5882",
-        "dmg_done": "73583",
-        "dmg_taken": "18870",
-        "dmg_absorbed": "1141",
-        "dps": "569.8851",
-        "deaths": 0
-      }
-    ]
+    "tanks": []
   },
   {
     "id": 944454,
@@ -213,21 +199,7 @@
     "guild": "Endragon",
     "realm": "KronosV",
     "time": "2026/09/26 21:25:39",
-    "tanks": [
-      {
-        "boss_name": "Ragnaros",
-        "guid": "71370",
-        "realm": "KronosV",
-        "name": "Wildchief",
-        "class": "1",
-        "avg_item_lvl": "55.3529",
-        "dmg_done": "25340",
-        "dmg_taken": "44533",
-        "dmg_absorbed": "3142",
-        "dps": "88.6023",
-        "deaths": 0
-      }
-    ]
+    "tanks": []
   },
   {
     "id": 944444,
@@ -765,21 +737,7 @@
     "guild": "Rage Quit",
     "realm": "KronosV",
     "time": "2026/09/26 19:25:24",
-    "tanks": [
-      {
-        "boss_name": "Onyxia",
-        "guid": "6180",
-        "realm": "KronosV",
-        "name": "Grazel",
-        "class": "1",
-        "avg_item_lvl": "63.3529",
-        "dmg_done": "43784",
-        "dmg_taken": "17220",
-        "dmg_absorbed": "2393",
-        "dps": "146.6727",
-        "deaths": 0
-      }
-    ]
+    "tanks": []
   },
   {
     "id": 938520,

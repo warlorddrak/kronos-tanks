@@ -109,40 +109,40 @@ export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
         } catch (_) {}
     }
 
-    // Filter for tanks who didn't die (death counter 0), allow any class,
-    // and rank by total mitigated damage (dmg_taken + dmg_absorbed)
-    const survivingCandidates = bosskillData
-        .filter((player: any) => {
-            const deaths = deathCounts.get(String(player.name).trim().toLowerCase()) ?? 0;
-            return deaths === 0;
-        })
+    // Rank all players by total mitigated damage (dmg_taken + dmg_absorbed) to identify the tank
+    const allCandidates = bosskillData
         .map((player: any) => {
             const taken = Number(player.dmg_taken) || 0;
             const absorbed = Number(player.dmg_absorbed) || 0;
+            const deaths = deathCounts.get(String(player.name).trim().toLowerCase()) ?? 0;
             return {
                 player,
                 dmg_taken: taken,
                 dmg_absorbed: absorbed,
                 total_mitigated: taken + absorbed,
+                deaths,
             };
         })
         .filter((c) => c.total_mitigated > 0)
         .sort((a, b) => b.total_mitigated - a.total_mitigated);
 
     const tanks: Tank[] = [];
-    const topCandidate = survivingCandidates[0];
-    if (topCandidate) {
+    const primaryTank = allCandidates[0];
+
+    // If the primary tank (highest dmg_taken + dmg_absorbed) died, no tank is recorded for that fight.
+    // Only record if the tank survived without dying (death counter 0).
+    if (primaryTank && primaryTank.deaths === 0) {
         tanks.push({
             boss_name: bossName,
-            guid: topCandidate.player.guid,
-            realm: topCandidate.player.realm,
-            name: topCandidate.player.name,
-            class: String(topCandidate.player.class ?? ""),
-            avg_item_lvl: topCandidate.player.avg_item_lvl,
-            dmg_done: topCandidate.player.dmg_done,
-            dmg_taken: topCandidate.player.dmg_taken,
-            dmg_absorbed: topCandidate.player.dmg_absorbed ?? String(topCandidate.dmg_absorbed),
-            dps: topCandidate.player.dps,
+            guid: primaryTank.player.guid,
+            realm: primaryTank.player.realm,
+            name: primaryTank.player.name,
+            class: String(primaryTank.player.class ?? ""),
+            avg_item_lvl: primaryTank.player.avg_item_lvl,
+            dmg_done: primaryTank.player.dmg_done,
+            dmg_taken: primaryTank.player.dmg_taken,
+            dmg_absorbed: primaryTank.player.dmg_absorbed ?? String(primaryTank.dmg_absorbed),
+            dps: primaryTank.player.dps,
             deaths: 0,
         });
     }
