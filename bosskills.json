@@ -1,0 +1,151 @@
+[
+  {
+    "id": 944456,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/09/26 22:23:09",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "4983",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "avg_item_lvl": "62.8824",
+        "dmg_done": "18696",
+        "dps": "144.7967"
+      },
+      {
+        "boss_name": "Onyxia",
+        "guid": "27718",
+        "realm": "KronosV",
+        "name": "Kissen",
+        "avg_item_lvl": "61.5882",
+        "dmg_done": "73583",
+        "dps": "569.8851"
+      }
+    ]
+  },
+  {
+    "id": 944454,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/09/26 21:59:47",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "4983",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "avg_item_lvl": "61.2941",
+        "dmg_done": "18703",
+        "dps": "197.7417"
+      },
+      {
+        "boss_name": "Ragnaros",
+        "guid": "23273",
+        "realm": "KronosV",
+        "name": "Caesar",
+        "avg_item_lvl": "64.5294",
+        "dmg_done": "41490",
+        "dps": "438.6623"
+      }
+    ]
+  },
+  {
+    "id": 944453,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/09/26 21:56:20",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "71370",
+        "realm": "KronosV",
+        "name": "Wildchief",
+        "avg_item_lvl": "63.8824",
+        "dmg_done": "38910",
+        "dps": "159.9997"
+      }
+    ]
+  },
+  {
+    "id": 944452,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/09/26 21:51:47",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "avg_item_lvl": "63",
+        "dmg_done": "16158",
+        "dps": "192.6783"
+      },
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "4983",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "avg_item_lvl": "66.8824",
+        "dmg_done": "13352",
+        "dps": "159.2177"
+      },
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "75340",
+        "realm": "KronosV",
+        "name": "Perseverance",
+        "avg_item_lvl": "60.5294",
+        "dmg_done": "24014",
+        "dps": "286.3582"
+      },
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "27718",
+        "realm": "KronosV",
+        "name": "Kissen",
+        "avg_item_lvl": "61.5882",
+        "dmg_done": "74592",
+        "dps": "889.4825"
+      }
+    ]
+  },
+  {
+    "id": 944450,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/09/26 21:46:25",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "avg_item_lvl": "62.2353",
+        "dmg_done": "24354",
+        "dps": "382.2934"
+      },
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "4983",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "avg_item_lvl": "67",
+        "dmg_done": "23985",
+        "dps": "376.5011"
+      }
+    ]
+  }
+]
