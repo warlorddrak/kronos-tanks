@@ -502,14 +502,13 @@ export function generateHtml(
                 <option value="">All Bosses</option>
                 ${uniqueBosses.map((b) => `<option value="${escapeHtml(b)}">${escapeHtml(b)}</option>`).join("")}
             </select>
-            <input type="text" class="input-control" id="search-input" placeholder="Search player, guild..." oninput="filterData()">
         </div>
     </div>
 
     <!-- VIEW 1: Per Bosskill Feed -->
     <div id="view-kills">
         ${processedKills.map((kill) => `
-        <div class="bosskill-card" data-realm="${escapeHtml(kill.realm)}" data-boss="${escapeHtml(kill.boss_name)}" data-guild="${escapeHtml(kill.guild || '')}" data-players="${escapeHtml(kill.topTanks.map((t) => t.name).join(' '))}">
+        <div class="bosskill-card" data-realm="${escapeHtml(kill.realm)}" data-boss="${escapeHtml(kill.boss_name)}">
             <div class="card-header">
                 <div class="boss-name">
                     <span>${escapeHtml(kill.boss_name)}</span>
@@ -653,25 +652,17 @@ export function generateHtml(
     function filterData() {
         const serverFilter = (document.getElementById('server-select')?.value || '').toLowerCase();
         const bossFilter = (document.getElementById('boss-select')?.value || '').toLowerCase();
-        const searchFilter = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
 
         if (currentView === 'kills') {
             const cards = document.getElementById('view-kills').querySelectorAll('.bosskill-card');
             cards.forEach(card => {
                 const realm = (card.getAttribute('data-realm') || '').toLowerCase();
                 const boss = (card.getAttribute('data-boss') || '').toLowerCase();
-                const guild = (card.getAttribute('data-guild') || '').toLowerCase();
-                const players = (card.getAttribute('data-players') || '').toLowerCase();
 
                 const matchesServer = !serverFilter || realm === serverFilter;
                 const matchesBoss = !bossFilter || boss === bossFilter;
-                const matchesSearch = !searchFilter || 
-                    boss.includes(searchFilter) || 
-                    guild.includes(searchFilter) || 
-                    players.includes(searchFilter) ||
-                    realm.includes(searchFilter);
 
-                if (matchesServer && matchesBoss && matchesSearch) {
+                if (matchesServer && matchesBoss) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
@@ -687,12 +678,10 @@ export function generateHtml(
                 let visibleRows = 0;
                 rows.forEach(row => {
                     const realm = (row.getAttribute('data-realm') || '').toLowerCase();
-                    const text = row.textContent.toLowerCase();
 
                     const matchesServer = !serverFilter || realm === serverFilter;
-                    const matchesSearch = !searchFilter || text.includes(searchFilter);
 
-                    if (matchesServer && matchesSearch) {
+                    if (matchesServer) {
                         row.style.display = '';
                         visibleRows++;
                     } else {
