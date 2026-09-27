@@ -1,5 +1,917 @@
 [
   {
+    "id": 944534,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 21:20:05",
+    "fight_length": "1min 28sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "103345",
+        "realm": "KronosV",
+        "name": "Moomooman",
+        "class": "11",
+        "avg_item_lvl": "56.0625",
+        "dmg_done": "16440",
+        "dmg_taken": "52685",
+        "dmg_absorbed": "0",
+        "dps": "185.5216",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944533,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 21:19:02",
+    "fight_length": "2min 7sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "26643",
+        "realm": "KronosV",
+        "name": "Kongenafdk",
+        "class": "3",
+        "avg_item_lvl": "65.1765",
+        "dmg_done": "57977",
+        "dmg_taken": "25482",
+        "dmg_absorbed": "6331",
+        "dps": "453.8068",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944531,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 21:05:04",
+    "fight_length": "1min 43sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "27040",
+        "realm": "KronosV",
+        "name": "Crowfeast",
+        "class": "1",
+        "avg_item_lvl": "64.9412",
+        "dmg_done": "14350",
+        "dmg_taken": "21730",
+        "dmg_absorbed": "3560",
+        "dps": "138.8419",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944530,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 21:04:53",
+    "fight_length": "2min 18sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "26220",
+        "realm": "KronosV",
+        "name": "Zx",
+        "class": "1",
+        "avg_item_lvl": "66.1765",
+        "dmg_done": "43149",
+        "dmg_taken": "111796",
+        "dmg_absorbed": "1141",
+        "dps": "312.2079",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944528,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:55:12",
+    "fight_length": "2min 2sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "26220",
+        "realm": "KronosV",
+        "name": "Zx",
+        "class": "1",
+        "avg_item_lvl": "64.5882",
+        "dmg_done": "22245",
+        "dmg_taken": "31409",
+        "dmg_absorbed": "0",
+        "dps": "182.1077",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944527,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:54:26",
+    "fight_length": "1min 15sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "103345",
+        "realm": "KronosV",
+        "name": "Moomooman",
+        "class": "11",
+        "avg_item_lvl": "56.0625",
+        "dmg_done": "11687",
+        "dmg_taken": "44318",
+        "dmg_absorbed": "0",
+        "dps": "155.5985",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944526,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:53:29",
+    "fight_length": "1min 25sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "62.2941",
+        "dmg_done": "30024",
+        "dmg_taken": "47576",
+        "dmg_absorbed": "0",
+        "dps": "349.7752",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944525,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:49:11",
+    "fight_length": "1min 16sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "11958",
+        "realm": "KronosV",
+        "name": "Chubs",
+        "class": "1",
+        "avg_item_lvl": "64.8824",
+        "dmg_done": "38439",
+        "dmg_taken": "60019",
+        "dmg_absorbed": "585",
+        "dps": "504.2900",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944524,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:46:34",
+    "fight_length": "1min 21sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "1624",
+        "realm": "KronosV",
+        "name": "Gigachad",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "13004",
+        "dmg_taken": "45655",
+        "dmg_absorbed": "1137",
+        "dps": "159.7327",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944523,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:45:36",
+    "fight_length": "1min 37sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "24169",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "61.9412",
+        "dmg_done": "20625",
+        "dmg_taken": "34209",
+        "dmg_absorbed": "1144",
+        "dps": "212.0234",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944522,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:44:43",
+    "fight_length": "50.2sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "26220",
+        "realm": "KronosV",
+        "name": "Zx",
+        "class": "1",
+        "avg_item_lvl": "64.3529",
+        "dmg_done": "18605",
+        "dmg_taken": "32944",
+        "dmg_absorbed": "0",
+        "dps": "370.5585",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944520,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:36:28",
+    "fight_length": "20.5sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "16934",
+        "realm": "KronosV",
+        "name": "Demondance",
+        "class": "1",
+        "avg_item_lvl": "64.8125",
+        "dmg_done": "31697",
+        "dmg_taken": "5446",
+        "dmg_absorbed": "3239",
+        "dps": "1547.4784",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944519,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:34:44",
+    "fight_length": "54.4sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "24169",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "62.6471",
+        "dmg_done": "12040",
+        "dmg_taken": "16233",
+        "dmg_absorbed": "0",
+        "dps": "221.5231",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944518,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:34:27",
+    "fight_length": "52.1sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "62.4706",
+        "dmg_done": "28553",
+        "dmg_taken": "30732",
+        "dmg_absorbed": "1149",
+        "dps": "548.1895",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944517,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:33:15",
+    "fight_length": "44.9sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "26220",
+        "realm": "KronosV",
+        "name": "Zx",
+        "class": "1",
+        "avg_item_lvl": "65.8235",
+        "dmg_done": "14469",
+        "dmg_taken": "24214",
+        "dmg_absorbed": "0",
+        "dps": "322.1849",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944516,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:30:48",
+    "fight_length": "41.3sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "62.3529",
+        "dmg_done": "14481",
+        "dmg_taken": "20266",
+        "dmg_absorbed": "2298",
+        "dps": "350.8249",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944515,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:28:03",
+    "fight_length": "1min 17sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "27040",
+        "realm": "KronosV",
+        "name": "Crowfeast",
+        "class": "1",
+        "avg_item_lvl": "64.9412",
+        "dmg_done": "18040",
+        "dmg_taken": "24645",
+        "dmg_absorbed": "0",
+        "dps": "232.7141",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944514,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:27:00",
+    "fight_length": "55.7sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "11958",
+        "realm": "KronosV",
+        "name": "Chubs",
+        "class": "1",
+        "avg_item_lvl": "64.8824",
+        "dmg_done": "23229",
+        "dmg_taken": "45929",
+        "dmg_absorbed": "1127",
+        "dps": "416.8057",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944513,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:24:28",
+    "fight_length": "26.1sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "62.3529",
+        "dmg_done": "12150",
+        "dmg_taken": "11493",
+        "dmg_absorbed": "1137",
+        "dps": "464.6805",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944508,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:23:04",
+    "fight_length": "1min 13sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "27040",
+        "realm": "KronosV",
+        "name": "Crowfeast",
+        "class": "1",
+        "avg_item_lvl": "64.9412",
+        "dmg_done": "12617",
+        "dmg_taken": "16380",
+        "dmg_absorbed": "0",
+        "dps": "172.7835",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944507,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:21:27",
+    "fight_length": "38.9sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "62.4706",
+        "dmg_done": "13860",
+        "dmg_taken": "16203",
+        "dmg_absorbed": "2296",
+        "dps": "356.6650",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944506,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:21:00",
+    "fight_length": "27.5sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "26220",
+        "realm": "KronosV",
+        "name": "Zx",
+        "class": "1",
+        "avg_item_lvl": "64.3529",
+        "dmg_done": "18095",
+        "dmg_taken": "12103",
+        "dmg_absorbed": "0",
+        "dps": "658.5268",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944505,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:17:04",
+    "fight_length": "44.8sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "63.6471",
+        "dmg_done": "23130",
+        "dmg_taken": "37038",
+        "dmg_absorbed": "444",
+        "dps": "515.7881",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944504,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:16:04",
+    "fight_length": "49.2sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "26220",
+        "realm": "KronosV",
+        "name": "Zx",
+        "class": "1",
+        "avg_item_lvl": "64.4706",
+        "dmg_done": "25820",
+        "dmg_taken": "23327",
+        "dmg_absorbed": "0",
+        "dps": "524.2959",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944503,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:15:17",
+    "fight_length": "1min 22sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "72219",
+        "realm": "KronosV",
+        "name": "Tarkus",
+        "class": "1",
+        "avg_item_lvl": "60.5294",
+        "dmg_done": "25770",
+        "dmg_taken": "58763",
+        "dmg_absorbed": "564",
+        "dps": "310.7253",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944502,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:12:11",
+    "fight_length": "22.2sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "62.1176",
+        "dmg_done": "11048",
+        "dmg_taken": "9324",
+        "dmg_absorbed": "0",
+        "dps": "497.9717",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944501,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:11:56",
+    "fight_length": "29.9sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "26220",
+        "realm": "KronosV",
+        "name": "Zx",
+        "class": "1",
+        "avg_item_lvl": "64.3529",
+        "dmg_done": "15134",
+        "dmg_taken": "12006",
+        "dmg_absorbed": "0",
+        "dps": "506.8489",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944500,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:08:01",
+    "fight_length": "43.8sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "62.4706",
+        "dmg_done": "19748",
+        "dmg_taken": "20819",
+        "dmg_absorbed": "1149",
+        "dps": "451.2385",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944499,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:07:26",
+    "fight_length": "1min 42sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "72219",
+        "realm": "KronosV",
+        "name": "Tarkus",
+        "class": "1",
+        "avg_item_lvl": "64.7647",
+        "dmg_done": "29297",
+        "dmg_taken": "34567",
+        "dmg_absorbed": "0",
+        "dps": "287.1129",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944498,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:05:16",
+    "fight_length": "22.9sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "62.3529",
+        "dmg_done": "12685",
+        "dmg_taken": "10728",
+        "dmg_absorbed": "0",
+        "dps": "554.3659",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944497,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 20:01:17",
+    "fight_length": "56.9sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "72219",
+        "realm": "KronosV",
+        "name": "Tarkus",
+        "class": "1",
+        "avg_item_lvl": "64.7647",
+        "dmg_done": "22454",
+        "dmg_taken": "38005",
+        "dmg_absorbed": "0",
+        "dps": "394.5875",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944496,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 19:54:50",
+    "fight_length": "43.2sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "23193",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "59",
+        "dmg_done": "3026",
+        "dmg_taken": "13985",
+        "dmg_absorbed": "0",
+        "dps": "70.1193",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944495,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 19:45:07",
+    "fight_length": "19.2sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "72219",
+        "realm": "KronosV",
+        "name": "Tarkus",
+        "class": "1",
+        "avg_item_lvl": "63.1765",
+        "dmg_done": "8818",
+        "dmg_taken": "9580",
+        "dmg_absorbed": "0",
+        "dps": "460.1096",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944494,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 19:39:28",
+    "fight_length": "41sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "72219",
+        "realm": "KronosV",
+        "name": "Tarkus",
+        "class": "1",
+        "avg_item_lvl": "64.7647",
+        "dmg_done": "13201",
+        "dmg_taken": "16848",
+        "dmg_absorbed": "0",
+        "dps": "322.1485",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944493,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 19:33:22",
+    "fight_length": "42.6sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "23193",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "60.1765",
+        "dmg_done": "11168",
+        "dmg_taken": "22723",
+        "dmg_absorbed": "567",
+        "dps": "262.1966",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944492,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 19:27:20",
+    "fight_length": "30.6sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "23193",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "59.9412",
+        "dmg_done": "2329",
+        "dmg_taken": "7174",
+        "dmg_absorbed": "128",
+        "dps": "76.1883",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944491,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 19:20:54",
+    "fight_length": "52.1sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "23193",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "59.9412",
+        "dmg_done": "4595",
+        "dmg_taken": "19992",
+        "dmg_absorbed": "3217",
+        "dps": "88.2161",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944490,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/09/27 19:16:52",
+    "fight_length": "36.6sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "23193",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "59.9412",
+        "dmg_done": "3542",
+        "dmg_taken": "8486",
+        "dmg_absorbed": "0",
+        "dps": "96.7865",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 944456,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
