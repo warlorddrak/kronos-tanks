@@ -1,4 +1,4 @@
-import { getTanks, fetchHtml, formatFightLength, parseFightLengthMs, type Tank } from "./scrape-bosskill.ts";
+import { getTanks, fetchHtml, formatFightLength, type Tank } from "./scrape-bosskill.ts";
 
 export interface BosskillListItem {
     id: number;
@@ -24,7 +24,6 @@ export interface DayBosskillResult {
     realm: string;
     time: string;
     fight_length?: string;
-    fight_length_ms?: number;
     tanks: Tank[];
     error?: string;
 }
@@ -117,11 +116,9 @@ export async function scrapeBosskillsForDay(
                 errorMsg = err?.message ?? String(err);
             }
 
-            const fightLengthMs = typeof kill.length === "number" && kill.length > 0
-                ? kill.length
-                : parseFightLengthMs(tanks[0]?.fight_length);
-            const fightLengthStr = (typeof kill.length === "number" && kill.length > 0 ? formatFightLength(kill.length) : undefined)
-                ?? tanks[0]?.fight_length;
+            const fightLength = typeof kill.length === "number" && kill.length > 0
+                ? formatFightLength(kill.length)
+                : undefined;
 
             results[index] = {
                 id: kill.id,
@@ -130,8 +127,7 @@ export async function scrapeBosskillsForDay(
                 guild: kill.guild,
                 realm: kill.realm,
                 time: kill.time,
-                ...(fightLengthStr ? { fight_length: fightLengthStr } : {}),
-                ...(fightLengthMs ? { fight_length_ms: fightLengthMs } : {}),
+                ...(fightLength ? { fight_length: fightLength } : {}),
                 tanks,
                 ...(errorMsg ? { error: errorMsg } : {}),
             };

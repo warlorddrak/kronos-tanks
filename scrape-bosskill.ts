@@ -10,7 +10,6 @@ export interface Tank {
     dmg_absorbed: string;
     dps: string;
     deaths?: number;
-    fight_length?: string;
 }
 
 export type WarriorTank = Tank;
@@ -117,8 +116,6 @@ export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
         ?? html.match(/<a[^>]*\?npc=\d+[^>]*>([^<]+)<\/a>/i);
     const bossName = bossMatch ? bossMatch[1].trim() : "Unknown";
 
-    const fightLength = extractFightLength(html);
-
     const line = html.split("\n").find((l) => l.includes("var bosskillData"));
     if (!line) {
         throw new Error(`Could not find 'var bosskillData' for bosskill ${bosskillId}`);
@@ -185,7 +182,6 @@ export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
             dmg_absorbed: primaryTank.player.dmg_absorbed ?? String(primaryTank.dmg_absorbed),
             dps: primaryTank.player.dps,
             deaths: 0,
-            ...(fightLength ? { fight_length: fightLength } : {}),
         });
     }
 

@@ -138,7 +138,7 @@ export function generateHtml(
                 raid: k.raid,
                 guild: k.guild,
                 time: k.time,
-                fight_length: t.fight_length || k.fight_length,
+                fight_length: k.fight_length,
             });
         }
     }

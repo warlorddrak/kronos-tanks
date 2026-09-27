@@ -7,8 +7,7 @@
     "realm": "KronosV",
     "time": "2026/09/26 22:23:09",
     "tanks": [],
-    "fight_length": "2min 9sec",
-    "fight_length_ms": 129119
+    "fight_length": "2min 9sec"
   },
   {
     "id": 944454,
@@ -29,12 +28,10 @@
         "dmg_taken": "33730",
         "dmg_absorbed": "7703",
         "dps": "197.7417",
-        "deaths": 0,
-        "fight_length": "1min 34sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 34sec",
-    "fight_length_ms": 94583
+    "fight_length": "1min 34sec"
   },
   {
     "id": 944453,
@@ -55,12 +52,10 @@
         "dmg_taken": "84092",
         "dmg_absorbed": "2465",
         "dps": "159.9997",
-        "deaths": 0,
-        "fight_length": "4min 3sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "4min 3sec",
-    "fight_length_ms": 243188
+    "fight_length": "4min 3sec"
   },
   {
     "id": 944452,
@@ -81,12 +76,10 @@
         "dmg_taken": "54474",
         "dmg_absorbed": "0",
         "dps": "192.6783",
-        "deaths": 0,
-        "fight_length": "1min 23sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 23sec",
-    "fight_length_ms": 83860
+    "fight_length": "1min 23sec"
   },
   {
     "id": 944450,
@@ -107,12 +100,10 @@
         "dmg_taken": "46824",
         "dmg_absorbed": "0",
         "dps": "382.2934",
-        "deaths": 0,
-        "fight_length": "1min 3sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 3sec",
-    "fight_length_ms": 63705
+    "fight_length": "1min 3sec"
   },
   {
     "id": 944449,
@@ -133,12 +124,10 @@
         "dmg_taken": "24841",
         "dmg_absorbed": "2164",
         "dps": "232.0303",
-        "deaths": 0,
-        "fight_length": "50sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "50sec",
-    "fight_length_ms": 49959
+    "fight_length": "50sec"
   },
   {
     "id": 944448,
@@ -159,12 +148,10 @@
         "dmg_taken": "10203",
         "dmg_absorbed": "2640",
         "dps": "570.3976",
-        "deaths": 0,
-        "fight_length": "24.2sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "24.2sec",
-    "fight_length_ms": 24248
+    "fight_length": "24.2sec"
   },
   {
     "id": 944447,
@@ -185,12 +172,10 @@
         "dmg_taken": "15147",
         "dmg_absorbed": "1417",
         "dps": "347.9628",
-        "deaths": 0,
-        "fight_length": "41.4sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "41.4sec",
-    "fight_length_ms": 41355
+    "fight_length": "41.4sec"
   },
   {
     "id": 944446,
@@ -211,12 +196,10 @@
         "dmg_taken": "28922",
         "dmg_absorbed": "0",
         "dps": "285.3260",
-        "deaths": 0,
-        "fight_length": "2min 5sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "2min 5sec",
-    "fight_length_ms": 125821
+    "fight_length": "2min 5sec"
   },
   {
     "id": 944445,
@@ -226,8 +209,7 @@
     "realm": "KronosV",
     "time": "2026/09/26 21:25:39",
     "tanks": [],
-    "fight_length": "4min 45sec",
-    "fight_length_ms": 285997
+    "fight_length": "4min 45sec"
   },
   {
     "id": 944444,
@@ -248,12 +230,10 @@
         "dmg_taken": "23786",
         "dmg_absorbed": "629",
         "dps": "187.0350",
-        "deaths": 0,
-        "fight_length": "44.1sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "44.1sec",
-    "fight_length_ms": 44088
+    "fight_length": "44.1sec"
   },
   {
     "id": 944442,
@@ -274,12 +254,10 @@
         "dmg_taken": "12162",
         "dmg_absorbed": "0",
         "dps": "518.7657",
-        "deaths": 0,
-        "fight_length": "31.8sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "31.8sec",
-    "fight_length_ms": 31760
+    "fight_length": "31.8sec"
   },
   {
     "id": 944441,
@@ -300,12 +278,10 @@
         "dmg_taken": "34723",
         "dmg_absorbed": "0",
         "dps": "694.0362",
-        "deaths": 0,
-        "fight_length": "53.8sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "53.8sec",
-    "fight_length_ms": 53758
+    "fight_length": "53.8sec"
   },
   {
     "id": 944440,
@@ -326,12 +302,10 @@
         "dmg_taken": "51535",
         "dmg_absorbed": "3064",
         "dps": "385.1456",
-        "deaths": 0,
-        "fight_length": "1min 50sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 50sec",
-    "fight_length_ms": 110270
+    "fight_length": "1min 50sec"
   },
   {
     "id": 944439,
@@ -352,12 +326,10 @@
         "dmg_taken": "15527",
         "dmg_absorbed": "0",
         "dps": "393.0674",
-        "deaths": 0,
-        "fight_length": "34.5sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "34.5sec",
-    "fight_length_ms": 34475
+    "fight_length": "34.5sec"
   },
   {
     "id": 944436,
@@ -378,12 +350,10 @@
         "dmg_taken": "38305",
         "dmg_absorbed": "0",
         "dps": "240.1723",
-        "deaths": 0,
-        "fight_length": "1min 34sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 34sec",
-    "fight_length_ms": 94961
+    "fight_length": "1min 34sec"
   },
   {
     "id": 944435,
@@ -404,12 +374,10 @@
         "dmg_taken": "25585",
         "dmg_absorbed": "0",
         "dps": "313.8879",
-        "deaths": 0,
-        "fight_length": "56sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "56sec",
-    "fight_length_ms": 56020
+    "fight_length": "56sec"
   },
   {
     "id": 944434,
@@ -430,12 +398,10 @@
         "dmg_taken": "47582",
         "dmg_absorbed": "2545",
         "dps": "291.6520",
-        "deaths": 0,
-        "fight_length": "2min 27sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "2min 27sec",
-    "fight_length_ms": 147892
+    "fight_length": "2min 27sec"
   },
   {
     "id": 944433,
@@ -456,12 +422,10 @@
         "dmg_taken": "36276",
         "dmg_absorbed": "92",
         "dps": "442.3856",
-        "deaths": 0,
-        "fight_length": "1min 19sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 19sec",
-    "fight_length_ms": 79980
+    "fight_length": "1min 19sec"
   },
   {
     "id": 944432,
@@ -482,12 +446,10 @@
         "dmg_taken": "23693",
         "dmg_absorbed": "564",
         "dps": "482.2051",
-        "deaths": 0,
-        "fight_length": "55.9sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "55.9sec",
-    "fight_length_ms": 55943
+    "fight_length": "55.9sec"
   },
   {
     "id": 944431,
@@ -508,12 +470,10 @@
         "dmg_taken": "39372",
         "dmg_absorbed": "0",
         "dps": "224.4818",
-        "deaths": 0,
-        "fight_length": "1min 26sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 26sec",
-    "fight_length_ms": 86889
+    "fight_length": "1min 26sec"
   },
   {
     "id": 944430,
@@ -534,12 +494,10 @@
         "dmg_taken": "17467",
         "dmg_absorbed": "0",
         "dps": "742.3920",
-        "deaths": 0,
-        "fight_length": "26.3sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "26.3sec",
-    "fight_length_ms": 26288
+    "fight_length": "26.3sec"
   },
   {
     "id": 944429,
@@ -560,12 +518,10 @@
         "dmg_taken": "48617",
         "dmg_absorbed": "0",
         "dps": "207.5371",
-        "deaths": 0,
-        "fight_length": "1min 1sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 1sec",
-    "fight_length_ms": 61642
+    "fight_length": "1min 1sec"
   },
   {
     "id": 944428,
@@ -586,12 +542,10 @@
         "dmg_taken": "20477",
         "dmg_absorbed": "1144",
         "dps": "495.8395",
-        "deaths": 0,
-        "fight_length": "46.1sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "46.1sec",
-    "fight_length_ms": 46148
+    "fight_length": "46.1sec"
   },
   {
     "id": 944427,
@@ -612,12 +566,10 @@
         "dmg_taken": "13153",
         "dmg_absorbed": "0",
         "dps": "733.6517",
-        "deaths": 0,
-        "fight_length": "29.5sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "29.5sec",
-    "fight_length_ms": 29529
+    "fight_length": "29.5sec"
   },
   {
     "id": 944426,
@@ -638,12 +590,10 @@
         "dmg_taken": "12713",
         "dmg_absorbed": "4284",
         "dps": "1136.6042",
-        "deaths": 0,
-        "fight_length": "28.5sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "28.5sec",
-    "fight_length_ms": 28535
+    "fight_length": "28.5sec"
   },
   {
     "id": 944425,
@@ -664,12 +614,10 @@
         "dmg_taken": "32501",
         "dmg_absorbed": "0",
         "dps": "393.3761",
-        "deaths": 0,
-        "fight_length": "55sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "55sec",
-    "fight_length_ms": 54983
+    "fight_length": "55sec"
   },
   {
     "id": 944424,
@@ -690,12 +638,10 @@
         "dmg_taken": "27271",
         "dmg_absorbed": "0",
         "dps": "574.7822",
-        "deaths": 0,
-        "fight_length": "58.3sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "58.3sec",
-    "fight_length_ms": 58316
+    "fight_length": "58.3sec"
   },
   {
     "id": 944423,
@@ -716,12 +662,10 @@
         "dmg_taken": "9318",
         "dmg_absorbed": "0",
         "dps": "712.9728",
-        "deaths": 0,
-        "fight_length": "27.4sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "27.4sec",
-    "fight_length_ms": 27419
+    "fight_length": "27.4sec"
   },
   {
     "id": 944422,
@@ -742,12 +686,10 @@
         "dmg_taken": "16081",
         "dmg_absorbed": "0",
         "dps": "225.8642",
-        "deaths": 0,
-        "fight_length": "52sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "52sec",
-    "fight_length_ms": 51987
+    "fight_length": "52sec"
   },
   {
     "id": 944421,
@@ -768,12 +710,10 @@
         "dmg_taken": "37164",
         "dmg_absorbed": "2629",
         "dps": "370.5580",
-        "deaths": 0,
-        "fight_length": "1min 9sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 9sec",
-    "fight_length_ms": 69479
+    "fight_length": "1min 9sec"
   },
   {
     "id": 944420,
@@ -794,12 +734,10 @@
         "dmg_taken": "30434",
         "dmg_absorbed": "0",
         "dps": "246.0145",
-        "deaths": 0,
-        "fight_length": "1min 10sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 10sec",
-    "fight_length_ms": 70882
+    "fight_length": "1min 10sec"
   },
   {
     "id": 944419,
@@ -820,12 +758,10 @@
         "dmg_taken": "42307",
         "dmg_absorbed": "0",
         "dps": "297.6359",
-        "deaths": 0,
-        "fight_length": "1min 21sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "1min 21sec",
-    "fight_length_ms": 81173
+    "fight_length": "1min 21sec"
   },
   {
     "id": 944418,
@@ -835,8 +771,7 @@
     "realm": "KronosV",
     "time": "2026/09/26 19:25:24",
     "tanks": [],
-    "fight_length": "4min 58sec",
-    "fight_length_ms": 298515
+    "fight_length": "4min 58sec"
   },
   {
     "id": 938520,
@@ -857,12 +792,10 @@
         "dmg_taken": "108696",
         "dmg_absorbed": "500",
         "dps": "150.2508",
-        "deaths": 0,
-        "fight_length": "8min 40sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "8min 40sec",
-    "fight_length_ms": 520117
+    "fight_length": "8min 40sec"
   },
   {
     "id": 938518,
@@ -883,12 +816,10 @@
         "dmg_taken": "93926",
         "dmg_absorbed": "0",
         "dps": "232.9222",
-        "deaths": 0,
-        "fight_length": "7min 30sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "7min 30sec",
-    "fight_length_ms": 450249
+    "fight_length": "7min 30sec"
   },
   {
     "id": 938515,
@@ -909,12 +840,10 @@
         "dmg_taken": "238057",
         "dmg_absorbed": "10048",
         "dps": "231.2567",
-        "deaths": 0,
-        "fight_length": "15min 6sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "15min 6sec",
-    "fight_length_ms": 906045
+    "fight_length": "15min 6sec"
   },
   {
     "id": 938513,
@@ -935,12 +864,10 @@
         "dmg_taken": "240117",
         "dmg_absorbed": "0",
         "dps": "450.9684",
-        "deaths": 0,
-        "fight_length": "9min 59sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "9min 59sec",
-    "fight_length_ms": 599736
+    "fight_length": "9min 59sec"
   },
   {
     "id": 938505,
@@ -961,12 +888,10 @@
         "dmg_taken": "199568",
         "dmg_absorbed": "0",
         "dps": "263.5920",
-        "deaths": 0,
-        "fight_length": "10min 41sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "10min 41sec",
-    "fight_length_ms": 641556
+    "fight_length": "10min 41sec"
   },
   {
     "id": 938500,
@@ -987,11 +912,9 @@
         "dmg_taken": "451538",
         "dmg_absorbed": "3935",
         "dps": "522.7220",
-        "deaths": 0,
-        "fight_length": "18min 44sec"
+        "deaths": 0
       }
     ],
-    "fight_length": "18min 44sec",
-    "fight_length_ms": 1124441
+    "fight_length": "18min 44sec"
   }
 ]
