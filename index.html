@@ -347,6 +347,68 @@
             font-style: italic;
         }
 
+        /* Top 50 Leaderboard Styles */
+        .points-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            padding: 0.2rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .medals-cell {
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .medal-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.15rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .medal-tag.gold {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .medal-tag.silver {
+            background: rgba(203, 213, 225, 0.15);
+            color: #cbd5e1;
+            border: 1px solid rgba(203, 213, 225, 0.3);
+        }
+
+        .medal-tag.bronze {
+            background: rgba(217, 119, 6, 0.15);
+            color: #d97706;
+            border: 1px solid rgba(217, 119, 6, 0.3);
+        }
+
+        .best-rank-tag {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        .placements-tag {
+            color: #cbd5e1;
+            font-weight: 500;
+            cursor: help;
+            border-bottom: 1px dotted var(--text-muted);
+        }
+
         /* Bosskills Feed Table Layout & Column Alignment */
         #view-kills table {
             table-layout: fixed;
@@ -448,6 +510,7 @@
         <div class="view-tabs">
             <button class="tab-btn active" id="tab-per-kill" onclick="switchView('kills')">Bosskills Feed</button>
             <button class="tab-btn" id="tab-leaderboard" onclick="switchView('leaderboard')">Top 10 by Boss</button>
+            <button class="tab-btn" id="tab-top50" onclick="switchView('top50')">Top 50 Leaderboard</button>
         </div>
 
         <div class="filters">
@@ -6369,8 +6432,779 @@
         
     </div>
 
+    <!-- VIEW 3: Top 50 Tank Leaderboard -->
+    <div id="view-top50" style="display: none;">
+        <div class="bosskill-card">
+            <div class="card-header">
+                <div class="boss-name">
+                    <span>🏆 Top 50 Tanks</span>
+                </div>
+                <div class="meta-info">
+                    <span>20 Ranked Tank(s) &bull; Rank #1 = 10 pts &hellip; Rank #10 = 1 pt</span>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 4rem;">Rank</th>
+                            <th>Tank</th>
+                            <th>Points</th>
+                            <th>Top 10 Finishes</th>
+                            <th>Podiums</th>
+                            <th>Top DPS</th>
+                            <th>Item Level</th>
+                            <th>Guild</th>
+                            <th>Server</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr id="top50-no-data" style="display: none;">
+                            <td colspan="9" class="no-data">No qualifying tanks found.</td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-1">#1</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Draka&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Draka
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Baron Geddon: #1 (10 pts - 495.8 DPS)
+Gehennas: #1 (10 pts - 733.7 DPS)
+Lucifron: #1 (10 pts - 713.0 DPS)
+Ragnaros: #1 (10 pts - 385.1 DPS)
+Sulfuron Harbinger: #1 (10 pts - 482.2 DPS)
+Magmadar: #2 (9 pts - 574.8 DPS)
+Golemagg the Incinerator: #3 (8 pts - 442.4 DPS)
+Onyxia: #3 (8 pts - 285.3 DPS)
+Shazzrah: #3 (8 pts - 742.4 DPS)">
+                                    83 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Baron Geddon: #1 (10 pts - 495.8 DPS)
+Gehennas: #1 (10 pts - 733.7 DPS)
+Lucifron: #1 (10 pts - 713.0 DPS)
+Ragnaros: #1 (10 pts - 385.1 DPS)
+Sulfuron Harbinger: #1 (10 pts - 482.2 DPS)
+Magmadar: #2 (9 pts - 574.8 DPS)
+Golemagg the Incinerator: #3 (8 pts - 442.4 DPS)
+Onyxia: #3 (8 pts - 285.3 DPS)
+Shazzrah: #3 (8 pts - 742.4 DPS)">
+                                    9 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    <span class="medal-tag gold" title="5x Rank 1">🥇 5</span>
+                                    <span class="medal-tag silver" title="1x Rank 2">🥈 1</span>
+                                    <span class="medal-tag bronze" title="3x Rank 3">🥉 3</span>
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">742.4</td>
+                            <td><span class="ilvl-badge">iLvl 65.5</span></td>
+                            <td>Sixth Sunder</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-2">#2</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Pottwall&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Pottwall
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Garr: #1 (10 pts - 515.8 DPS)
+Golemagg the Incinerator: #1 (10 pts - 548.2 DPS)
+Lucifron: #2 (9 pts - 554.4 DPS)
+Ragnaros: #2 (9 pts - 349.8 DPS)
+Baron Geddon: #3 (8 pts - 356.7 DPS)
+Sulfuron Harbinger: #3 (8 pts - 350.8 DPS)
+Gehennas: #4 (7 pts - 498.0 DPS)
+Magmadar: #4 (7 pts - 451.2 DPS)
+Shazzrah: #5 (6 pts - 464.7 DPS)">
+                                    74 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Garr: #1 (10 pts - 515.8 DPS)
+Golemagg the Incinerator: #1 (10 pts - 548.2 DPS)
+Lucifron: #2 (9 pts - 554.4 DPS)
+Ragnaros: #2 (9 pts - 349.8 DPS)
+Baron Geddon: #3 (8 pts - 356.7 DPS)
+Sulfuron Harbinger: #3 (8 pts - 350.8 DPS)
+Gehennas: #4 (7 pts - 498.0 DPS)
+Magmadar: #4 (7 pts - 451.2 DPS)
+Shazzrah: #5 (6 pts - 464.7 DPS)">
+                                    9 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    <span class="medal-tag gold" title="2x Rank 1">🥇 2</span>
+                                    <span class="medal-tag silver" title="2x Rank 2">🥈 2</span>
+                                    <span class="medal-tag bronze" title="2x Rank 3">🥉 2</span>
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">554.4</td>
+                            <td><span class="ilvl-badge">iLvl 63.6</span></td>
+                            <td>The Carebear Union V</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge rank-3">#3</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Zx&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Zx
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Gehennas: #2 (9 pts - 658.5 DPS)
+Onyxia: #2 (9 pts - 304.6 DPS)
+Sulfuron Harbinger: #2 (9 pts - 370.6 DPS)
+Lucifron: #3 (8 pts - 506.8 DPS)
+Magmadar: #3 (8 pts - 524.3 DPS)
+Ragnaros: #3 (8 pts - 312.2 DPS)
+Baron Geddon: #5 (6 pts - 322.2 DPS)
+Majordomo Executus: #5 (6 pts - 182.1 DPS)">
+                                    63 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Gehennas: #2 (9 pts - 658.5 DPS)
+Onyxia: #2 (9 pts - 304.6 DPS)
+Sulfuron Harbinger: #2 (9 pts - 370.6 DPS)
+Lucifron: #3 (8 pts - 506.8 DPS)
+Magmadar: #3 (8 pts - 524.3 DPS)
+Ragnaros: #3 (8 pts - 312.2 DPS)
+Baron Geddon: #5 (6 pts - 322.2 DPS)
+Majordomo Executus: #5 (6 pts - 182.1 DPS)">
+                                    8 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    <span class="medal-tag silver" title="3x Rank 2">🥈 3</span>
+                                    <span class="medal-tag bronze" title="3x Rank 3">🥉 3</span>
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">658.5</td>
+                            <td><span class="ilvl-badge">iLvl 66.2</span></td>
+                            <td>The Agency</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#4</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Agaanii&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Agaanii
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Magmadar: #1 (10 pts - 694.0 DPS)
+Gehennas: #3 (8 pts - 518.8 DPS)
+Baron Geddon: #4 (7 pts - 348.0 DPS)
+Lucifron: #4 (7 pts - 393.1 DPS)
+Shazzrah: #4 (7 pts - 570.4 DPS)
+Sulfuron Harbinger: #4 (7 pts - 232.0 DPS)
+Ragnaros: #6 (5 pts - 197.7 DPS)">
+                                    51 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Magmadar: #1 (10 pts - 694.0 DPS)
+Gehennas: #3 (8 pts - 518.8 DPS)
+Baron Geddon: #4 (7 pts - 348.0 DPS)
+Lucifron: #4 (7 pts - 393.1 DPS)
+Shazzrah: #4 (7 pts - 570.4 DPS)
+Sulfuron Harbinger: #4 (7 pts - 232.0 DPS)
+Ragnaros: #6 (5 pts - 197.7 DPS)">
+                                    7 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    <span class="medal-tag gold" title="1x Rank 1">🥇 1</span>
+                                    
+                                    <span class="medal-tag bronze" title="1x Rank 3">🥉 1</span>
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">694.0</td>
+                            <td><span class="ilvl-badge">iLvl 66.5</span></td>
+                            <td>Final Fresh</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#5</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Tarkus&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Tarkus
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Majordomo Executus: #2 (9 pts - 287.1 DPS)
+Golemagg the Incinerator: #4 (7 pts - 394.6 DPS)
+Ragnaros: #4 (7 pts - 310.7 DPS)
+Baron Geddon: #6 (5 pts - 322.1 DPS)
+Shazzrah: #6 (5 pts - 460.1 DPS)">
+                                    33 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Majordomo Executus: #2 (9 pts - 287.1 DPS)
+Golemagg the Incinerator: #4 (7 pts - 394.6 DPS)
+Ragnaros: #4 (7 pts - 310.7 DPS)
+Baron Geddon: #6 (5 pts - 322.1 DPS)
+Shazzrah: #6 (5 pts - 460.1 DPS)">
+                                    5 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    <span class="medal-tag silver" title="1x Rank 2">🥈 1</span>
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">460.1</td>
+                            <td><span class="ilvl-badge">iLvl 64.8</span></td>
+                            <td>Rage Quit</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#6</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Furunculus&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Furunculus
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Baron Geddon: #2 (9 pts - 393.4 DPS)
+Gehennas: #5 (6 pts - 225.9 DPS)
+Lucifron: #5 (6 pts - 246.0 DPS)
+Sulfuron Harbinger: #5 (6 pts - 207.5 DPS)
+Golemagg the Incinerator: #7 (4 pts - 224.5 DPS)">
+                                    31 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Baron Geddon: #2 (9 pts - 393.4 DPS)
+Gehennas: #5 (6 pts - 225.9 DPS)
+Lucifron: #5 (6 pts - 246.0 DPS)
+Sulfuron Harbinger: #5 (6 pts - 207.5 DPS)
+Golemagg the Incinerator: #7 (4 pts - 224.5 DPS)">
+                                    5 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    <span class="medal-tag silver" title="1x Rank 2">🥈 1</span>
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">393.4</td>
+                            <td><span class="ilvl-badge">iLvl 59.4</span></td>
+                            <td>Endragon</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#7</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Wildchief&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Wildchief
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Majordomo Executus: #1 (10 pts - 291.7 DPS)
+Garr: #4 (7 pts - 297.6 DPS)
+Onyxia: #4 (7 pts - 160.0 DPS)
+Magmadar: #5 (6 pts - 370.6 DPS)">
+                                    30 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Majordomo Executus: #1 (10 pts - 291.7 DPS)
+Garr: #4 (7 pts - 297.6 DPS)
+Onyxia: #4 (7 pts - 160.0 DPS)
+Magmadar: #5 (6 pts - 370.6 DPS)">
+                                    4 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    <span class="medal-tag gold" title="1x Rank 1">🥇 1</span>
+                                    
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">370.6</td>
+                            <td><span class="ilvl-badge">iLvl 64.2</span></td>
+                            <td>Endragon</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#8</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Crowfeast&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Crowfeast
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Onyxia: #5 (6 pts - 91.2 DPS)
+Ragnaros: #5 (6 pts - 224.4 DPS)
+Lucifron: #6 (5 pts - 172.8 DPS)
+Magmadar: #6 (5 pts - 232.7 DPS)
+Shazzrah: #7 (4 pts - 138.8 DPS)">
+                                    26 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Onyxia: #5 (6 pts - 91.2 DPS)
+Ragnaros: #5 (6 pts - 224.4 DPS)
+Lucifron: #6 (5 pts - 172.8 DPS)
+Magmadar: #6 (5 pts - 232.7 DPS)
+Shazzrah: #7 (4 pts - 138.8 DPS)">
+                                    5 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    
+                                    
+                                    <span class="best-rank-tag">Best: #5</span>
+                                </div>
+                            </td>
+                            <td class="dps-cell">232.7</td>
+                            <td><span class="ilvl-badge">iLvl 65.2</span></td>
+                            <td>Dead by Dawn</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#9</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Runekeeper&realm=KronosV" target="_blank" class="player-link" style="color: #F58CBA;" title="Paladin">
+                                    Runekeeper
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Garr: #5 (6 pts - 262.2 DPS)
+Gehennas: #7 (4 pts - 76.2 DPS)
+Lucifron: #7 (4 pts - 96.8 DPS)
+Magmadar: #7 (4 pts - 88.2 DPS)
+Sulfuron Harbinger: #7 (4 pts - 70.1 DPS)">
+                                    22 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Garr: #5 (6 pts - 262.2 DPS)
+Gehennas: #7 (4 pts - 76.2 DPS)
+Lucifron: #7 (4 pts - 96.8 DPS)
+Magmadar: #7 (4 pts - 88.2 DPS)
+Sulfuron Harbinger: #7 (4 pts - 70.1 DPS)">
+                                    5 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    
+                                    
+                                    <span class="best-rank-tag">Best: #5</span>
+                                </div>
+                            </td>
+                            <td class="dps-cell">262.2</td>
+                            <td><span class="ilvl-badge">iLvl 60.2</span></td>
+                            <td>Rage Quit</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#10</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Esailu&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Esailu
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Azuregos: #1 (10 pts - 262.5 DPS)
+Lord Kazzak: #1 (10 pts - 383.9 DPS)">
+                                    20 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Azuregos: #1 (10 pts - 262.5 DPS)
+Lord Kazzak: #1 (10 pts - 383.9 DPS)">
+                                    2 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    <span class="medal-tag gold" title="2x Rank 1">🥇 2</span>
+                                    
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">383.9</td>
+                            <td><span class="ilvl-badge">iLvl 68.2</span></td>
+                            <td>No Shoes</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#11</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Chubs&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Chubs
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Garr: #2 (9 pts - 416.8 DPS)
+Golemagg the Incinerator: #2 (9 pts - 504.3 DPS)">
+                                    18 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Garr: #2 (9 pts - 416.8 DPS)
+Golemagg the Incinerator: #2 (9 pts - 504.3 DPS)">
+                                    2 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    <span class="medal-tag silver" title="2x Rank 2">🥈 2</span>
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">504.3</td>
+                            <td><span class="ilvl-badge">iLvl 64.9</span></td>
+                            <td>The Agency</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#12</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Nanohc&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Nanohc
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Majordomo Executus: #4 (7 pts - 192.7 DPS)
+Golemagg the Incinerator: #5 (6 pts - 382.3 DPS)
+Garr: #6 (5 pts - 187.0 DPS)">
+                                    18 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Majordomo Executus: #4 (7 pts - 192.7 DPS)
+Golemagg the Incinerator: #5 (6 pts - 382.3 DPS)
+Garr: #6 (5 pts - 187.0 DPS)">
+                                    3 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    
+                                    
+                                    <span class="best-rank-tag">Best: #4</span>
+                                </div>
+                            </td>
+                            <td class="dps-cell">382.3</td>
+                            <td><span class="ilvl-badge">iLvl 63.0</span></td>
+                            <td>Final Fresh</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#13</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Shiet&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Shiet
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Gehennas: #6 (5 pts - 221.5 DPS)
+Golemagg the Incinerator: #6 (5 pts - 230.8 DPS)
+Baron Geddon: #7 (4 pts - 212.0 DPS)">
+                                    14 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Gehennas: #6 (5 pts - 221.5 DPS)
+Golemagg the Incinerator: #6 (5 pts - 230.8 DPS)
+Baron Geddon: #7 (4 pts - 212.0 DPS)">
+                                    3 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    
+                                    
+                                    <span class="best-rank-tag">Best: #6</span>
+                                </div>
+                            </td>
+                            <td class="dps-cell">230.8</td>
+                            <td><span class="ilvl-badge">iLvl 64.6</span></td>
+                            <td>Dead by Dawn</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#14</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Moomooman&realm=KronosV" target="_blank" class="player-link" style="color: #FF7D0A;" title="Druid">
+                                    Moomooman
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Sulfuron Harbinger: #6 (5 pts - 185.5 DPS)
+Garr: #7 (4 pts - 155.6 DPS)
+Majordomo Executus: #7 (4 pts - 116.0 DPS)">
+                                    13 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Sulfuron Harbinger: #6 (5 pts - 185.5 DPS)
+Garr: #7 (4 pts - 155.6 DPS)
+Majordomo Executus: #7 (4 pts - 116.0 DPS)">
+                                    3 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    
+                                    
+                                    <span class="best-rank-tag">Best: #6</span>
+                                </div>
+                            </td>
+                            <td class="dps-cell">185.5</td>
+                            <td><span class="ilvl-badge">iLvl 56.1</span></td>
+                            <td>Dead by Dawn</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#15</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Demondance&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Demondance
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Shazzrah: #1 (10 pts - 1,547.5 DPS)">
+                                    10 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Shazzrah: #1 (10 pts - 1,547.5 DPS)">
+                                    1 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    <span class="medal-tag gold" title="1x Rank 1">🥇 1</span>
+                                    
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">1,547.5</td>
+                            <td><span class="ilvl-badge">iLvl 64.8</span></td>
+                            <td>The Agency</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#16</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Kongenafdk&realm=KronosV" target="_blank" class="player-link" style="color: #ABD473;" title="Hunter">
+                                    Kongenafdk
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Onyxia: #1 (10 pts - 453.8 DPS)">
+                                    10 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Onyxia: #1 (10 pts - 453.8 DPS)">
+                                    1 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    <span class="medal-tag gold" title="1x Rank 1">🥇 1</span>
+                                    
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">453.8</td>
+                            <td><span class="ilvl-badge">iLvl 65.2</span></td>
+                            <td>The Carebear Union V</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#17</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Adzemawg&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Adzemawg
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Shazzrah: #2 (9 pts - 1,136.6 DPS)">
+                                    9 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Shazzrah: #2 (9 pts - 1,136.6 DPS)">
+                                    1 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    <span class="medal-tag silver" title="1x Rank 2">🥈 1</span>
+                                    
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">1,136.6</td>
+                            <td><span class="ilvl-badge">iLvl 61.3</span></td>
+                            <td>Endragon</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#18</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Nobleknight&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Nobleknight
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Garr: #3 (8 pts - 313.9 DPS)">
+                                    8 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Garr: #3 (8 pts - 313.9 DPS)">
+                                    1 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    
+                                    <span class="medal-tag bronze" title="1x Rank 3">🥉 1</span>
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">313.9</td>
+                            <td><span class="ilvl-badge">iLvl 62.2</span></td>
+                            <td>Sixth Sunder</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#19</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Sliggy&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Sliggy
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Majordomo Executus: #3 (8 pts - 240.2 DPS)">
+                                    8 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Majordomo Executus: #3 (8 pts - 240.2 DPS)">
+                                    1 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    
+                                    <span class="medal-tag bronze" title="1x Rank 3">🥉 1</span>
+                                    
+                                </div>
+                            </td>
+                            <td class="dps-cell">240.2</td>
+                            <td><span class="ilvl-badge">iLvl 64.5</span></td>
+                            <td>Sixth Sunder</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                        <tr class="top50-row" data-realm="KronosV">
+                            <td><span class="rank-badge">#20</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=Gigachad&realm=KronosV" target="_blank" class="player-link" style="color: #C79C6E;" title="Warrior">
+                                    Gigachad
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="Majordomo Executus: #6 (5 pts - 159.7 DPS)">
+                                    5 pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="Majordomo Executus: #6 (5 pts - 159.7 DPS)">
+                                    1 / 13 Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    
+                                    
+                                    
+                                    <span class="best-rank-tag">Best: #6</span>
+                                </div>
+                            </td>
+                            <td class="dps-cell">159.7</td>
+                            <td><span class="ilvl-badge">iLvl 65.0</span></td>
+                            <td>The Carebear Union V</td>
+                            <td><span class="realm-tag">KronosV</span></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <footer>
-        <p>Kronos Tank Logs by <a href="https://www.vanillawar.com/" target="_blank">Warlord Drak</a> &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; <a href="bosskills.json" target="_blank">View Raw JSON (bosskills.json)</a> &bull; Generated: 2026-09-28 07:13:43 UTC</p>
+        <p>Kronos Tank Logs by <a href="https://www.vanillawar.com/" target="_blank">Warlord Drak</a> &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; <a href="bosskills.json" target="_blank">View Raw JSON (bosskills.json)</a> &bull; Generated: 2026-09-28 07:36:52 UTC</p>
     </footer>
 </div>
 
@@ -6381,19 +7215,39 @@
         currentView = view;
         const killsView = document.getElementById('view-kills');
         const leadView = document.getElementById('view-leaderboard');
+        const top50View = document.getElementById('view-top50');
         const tabKills = document.getElementById('tab-per-kill');
         const tabLead = document.getElementById('tab-leaderboard');
+        const tabTop50 = document.getElementById('tab-top50');
+        const bossSelect = document.getElementById('boss-select');
 
         if (view === 'kills') {
             killsView.style.display = 'block';
             leadView.style.display = 'none';
+            if (top50View) top50View.style.display = 'none';
             tabKills.classList.add('active');
             tabLead.classList.remove('active');
-        } else {
+            if (tabTop50) tabTop50.classList.remove('active');
+            if (bossSelect) bossSelect.style.display = '';
+        } else if (view === 'leaderboard') {
             killsView.style.display = 'none';
             leadView.style.display = 'block';
+            if (top50View) top50View.style.display = 'none';
             tabKills.classList.remove('active');
             tabLead.classList.add('active');
+            if (tabTop50) tabTop50.classList.remove('active');
+            if (bossSelect) bossSelect.style.display = '';
+        } else if (view === 'top50') {
+            killsView.style.display = 'none';
+            leadView.style.display = 'none';
+            if (top50View) top50View.style.display = 'block';
+            tabKills.classList.remove('active');
+            tabLead.classList.remove('active');
+            if (tabTop50) tabTop50.classList.add('active');
+            if (bossSelect) bossSelect.style.display = 'none';
+        }
+        if (history.replaceState) {
+            history.replaceState(null, '', '#' + view);
         }
         filterData();
     }
@@ -6417,7 +7271,7 @@
                     card.style.display = 'none';
                 }
             });
-        } else {
+        } else if (currentView === 'leaderboard') {
             const cards = document.getElementById('view-leaderboard').querySelectorAll('.bosskill-card');
             cards.forEach(card => {
                 const boss = (card.getAttribute('data-boss') || '').toLowerCase();
@@ -6444,7 +7298,32 @@
                     card.style.display = 'none';
                 }
             });
+        } else if (currentView === 'top50') {
+            const top50 = document.getElementById('view-top50');
+            if (top50) {
+                const rows = top50.querySelectorAll('.top50-row');
+                let visibleRows = 0;
+                rows.forEach(row => {
+                    const realm = (row.getAttribute('data-realm') || '').toLowerCase();
+                    const matchesServer = !serverFilter || realm === serverFilter;
+                    if (matchesServer) {
+                        row.style.display = '';
+                        visibleRows++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                const noDataRow = document.getElementById('top50-no-data');
+                if (noDataRow) {
+                    noDataRow.style.display = visibleRows === 0 ? '' : 'none';
+                }
+            }
         }
+    }
+
+    const initialHash = window.location.hash.replace('#', '');
+    if (initialHash === 'kills' || initialHash === 'leaderboard' || initialHash === 'top50') {
+        switchView(initialHash);
     }
 </script>
 

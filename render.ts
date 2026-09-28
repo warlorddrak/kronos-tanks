@@ -143,16 +143,130 @@ export function generateHtml(
         }
     }
 
-    // Sort each boss leaderboard by DPS descending and take top 10
+    // Sort each boss leaderboard by DPS descending and take top 10 unique tanks
     const bossLeaderboards: Array<{ boss_name: string; tanks: any[] }> = [];
     for (const [boss_name, tanks] of bossMap.entries()) {
         tanks.sort((a, b) => Number(b.dps) - Number(a.dps));
+        const uniqueTanks: typeof tanks = [];
+        const seen = new Set<string>();
+        for (const t of tanks) {
+            const tankKey = `${t.name.toLowerCase()}@${t.realm.toLowerCase()}`;
+            if (!seen.has(tankKey)) {
+                seen.add(tankKey);
+                uniqueTanks.push(t);
+            }
+        }
         bossLeaderboards.push({
             boss_name,
-            tanks: tanks.slice(0, 10),
+            tanks: uniqueTanks.slice(0, 10),
         });
     }
     bossLeaderboards.sort((a, b) => a.boss_name.localeCompare(b.boss_name));
+
+    // 3. Compute Top 50 Leaderboard based on points from Top 10 by Boss lists
+    // Rank #1 grants 10 points, Rank #2 grants 9 points, ..., Rank #10 grants 1 point.
+    interface Top50Placement {
+        boss_name: string;
+        rank: number;
+        points: number;
+        dps: string;
+        bosskill_id: number;
+        time?: string;
+    }
+
+    interface Top50Tank {
+        name: string;
+        realm: string;
+        class?: string;
+        guild?: string;
+        totalPoints: number;
+        placements: Top50Placement[];
+        topDps: number;
+        avgItemLvl?: number;
+        rank1Count: number;
+        rank2Count: number;
+        rank3Count: number;
+        bestRank: number;
+    }
+
+    const tankScoreMap = new Map<string, Top50Tank>();
+
+    for (const b of bossLeaderboards) {
+        b.tanks.forEach((tank, idx) => {
+            const rank = idx + 1; // 1 to 10
+            const points = 11 - rank; // 10 down to 1
+            const key = `${tank.name.toLowerCase()}@${tank.realm.toLowerCase()}`;
+
+            if (!tankScoreMap.has(key)) {
+                tankScoreMap.set(key, {
+                    name: tank.name,
+                    realm: tank.realm,
+                    class: tank.class,
+                    guild: tank.guild,
+                    totalPoints: 0,
+                    placements: [],
+                    topDps: 0,
+                    rank1Count: 0,
+                    rank2Count: 0,
+                    rank3Count: 0,
+                    bestRank: 999,
+                });
+            }
+
+            const entry = tankScoreMap.get(key)!;
+            entry.totalPoints += points;
+            entry.placements.push({
+                boss_name: b.boss_name,
+                rank,
+                points,
+                dps: tank.dps,
+                bosskill_id: tank.bosskill_id,
+                time: tank.time,
+            });
+
+            if (rank === 1) entry.rank1Count++;
+            if (rank === 2) entry.rank2Count++;
+            if (rank === 3) entry.rank3Count++;
+            if (rank < entry.bestRank) entry.bestRank = rank;
+
+            const dpsNum = Number(tank.dps) || 0;
+            if (dpsNum > entry.topDps) entry.topDps = dpsNum;
+
+            const ilvlNum = Number(tank.avg_item_lvl) || 0;
+            if (ilvlNum > (entry.avgItemLvl || 0)) entry.avgItemLvl = ilvlNum;
+
+            if (tank.guild && (!entry.guild || entry.guild === "No Guild")) {
+                entry.guild = tank.guild;
+            }
+        });
+    }
+
+    // Sort placements for each tank by rank ascending, then boss name
+    for (const entry of tankScoreMap.values()) {
+        entry.placements.sort((a, b) => a.rank - b.rank || a.boss_name.localeCompare(b.boss_name));
+    }
+
+    const top50Leaderboard: Top50Tank[] = Array.from(tankScoreMap.values())
+        .sort((a, b) => {
+            if (b.totalPoints !== a.totalPoints) {
+                return b.totalPoints - a.totalPoints;
+            }
+            // Tie-breaker 1: most #1 ranks, then #2 ranks, etc.
+            for (let r = 1; r <= 10; r++) {
+                const countA = a.placements.filter((p) => p.rank === r).length;
+                const countB = b.placements.filter((p) => p.rank === r).length;
+                if (countB !== countA) {
+                    return countB - countA;
+                }
+            }
+            // Tie-breaker 2: highest peak DPS recorded
+            if (b.topDps !== a.topDps) {
+                return b.topDps - a.topDps;
+            }
+            // Tie-breaker 3: alphabetical
+            return a.name.localeCompare(b.name);
+        })
+        .slice(0, 50);
 
 
     const uniqueBosses = Array.from(bossMap.keys()).sort();
@@ -507,6 +621,68 @@ export function generateHtml(
             font-style: italic;
         }
 
+        /* Top 50 Leaderboard Styles */
+        .points-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            padding: 0.2rem 0.65rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .medals-cell {
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .medal-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.15rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .medal-tag.gold {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .medal-tag.silver {
+            background: rgba(203, 213, 225, 0.15);
+            color: #cbd5e1;
+            border: 1px solid rgba(203, 213, 225, 0.3);
+        }
+
+        .medal-tag.bronze {
+            background: rgba(217, 119, 6, 0.15);
+            color: #d97706;
+            border: 1px solid rgba(217, 119, 6, 0.3);
+        }
+
+        .best-rank-tag {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        .placements-tag {
+            color: #cbd5e1;
+            font-weight: 500;
+            cursor: help;
+            border-bottom: 1px dotted var(--text-muted);
+        }
+
         /* Bosskills Feed Table Layout & Column Alignment */
         #view-kills table {
             table-layout: fixed;
@@ -608,6 +784,7 @@ export function generateHtml(
         <div class="view-tabs">
             <button class="tab-btn active" id="tab-per-kill" onclick="switchView('kills')">Bosskills Feed</button>
             <button class="tab-btn" id="tab-leaderboard" onclick="switchView('leaderboard')">Top 10 by Boss</button>
+            <button class="tab-btn" id="tab-top50" onclick="switchView('top50')">Top 50 Leaderboard</button>
         </div>
 
         <div class="filters">
@@ -745,6 +922,80 @@ export function generateHtml(
         `).join("")}
     </div>
 
+    <!-- VIEW 3: Top 50 Tank Leaderboard -->
+    <div id="view-top50" style="display: none;">
+        <div class="bosskill-card">
+            <div class="card-header">
+                <div class="boss-name">
+                    <span>🏆 Top 50 Tanks</span>
+                </div>
+                <div class="meta-info">
+                    <span>${top50Leaderboard.length} Ranked Tank(s) &bull; Rank #1 = 10 pts &hellip; Rank #10 = 1 pt</span>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 4rem;">Rank</th>
+                            <th>Tank</th>
+                            <th>Points</th>
+                            <th>Top 10 Finishes</th>
+                            <th>Podiums</th>
+                            <th>Top DPS</th>
+                            <th>Item Level</th>
+                            <th>Guild</th>
+                            <th>Server</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${top50Leaderboard.length === 0 ? `
+                        <tr id="top50-no-data">
+                            <td colspan="9" class="no-data">No qualifying tanks found.</td>
+                        </tr>
+                        ` : `
+                        <tr id="top50-no-data" style="display: none;">
+                            <td colspan="9" class="no-data">No qualifying tanks found.</td>
+                        </tr>
+                        ` + top50Leaderboard.map((tank, idx) => `
+                        <tr class="top50-row" data-realm="${escapeHtml(tank.realm)}">
+                            <td><span class="rank-badge${idx === 0 ? " rank-1" : idx === 1 ? " rank-2" : idx === 2 ? " rank-3" : ""}">#${idx + 1}</span></td>
+                            <td>
+                                <a href="https://armory.twinstar-wow.com/character?name=${encodeURIComponent(tank.name)}&realm=${encodeURIComponent(tank.realm)}" target="_blank" class="player-link" style="color: ${getClassColor(tank.class)};" title="${escapeHtml(getClassName(tank.class))}">
+                                    ${escapeHtml(tank.name)}
+                                </a>
+                            </td>
+                            <td>
+                                <span class="points-badge" title="${escapeHtml(tank.placements.map(p => `${p.boss_name}: #${p.rank} (${p.points} pts - ${formatDps(p.dps)} DPS)`).join('\n'))}">
+                                    ${tank.totalPoints} pts
+                                </span>
+                            </td>
+                            <td>
+                                <span class="placements-tag" title="${escapeHtml(tank.placements.map(p => `${p.boss_name}: #${p.rank} (${p.points} pts - ${formatDps(p.dps)} DPS)`).join('\n'))}">
+                                    ${tank.placements.length} / ${uniqueBosses.length} Bosses
+                                </span>
+                            </td>
+                            <td>
+                                <div class="medals-cell">
+                                    ${tank.rank1Count > 0 ? `<span class="medal-tag gold" title="${tank.rank1Count}x Rank 1">🥇 ${tank.rank1Count}</span>` : ""}
+                                    ${tank.rank2Count > 0 ? `<span class="medal-tag silver" title="${tank.rank2Count}x Rank 2">🥈 ${tank.rank2Count}</span>` : ""}
+                                    ${tank.rank3Count > 0 ? `<span class="medal-tag bronze" title="${tank.rank3Count}x Rank 3">🥉 ${tank.rank3Count}</span>` : ""}
+                                    ${tank.rank1Count === 0 && tank.rank2Count === 0 && tank.rank3Count === 0 ? `<span class="best-rank-tag">Best: #${tank.bestRank}</span>` : ""}
+                                </div>
+                            </td>
+                            <td class="dps-cell">${formatDps(tank.topDps)}</td>
+                            <td><span class="ilvl-badge">iLvl ${formatIlvl(tank.avgItemLvl)}</span></td>
+                            <td>${escapeHtml(tank.guild || "No Guild")}</td>
+                            <td><span class="realm-tag">${escapeHtml(tank.realm)}</span></td>
+                        </tr>
+                        `).join("")}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>Kronos Tank Logs by <a href="https://www.vanillawar.com/" target="_blank">Warlord Drak</a> &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; <a href="bosskills.json" target="_blank">View Raw JSON (bosskills.json)</a> &bull; Generated: ${generatedAt}</p>
     </footer>
@@ -757,19 +1008,39 @@ export function generateHtml(
         currentView = view;
         const killsView = document.getElementById('view-kills');
         const leadView = document.getElementById('view-leaderboard');
+        const top50View = document.getElementById('view-top50');
         const tabKills = document.getElementById('tab-per-kill');
         const tabLead = document.getElementById('tab-leaderboard');
+        const tabTop50 = document.getElementById('tab-top50');
+        const bossSelect = document.getElementById('boss-select');
 
         if (view === 'kills') {
             killsView.style.display = 'block';
             leadView.style.display = 'none';
+            if (top50View) top50View.style.display = 'none';
             tabKills.classList.add('active');
             tabLead.classList.remove('active');
-        } else {
+            if (tabTop50) tabTop50.classList.remove('active');
+            if (bossSelect) bossSelect.style.display = '';
+        } else if (view === 'leaderboard') {
             killsView.style.display = 'none';
             leadView.style.display = 'block';
+            if (top50View) top50View.style.display = 'none';
             tabKills.classList.remove('active');
             tabLead.classList.add('active');
+            if (tabTop50) tabTop50.classList.remove('active');
+            if (bossSelect) bossSelect.style.display = '';
+        } else if (view === 'top50') {
+            killsView.style.display = 'none';
+            leadView.style.display = 'none';
+            if (top50View) top50View.style.display = 'block';
+            tabKills.classList.remove('active');
+            tabLead.classList.remove('active');
+            if (tabTop50) tabTop50.classList.add('active');
+            if (bossSelect) bossSelect.style.display = 'none';
+        }
+        if (history.replaceState) {
+            history.replaceState(null, '', '#' + view);
         }
         filterData();
     }
@@ -793,7 +1064,7 @@ export function generateHtml(
                     card.style.display = 'none';
                 }
             });
-        } else {
+        } else if (currentView === 'leaderboard') {
             const cards = document.getElementById('view-leaderboard').querySelectorAll('.bosskill-card');
             cards.forEach(card => {
                 const boss = (card.getAttribute('data-boss') || '').toLowerCase();
@@ -820,7 +1091,32 @@ export function generateHtml(
                     card.style.display = 'none';
                 }
             });
+        } else if (currentView === 'top50') {
+            const top50 = document.getElementById('view-top50');
+            if (top50) {
+                const rows = top50.querySelectorAll('.top50-row');
+                let visibleRows = 0;
+                rows.forEach(row => {
+                    const realm = (row.getAttribute('data-realm') || '').toLowerCase();
+                    const matchesServer = !serverFilter || realm === serverFilter;
+                    if (matchesServer) {
+                        row.style.display = '';
+                        visibleRows++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                const noDataRow = document.getElementById('top50-no-data');
+                if (noDataRow) {
+                    noDataRow.style.display = visibleRows === 0 ? '' : 'none';
+                }
+            }
         }
+    }
+
+    const initialHash = window.location.hash.replace('#', '');
+    if (initialHash === 'kills' || initialHash === 'leaderboard' || initialHash === 'top50') {
+        switchView(initialHash);
     }
 </script>
 

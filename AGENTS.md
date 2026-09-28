@@ -28,7 +28,7 @@
 | `scrape-bosskill.ts` | Scrapes and parses a single bosskill encounter page (`?boss-kill=<id>`) from Twinhead. Implements Cloudflare-resistant fetching and tank identification logic. |
 | `scrape-bosskills-for-day.ts` | Scrapes the bosskills catalog list (`?latest=bosskills`), filters by date, and performs concurrent scraping for historic or date-bounded runs. |
 | `update-bosskills.ts` | Main updater script executed by CI. Reads `bosskills.json`, finds new bosskills (IDs strictly greater than max recorded ID), scrapes them concurrently, merges records, writes to disk, and calls `render()`. |
-| `render.ts` | Static site generator. Transforms `bosskills.json` into `index.html` with leaderboards (Top 10 DPS per boss), recent kills feed, tab filtering, and responsive styling. |
+| `render.ts` | Static site generator. Transforms `bosskills.json` into `index.html` with leaderboards (Top 10 DPS per boss, Top 50 overall points leaderboard), recent kills feed, tab filtering, and responsive styling. |
 | `bosskills.json` | The primary data store containing historical bosskill records and extracted tank stats sorted descending by kill ID. |
 | `index.html` | Generated static HTML file deployed to GitHub Pages. Contains embedded CSS and minimal client-side vanilla JavaScript for filtering. |
 | `CNAME` | Custom domain configuration for GitHub Pages (`kronos-tanks.com`). |
@@ -49,9 +49,10 @@ In Vanilla WoW logs without explicit role tags, tanks are identified programmati
 - Death counts are parsed from the Twinhead timeline chart data (`chart_data[4]`, the death event series).
 
 ### 3. Leaderboards
-- Boss leaderboards group surviving tanks by `boss_name`.
-- Tanks are ranked strictly by **DPS descending**.
-- Each boss card displays the Top 10 tanks of all time for that encounter.
+- **Boss Leaderboards**: Group surviving tanks by `boss_name`, ranked strictly by **DPS descending**. Each boss card displays the Top 10 tanks of all time for that encounter.
+- **Top 50 Overall Leaderboard**: Tanks earn points based on their placements across the top-10-per-boss leaderboards:
+  - Rank #1 grants 10 points, Rank #2 grants 9 points, ..., Rank #10 grants 1 point.
+  - Tanks are ranked by total accumulated points descending, with tie-breakers on finish counts (most #1s, then #2s, etc.) and peak DPS.
 
 ### 4. Realm Filtering
 - The scraping pipeline captures bosskills from all realms reported by Twinhead.
