@@ -1,21 +1,15 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { getTanks, formatFightLength, type Tank } from "./scrape-bosskill.ts";
-import { fetchBosskillsList } from "./scrape-bosskills-for-day.ts";
+import {
+    BOSS_KILLS_FILE,
+    fetchBosskillsList,
+    formatFightLength,
+    scrapeBosskillsBatch,
+    type StoredBosskill,
+    type Tank,
+} from "./scrape-bosskill.ts";
 import { render } from "./render.ts";
 
-export interface StoredBosskill {
-    id: number;
-    boss_name: string;
-    raid: string;
-    guild: string;
-    realm: string;
-    time: string;
-    fight_length?: string;
-    tanks: Tank[];
-    error?: string;
-}
-
-export const BOSS_KILLS_FILE = "bosskills.json";
+export { BOSS_KILLS_FILE, type StoredBosskill, type Tank };
 
 export async function updateBosskills(options: {
     filePath?: string;
@@ -56,20 +50,7 @@ export async function updateBosskills(options: {
 
     const catalogMap = new Map(latestList.map((k) => [k.id, k]));
     let backfilledCount = 0;
-    let cleanedCount = 0;
     for (const kill of existingKills) {
-        // Cleanup redundant fight_length_ms if present
-        if ("fight_length_ms" in kill) {
-            delete (kill as any).fight_length_ms;
-            cleanedCount++;
-        }
-        // Cleanup redundant fight_length on tanks if present
-        for (const t of kill.tanks) {
-            if ("fight_length" in t) {
-                delete (t as any).fight_length;
-                cleanedCount++;
-            }
-        }
         if (!kill.fight_length && catalogMap.has(kill.id)) {
             const catItem = catalogMap.get(kill.id)!;
             if (typeof catItem.length === "number" && catItem.length > 0) {
@@ -81,17 +62,14 @@ export async function updateBosskills(options: {
     if (backfilledCount > 0) {
         console.log(`Backfilled fight length for ${backfilledCount} existing bosskill(s).`);
     }
-    if (cleanedCount > 0) {
-        console.log(`Cleaned up redundant fields in existing bosskill(s).`);
-    }
 
     // If we already have stored kills, only check for kills strictly newer than our highest recorded ID
-    let newKillsToScrape = existingKills.length > 0
+    const newKillsToScrape = existingKills.length > 0
         ? latestList.filter((k) => k.id > maxExistingId && !existingIds.has(k.id))
         : latestList.slice(0, maxInitial);
 
     if (newKillsToScrape.length === 0) {
-        if (backfilledCount > 0 || cleanedCount > 0) {
+        if (backfilledCount > 0) {
             writeFileSync(filePath, JSON.stringify(existingKills, null, 2) + "\n", "utf-8");
             console.log(`Saved ${existingKills.length} bosskills with updated records to ${filePath}.`);
             render(filePath, "index.html");
@@ -103,52 +81,14 @@ export async function updateBosskills(options: {
 
     console.log(`Found ${newKillsToScrape.length} new bosskill(s) to scrape.`);
 
-    const newlyScraped: StoredBosskill[] = new Array(newKillsToScrape.length);
-    let currentIndex = 0;
-    let completed = 0;
-
-    async function worker() {
-        while (currentIndex < newKillsToScrape.length) {
-            const idx = currentIndex++;
-            const kill = newKillsToScrape[idx];
-
-            let tanks: Tank[] = [];
-            let errorMsg: string | undefined;
-
-            try {
-                tanks = await getTanks(kill.id);
-            } catch (err: any) {
-                errorMsg = err?.message ?? String(err);
-            }
-
-            const fightLength = typeof kill.length === "number" && kill.length > 0
-                ? formatFightLength(kill.length)
-                : undefined;
-
-            newlyScraped[idx] = {
-                id: kill.id,
-                boss_name: kill.bossname,
-                raid: kill.raid,
-                guild: kill.guild,
-                realm: kill.realm,
-                time: kill.time,
-                ...(fightLength ? { fight_length: fightLength } : {}),
-                tanks,
-                ...(errorMsg ? { error: errorMsg } : {}),
-            };
-
-            completed++;
+    const newlyScraped = await scrapeBosskillsBatch(newKillsToScrape, {
+        concurrency,
+        onProgress: (completed, total, result) => {
             console.log(
-                `[${completed}/${newKillsToScrape.length}] Scraped #${kill.id} (${kill.bossname} - ${kill.guild || "No Guild"}): ${tanks.length} tank(s)`
+                `[${completed}/${total}] Scraped #${result.id} (${result.boss_name} - ${result.guild || "No Guild"}): ${result.tanks.length} tank(s)`
             );
-        }
-    }
-
-    const workers = Array.from(
-        { length: Math.min(concurrency, newKillsToScrape.length) },
-        () => worker()
-    );
-    await Promise.all(workers);
+        },
+    });
 
     // Merge: newly scraped + existing, sorted descending by ID
     const mergedMap = new Map<number, StoredBosskill>();

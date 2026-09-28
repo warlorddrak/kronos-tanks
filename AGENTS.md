@@ -25,8 +25,7 @@
 
 | File | Purpose |
 | --- | --- |
-| `scrape-bosskill.ts` | Scrapes and parses a single bosskill encounter page (`?boss-kill=<id>`) from Twinhead. Implements Cloudflare-resistant fetching and tank identification logic. |
-| `scrape-bosskills-for-day.ts` | Scrapes the bosskills catalog list (`?latest=bosskills`), filters by date, and performs concurrent scraping for historic or date-bounded runs. |
+| `scrape-bosskill.ts` | Scrapes Twinhead pages: individual bosskills (`?boss-kill=<id>`), catalog listview (`?latest=bosskills`), and date-filtered batches. Implements Cloudflare-resistant fetching, batch concurrency, and tank identification logic. |
 | `update-bosskills.ts` | Main updater script executed by CI. Reads `bosskills.json`, finds new bosskills (IDs strictly greater than max recorded ID), scrapes them concurrently, merges records, writes to disk, and calls `render()`. |
 | `render.ts` | Static site generator. Transforms `bosskills.json` into `index.html` with leaderboards (Top 10 DPS per boss, Top 50 overall points leaderboard), recent kills feed, tab filtering, and responsive styling. |
 | `bosskills.json` | The primary data store containing historical bosskill records and extracted tank stats sorted descending by kill ID. |
@@ -124,7 +123,7 @@ bun run scrape-bosskill.ts 944440
 ### Scrape Bosskills for a Specific Date
 ```bash
 # Scrapes all bosskills for a given day (YYYY-MM-DD or YYYY/MM/DD)
-bun run scrape-bosskills-for-day.ts 2026-09-26
+bun run scrape-bosskill.ts 2026-09-26
 ```
 
 ---

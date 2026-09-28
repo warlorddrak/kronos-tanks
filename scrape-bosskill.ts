@@ -12,7 +12,37 @@ export interface Tank {
     deaths?: number;
 }
 
-export type WarriorTank = Tank;
+export interface StoredBosskill {
+    id: number;
+    boss_name: string;
+    raid: string;
+    guild: string;
+    realm: string;
+    time: string;
+    fight_length?: string;
+    tanks: Tank[];
+    error?: string;
+}
+
+export type DayBosskillResult = StoredBosskill;
+
+export interface BosskillListItem {
+    id: number;
+    entry: number;
+    bossname: string;
+    raid: string;
+    guildrealm: string;
+    map: string;
+    realm: string;
+    realmid: string;
+    mode: number;
+    guild: string;
+    hasDetail: number;
+    time: string;
+    length: number;
+}
+
+export const BOSS_KILLS_FILE = "bosskills.json";
 
 export async function fetchHtml(url: string, referrer = "https://vanilla-twinhead.twinstar.cz/"): Promise<string> {
     const headers: Record<string, string> = {
@@ -68,11 +98,6 @@ export async function fetchHtml(url: string, referrer = "https://vanilla-twinhea
     return html;
 }
 
-export function extractFightLength(html: string): string | undefined {
-    const match = html.match(/<td>Fight Length<\/td>\s*<td>([^<]+)<\/td>/i);
-    return match ? match[1].trim() : undefined;
-}
-
 export function formatFightLength(msOrStr: number | string | undefined | null): string | undefined {
     if (msOrStr === undefined || msOrStr === null || msOrStr === "") return undefined;
     if (typeof msOrStr === "string") return msOrStr.trim();
@@ -88,24 +113,56 @@ export function formatFightLength(msOrStr: number | string | undefined | null): 
     return secWithDec.endsWith(".0") ? `${Math.round(ms / 1000)}sec` : `${secWithDec}sec`;
 }
 
-export function parseFightLengthMs(str: string | undefined | null): number | undefined {
-    if (!str) return undefined;
-    const trimmed = str.trim();
-    const minSecMatch = trimmed.match(/^(?:(\d+)\s*min)?\s*(?:([\d.]+)\s*sec)?$/i);
-    if (minSecMatch && (minSecMatch[1] || minSecMatch[2])) {
-        const mins = minSecMatch[1] ? Number(minSecMatch[1]) : 0;
-        const secs = minSecMatch[2] ? Number(minSecMatch[2]) : 0;
-        return Math.round((mins * 60 + secs) * 1000);
+/**
+ * Normalizes user-provided date strings (e.g. "2026-09-26" or "2026/9/26")
+ * into "YYYY/MM/DD" format used by Twinhead timestamps.
+ */
+export function normalizeDate(dateStr: string): string {
+    const parts = dateStr.replace(/-/g, "/").split("/");
+    if (parts.length === 3) {
+        const year = parts[0].padStart(4, "0");
+        const month = parts[1].padStart(2, "0");
+        const day = parts[2].padStart(2, "0");
+        return `${year}/${month}/${day}`;
     }
-    const colonMatch = trimmed.match(/^(\d+):(\d+(?:\.\d+)?)$/);
-    if (colonMatch) {
-        const mins = Number(colonMatch[1]);
-        const secs = Number(colonMatch[2]);
-        return Math.round((mins * 60 + secs) * 1000);
-    }
-    return undefined;
+    return dateStr;
 }
 
+/**
+ * Fetches the latest bosskills catalog list from Twinhead.
+ */
+export async function fetchBosskillsList(): Promise<BosskillListItem[]> {
+    const html = await fetchHtml(
+        "https://vanilla-twinhead.twinstar.cz/?latest=bosskills",
+        "https://vanilla-twinhead.twinstar.cz/"
+    );
+
+    let start = html.indexOf("new Listview");
+    if (start === -1) {
+        start = html.indexOf("id: 'kills'");
+    }
+    if (start === -1) {
+        start = html.indexOf('id: "kills"');
+    }
+    if (start === -1) {
+        throw new Error(
+            `Could not find bosskills Listview data on latest=bosskills page. HTML snippet: ${html.slice(0, 300)}`
+        );
+    }
+
+    const arrayStart = html.indexOf("[", start);
+    const arrayEnd = html.indexOf("}]", arrayStart);
+    if (arrayStart === -1 || arrayEnd === -1) {
+        throw new Error(`Could not find bosskills data array bounds in page (start at ${start})`);
+    }
+
+    const arrayStr = html.slice(arrayStart, arrayEnd + 2);
+    return new Function("return " + arrayStr)();
+}
+
+/**
+ * Fetches and extracts surviving primary tanks for a single bosskill encounter.
+ */
 export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
     const html = await fetchHtml(
         `https://vanilla-twinhead.twinstar.cz/?boss-kill=${bosskillId}`,
@@ -188,10 +245,125 @@ export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
     return tanks;
 }
 
-export const getWarriorTanks = getTanks;
+/**
+ * Scrapes a single catalog item into a StoredBosskill record.
+ */
+export async function scrapeBosskillItem(kill: BosskillListItem): Promise<StoredBosskill> {
+    let tanks: Tank[] = [];
+    let errorMsg: string | undefined;
+
+    try {
+        tanks = await getTanks(kill.id);
+    } catch (err: any) {
+        errorMsg = err?.message ?? String(err);
+    }
+
+    const fightLength = typeof kill.length === "number" && kill.length > 0
+        ? formatFightLength(kill.length)
+        : undefined;
+
+    return {
+        id: kill.id,
+        boss_name: kill.bossname,
+        raid: kill.raid,
+        guild: kill.guild,
+        realm: kill.realm,
+        time: kill.time,
+        ...(fightLength ? { fight_length: fightLength } : {}),
+        tanks,
+        ...(errorMsg ? { error: errorMsg } : {}),
+    };
+}
+
+/**
+ * Concurrently scrapes a list of BosskillListItems using a worker pool.
+ */
+export async function scrapeBosskillsBatch(
+    kills: BosskillListItem[],
+    options: {
+        concurrency?: number;
+        onProgress?: (completed: number, total: number, result: StoredBosskill) => void;
+    } = {}
+): Promise<StoredBosskill[]> {
+    const concurrency = options.concurrency ?? 4;
+    const results: StoredBosskill[] = new Array(kills.length);
+    let currentIndex = 0;
+    let completed = 0;
+
+    async function worker() {
+        while (currentIndex < kills.length) {
+            const idx = currentIndex++;
+            const kill = kills[idx];
+            const result = await scrapeBosskillItem(kill);
+            results[idx] = result;
+            completed++;
+            if (options.onProgress) {
+                options.onProgress(completed, kills.length, result);
+            }
+        }
+    }
+
+    const workers = Array.from(
+        { length: Math.min(concurrency, kills.length) },
+        () => worker()
+    );
+    await Promise.all(workers);
+    return results;
+}
+
+/**
+ * Filters the bosskills catalog list for a given day (YYYY-MM-DD or YYYY/MM/DD).
+ */
+export async function getBosskillsForDay(
+    dateStr: string,
+    allKills?: BosskillListItem[]
+): Promise<BosskillListItem[]> {
+    const list = allKills ?? (await fetchBosskillsList());
+    const normalized = normalizeDate(dateStr);
+    return list.filter((k) => k.time && k.time.startsWith(normalized));
+}
+
+/**
+ * Scrapes bosskills and surviving tanks for a given day.
+ */
+export async function scrapeBosskillsForDay(
+    dateStr: string,
+    options: {
+        concurrency?: number;
+        onProgress?: (completed: number, total: number, result: StoredBosskill) => void;
+    } = {}
+): Promise<StoredBosskill[]> {
+    const dayKills = await getBosskillsForDay(dateStr);
+    return scrapeBosskillsBatch(dayKills, options);
+}
 
 if (import.meta.main) {
-    const bosskillId = process.argv[2] ?? 944440;
-    const tanks = await getTanks(bosskillId);
-    console.log(tanks);
+    const arg = process.argv[2];
+    const isDate = arg && /^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/.test(arg);
+
+    if (isDate) {
+        const targetDate = normalizeDate(arg);
+        console.error(`Fetching latest bosskills catalog from Twinhead for ${targetDate}...`);
+        const allKills = await fetchBosskillsList();
+        const dayKills = allKills.filter((k) => k.time && k.time.startsWith(targetDate));
+        console.error(`Found ${dayKills.length} bosskill(s) for ${targetDate}.`);
+
+        if (dayKills.length === 0) {
+            console.log(JSON.stringify([], null, 2));
+            process.exit(0);
+        }
+
+        console.error(`Scraping tanks for ${dayKills.length} bosskills (concurrency: 4)...`);
+        const results = await scrapeBosskillsBatch(dayKills, {
+            concurrency: 4,
+            onProgress: (done, total, res) => {
+                console.error(`[${done}/${total}] Scraped #${res.id} (${res.boss_name} - ${res.guild || "No Guild"})`);
+            },
+        });
+        console.log(JSON.stringify(results, null, 2));
+    } else {
+        const bosskillId = arg ?? 944440;
+        const tanks = await getTanks(bosskillId);
+        console.log(tanks);
+    }
 }

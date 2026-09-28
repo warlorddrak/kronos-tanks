@@ -1,5 +1,29 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { BOSS_KILLS_FILE, type StoredBosskill } from "./update-bosskills.ts";
+import { BOSS_KILLS_FILE, type StoredBosskill } from "./scrape-bosskill.ts";
+
+export interface Top50Placement {
+    boss_name: string;
+    rank: number;
+    points: number;
+    dps: string;
+    bosskill_id: number;
+    time?: string;
+}
+
+export interface Top50Tank {
+    name: string;
+    realm: string;
+    class?: string;
+    guild?: string;
+    totalPoints: number;
+    placements: Top50Placement[];
+    topDps: number;
+    avgItemLvl?: number;
+    rank1Count: number;
+    rank2Count: number;
+    rank3Count: number;
+    bestRank: number;
+}
 
 function escapeHtml(str: string | number | undefined | null): string {
     if (str == null) return "";
@@ -165,30 +189,6 @@ export function generateHtml(
 
     // 3. Compute Top 50 Leaderboard based on points from Top 10 by Boss lists
     // Rank #1 grants 10 points, Rank #2 grants 9 points, ..., Rank #10 grants 1 point.
-    interface Top50Placement {
-        boss_name: string;
-        rank: number;
-        points: number;
-        dps: string;
-        bosskill_id: number;
-        time?: string;
-    }
-
-    interface Top50Tank {
-        name: string;
-        realm: string;
-        class?: string;
-        guild?: string;
-        totalPoints: number;
-        placements: Top50Placement[];
-        topDps: number;
-        avgItemLvl?: number;
-        rank1Count: number;
-        rank2Count: number;
-        rank3Count: number;
-        bestRank: number;
-    }
-
     const tankScoreMap = new Map<string, Top50Tank>();
 
     for (const b of bossLeaderboards) {
