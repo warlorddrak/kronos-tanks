@@ -1191,9 +1191,6 @@ export function generateHtml(
                 <div class="boss-name">
                     <span>🏆 Top 50 Tanks</span>
                 </div>
-                <div class="meta-info">
-                    <span>${top50Leaderboard.length} Ranked Tank(s) &bull; Rank #1 = 10 pts &hellip; Rank #10 = 1 pt</span>
-                </div>
             </div>
 
             <div class="table-responsive">
