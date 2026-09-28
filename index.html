@@ -116,6 +116,124 @@
             margin-top: 0.2rem;
         }
 
+        /* FAQ Details Section */
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .faq-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        .faq-card summary {
+            padding: 0.85rem 1.25rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            list-style: none;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .faq-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-card summary::marker {
+            display: none;
+        }
+
+        .faq-card summary:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-icon-arrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--accent);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-card[open] .faq-icon-arrow {
+            transform: rotate(90deg);
+        }
+
+        .faq-card[open] summary {
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-subtle);
+        }
+
+        .faq-content {
+            padding: 1.25rem 1.5rem;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        .faq-content h1,
+        .faq-content h2,
+        .faq-content h3 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-top: 1.25rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-content h1:first-child,
+        .faq-content h2:first-child,
+        .faq-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .faq-content p {
+            margin-bottom: 0.85rem;
+        }
+
+        .faq-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-content ol,
+        .faq-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .faq-content li {
+            margin-bottom: 0.35rem;
+        }
+
+        .faq-content strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .faq-content code {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+        }
+
+        .faq-content a {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
         /* Controls */
         .controls-card {
             background: var(--bg-card);
@@ -505,6 +623,21 @@
             </div>
         </div>
     </header>
+
+    
+    <details class="faq-card">
+        <summary>
+            <span class="faq-icon-arrow">▶</span>
+            <span>Frequently Asked Questions (FAQ)</span>
+        </summary>
+        <div class="faq-content">
+            <h2>How does it work?</h2>
+<p>Per boss kill, at most one player is considered the "tank":</p>
+<ol><li>The player having taken most "damage taken" plus "damage absorbed".</li><li>Only if that played did not die. If that player died, no eligible tank is tracked for that fight.</li></ol>
+<p>The "Top 50 Leaderboard" ranks tanks by granting points for each top 10 boss result (rank #1 10 points, rank #2 9 points, ..., rank #10 1 point).</p>
+        </div>
+    </details>
+    
 
     <div class="controls-card">
         <div class="view-tabs">
@@ -7305,7 +7438,7 @@ Majordomo Executus: #7 (4 pts - 116.0 DPS)">
     </div>
 
     <footer>
-        <p>Kronos Tank Logs by <a href="https://www.vanillawar.com/" target="_blank">Warlord Drak</a> &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; <a href="bosskills.json" target="_blank">View Raw JSON (bosskills.json)</a> &bull; Generated: 2026-09-28 14:12:25 UTC</p>
+        <p>Kronos Tank Logs by <a href="https://www.vanillawar.com/" target="_blank">Warlord Drak</a> &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; <a href="bosskills.json" target="_blank">View Raw JSON (bosskills.json)</a> &bull; Generated: 2026-09-28 14:35:27 UTC</p>
     </footer>
 </div>
 

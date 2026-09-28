@@ -103,11 +103,154 @@ export function getClassName(classIdOrName?: string | number): string {
     return String(classIdOrName);
 }
 
+export function formatInlineMarkdown(text: string): string {
+    let result = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+    result = result.replace(/`([^`]+)`/g, "<code>$1</code>");
+
+    result = result.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, linkText, url) => {
+        const safeUrl = url.trim().replace(/"/g, "&quot;");
+        if (/^(https?:\/\/|mailto:|\/|#)/i.test(safeUrl)) {
+            return `<a href="${safeUrl}" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
+        }
+        return linkText;
+    });
+
+    result = result.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    result = result.replace(/__([^_]+)__/g, "<strong>$1</strong>");
+    result = result.replace(/(^|[^\*])\*([^*\s][^*]*[^*\s]|[^*\s])\*(?!\*)/g, "$1<em>$2</em>");
+    result = result.replace(/(^|[^_])_([^_\s][^_]*[^_\s]|[^_\s])_(?!_)/g, "$1<em>$2</em>");
+
+    return result;
+}
+
+export function renderMarkdown(markdown: string): string {
+    if (!markdown) return "";
+    const lines = markdown.replace(/\r\n/g, "\n").split("\n");
+    const htmlBlocks: string[] = [];
+    let currentParagraph: string[] = [];
+    let currentList: { type: "ul" | "ol"; items: string[] } | null = null;
+
+    const flushParagraph = () => {
+        if (currentParagraph.length > 0) {
+            const text = currentParagraph.join(" ").trim();
+            if (text) {
+                htmlBlocks.push(`<p>${formatInlineMarkdown(text)}</p>`);
+            }
+            currentParagraph = [];
+        }
+    };
+
+    const flushList = () => {
+        if (currentList) {
+            const tag = currentList.type;
+            const itemsHtml = currentList.items
+                .map((item) => `<li>${formatInlineMarkdown(item)}</li>`)
+                .join("");
+            htmlBlocks.push(`<${tag}>${itemsHtml}</${tag}>`);
+            currentList = null;
+        }
+    };
+
+    const flushAll = () => {
+        flushParagraph();
+        flushList();
+    };
+
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const trimmed = line.trim();
+
+        if (!trimmed) {
+            flushAll();
+            continue;
+        }
+
+        const headingMatch = trimmed.match(/^(#{1,6})\s+(.*)$/);
+        if (headingMatch) {
+            flushAll();
+            const level = headingMatch[1].length;
+            const content = formatInlineMarkdown(headingMatch[2].trim());
+            htmlBlocks.push(`<h${level}>${content}</h${level}>`);
+            continue;
+        }
+
+        const olMatch = trimmed.match(/^\d+\.\s+(.*)$/);
+        if (olMatch) {
+            flushParagraph();
+            if (!currentList || currentList.type !== "ol") {
+                flushList();
+                currentList = { type: "ol", items: [] };
+            }
+            currentList.items.push(olMatch[1]);
+            continue;
+        }
+
+        const ulMatch = trimmed.match(/^[-*+]\s+(.*)$/);
+        if (ulMatch) {
+            flushParagraph();
+            if (!currentList || currentList.type !== "ul") {
+                flushList();
+                currentList = { type: "ul", items: [] };
+            }
+            currentList.items.push(ulMatch[1]);
+            continue;
+        }
+
+        const bqMatch = trimmed.match(/^>\s*(.*)$/);
+        if (bqMatch) {
+            flushAll();
+            htmlBlocks.push(`<blockquote>${formatInlineMarkdown(bqMatch[1])}</blockquote>`);
+            continue;
+        }
+
+        if (currentList) {
+            flushList();
+        }
+        currentParagraph.push(trimmed);
+    }
+
+    flushAll();
+    return htmlBlocks.join("\n");
+}
+
+export function loadFaqHtml(faqPath = "faq.md"): string {
+    let resolvedPath = faqPath;
+    if (!existsSync(resolvedPath)) {
+        try {
+            const scriptDir = new URL(".", import.meta.url).pathname;
+            const fallbackPath = `${scriptDir}/${faqPath}`.replace(/\/+/g, "/");
+            if (existsSync(fallbackPath)) {
+                resolvedPath = fallbackPath;
+            }
+        } catch {
+            // ignore
+        }
+    }
+
+    if (existsSync(resolvedPath)) {
+        try {
+            const content = readFileSync(resolvedPath, "utf-8");
+            return renderMarkdown(content);
+        } catch (err) {
+            console.warn(`Warning: Could not read FAQ file at ${resolvedPath}:`, err);
+        }
+    }
+    return "";
+}
+
 export function generateHtml(
     bosskills: StoredBosskill[],
-    options: { server?: string } = {}
+    options: { server?: string; faqFile?: string; faqHtml?: string } = {}
 ): string {
     const generatedAt = new Date().toISOString().replace("T", " ").replace(/\..+/, " UTC");
+
+    const faqHtml = options.faqHtml !== undefined
+        ? options.faqHtml
+        : loadFaqHtml(options.faqFile ?? "faq.md");
 
     // All available servers in the dataset
     const allServers = Array.from(new Set(bosskills.map((k) => k.realm))).filter(Boolean).sort();
@@ -388,6 +531,124 @@ export function generateHtml(
             font-size: 0.8rem;
             color: var(--accent);
             margin-top: 0.2rem;
+        }
+
+        /* FAQ Details Section */
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .faq-card:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+        }
+
+        .faq-card summary {
+            padding: 0.85rem 1.25rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            list-style: none;
+            transition: background-color 0.15s ease, color 0.15s ease;
+        }
+
+        .faq-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-card summary::marker {
+            display: none;
+        }
+
+        .faq-card summary:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .faq-icon-arrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--accent);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-card[open] .faq-icon-arrow {
+            transform: rotate(90deg);
+        }
+
+        .faq-card[open] summary {
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-subtle);
+        }
+
+        .faq-content {
+            padding: 1.25rem 1.5rem;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        .faq-content h1,
+        .faq-content h2,
+        .faq-content h3 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-top: 1.25rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-content h1:first-child,
+        .faq-content h2:first-child,
+        .faq-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .faq-content p {
+            margin-bottom: 0.85rem;
+        }
+
+        .faq-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-content ol,
+        .faq-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .faq-content li {
+            margin-bottom: 0.35rem;
+        }
+
+        .faq-content strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .faq-content code {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+        }
+
+        .faq-content a {
+            color: var(--accent);
+            text-decoration: underline;
         }
 
         /* Controls */
@@ -780,6 +1041,18 @@ export function generateHtml(
         </div>
     </header>
 
+    ${faqHtml ? `
+    <details class="faq-card">
+        <summary>
+            <span class="faq-icon-arrow">▶</span>
+            <span>Frequently Asked Questions (FAQ)</span>
+        </summary>
+        <div class="faq-content">
+            ${faqHtml}
+        </div>
+    </details>
+    ` : ""}
+
     <div class="controls-card">
         <div class="view-tabs">
             <button class="tab-btn active" id="tab-per-kill" onclick="switchView('kills')">Bosskills Feed</button>
@@ -1128,7 +1401,7 @@ export function generateHtml(
 export function render(
     bosskillsFile = BOSS_KILLS_FILE,
     outputFile = "index.html",
-    options: { server?: string } = { server: "KronosV" }
+    options: { server?: string; faqFile?: string; faqHtml?: string } = { server: "KronosV" }
 ): void {
     if (!existsSync(bosskillsFile)) {
         console.error(`Error: Data file ${bosskillsFile} not found.`);
@@ -1149,5 +1422,6 @@ if (import.meta.main) {
     const jsonFile = process.argv[2] ?? BOSS_KILLS_FILE;
     const outFile = process.argv[3] ?? "index.html";
     const server = process.argv[4] ?? "KronosV";
-    render(jsonFile, outFile, { server });
+    const faqFile = process.argv[5] ?? "faq.md";
+    render(jsonFile, outFile, { server, faqFile });
 }
