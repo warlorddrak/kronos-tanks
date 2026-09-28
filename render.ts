@@ -538,7 +538,8 @@ export function generateHtml(
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 0.75rem;
-            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
             overflow: hidden;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
@@ -1041,18 +1042,6 @@ export function generateHtml(
         </div>
     </header>
 
-    ${faqHtml ? `
-    <details class="faq-card">
-        <summary>
-            <span class="faq-icon-arrow">▶</span>
-            <span>Frequently Asked Questions (FAQ)</span>
-        </summary>
-        <div class="faq-content">
-            ${faqHtml}
-        </div>
-    </details>
-    ` : ""}
-
     <div class="controls-card">
         <div class="view-tabs">
             <button class="tab-btn active" id="tab-per-kill" onclick="switchView('kills')">Bosskills Feed</button>
@@ -1268,6 +1257,18 @@ export function generateHtml(
             </div>
         </div>
     </div>
+
+    ${faqHtml ? `
+    <details class="faq-card">
+        <summary>
+            <span class="faq-icon-arrow">▶</span>
+            <span>Frequently Asked Questions (FAQ)</span>
+        </summary>
+        <div class="faq-content">
+            ${faqHtml}
+        </div>
+    </details>
+    ` : ""}
 
     <footer>
         <p>Kronos Tank Logs by <a href="https://www.vanillawar.com/" target="_blank">Warlord Drak</a> &bull; Data scraped from <a href="https://vanilla-twinhead.twinstar.cz/?latest=bosskills" target="_blank">Twinhead</a> &bull; <a href="bosskills.json" target="_blank">View Raw JSON (bosskills.json)</a> &bull; Generated: ${generatedAt}</p>
