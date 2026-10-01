@@ -1129,9 +1129,6 @@ export function generateHtml(
                 <div class="boss-name">
                     <span>${escapeHtml(b.boss_name)}</span>
                 </div>
-                <div class="meta-info">
-                    <span>${b.tanks.length} Tank Record(s)</span>
-                </div>
             </div>
 
             <div class="table-responsive">
