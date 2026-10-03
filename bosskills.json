@@ -1,5 +1,77 @@
 [
   {
+    "id": 944769,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/03 22:25:59",
+    "fight_length": "2min 57sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "14875",
+        "realm": "KronosV",
+        "name": "Rubis",
+        "class": "8",
+        "avg_item_lvl": "65.25",
+        "dmg_done": "63143",
+        "dmg_taken": "35331",
+        "dmg_absorbed": "9492",
+        "dps": "356.0742",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944768,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/03 22:01:30",
+    "fight_length": "2min 12sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "class": "1",
+        "avg_item_lvl": "58.4706",
+        "dmg_done": "31295",
+        "dmg_taken": "79453",
+        "dmg_absorbed": "0",
+        "dps": "236.7820",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944767,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/03 21:54:01",
+    "fight_length": "1min 11sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "class": "1",
+        "avg_item_lvl": "62.7647",
+        "dmg_done": "18372",
+        "dmg_taken": "41805",
+        "dmg_absorbed": "1127",
+        "dps": "256.2236",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 944765,
     "boss_name": "Golemagg the Incinerator",
     "raid": "Molten Core",
