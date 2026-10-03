@@ -1,5 +1,29 @@
 [
   {
+    "id": 944777,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/03 23:43:15",
+    "fight_length": "1min 35sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "28822",
+        "realm": "KronosV",
+        "name": "Snima",
+        "class": "1",
+        "avg_item_lvl": "59",
+        "dmg_done": "22346",
+        "dmg_taken": "24404",
+        "dmg_absorbed": "0",
+        "dps": "233.7448",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 944769,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
