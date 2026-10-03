@@ -1,5 +1,49 @@
 [
   {
+    "id": 944780,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/04 00:35:21",
+    "fight_length": "2min 10sec",
+    "tanks": []
+  },
+  {
+    "id": 944779,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/04 00:20:30",
+    "fight_length": "1min 13sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "12237",
+        "realm": "KronosV",
+        "name": "Valter",
+        "class": "1",
+        "avg_item_lvl": "59.6471",
+        "dmg_done": "14374",
+        "dmg_taken": "22315",
+        "dmg_absorbed": "0",
+        "dps": "196.6966",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 944778,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/03 23:58:48",
+    "fight_length": "4min 16sec",
+    "tanks": []
+  },
+  {
     "id": 944777,
     "boss_name": "Lucifron",
     "raid": "Molten Core",
