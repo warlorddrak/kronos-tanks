@@ -1,5 +1,29 @@
 [
   {
+    "id": 944982,
+    "boss_name": "Lord Kazzak",
+    "raid": "Eastern Kingdoms",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/07 01:49:58",
+    "fight_length": "2min 35sec",
+    "tanks": [
+      {
+        "boss_name": "Lord Kazzak",
+        "guid": "1587",
+        "realm": "KronosV",
+        "name": "Mediation",
+        "class": "1",
+        "avg_item_lvl": "63.1176",
+        "dmg_done": "56438",
+        "dmg_taken": "51827",
+        "dmg_absorbed": "2893",
+        "dps": "363.2093",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 944965,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
