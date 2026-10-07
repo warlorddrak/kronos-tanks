@@ -46,7 +46,7 @@ export async function updateBosskills(options: {
         console.log("Skipping update for this cycle; existing records remain untouched.");
         return { added: 0, total: existingKills.length };
     }
-    console.log(`Fetched ${latestList.length} bosskills in catalog.`);
+    console.log("Fetched first page of bosskills catalog.");
 
     const catalogMap = new Map(latestList.map((k) => [k.id, k]));
     let backfilledCount = 0;
