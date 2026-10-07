@@ -1,5 +1,29 @@
 [
   {
+    "id": 944995,
+    "boss_name": "Azuregos",
+    "raid": "Kalimdor",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/07 09:23:28",
+    "fight_length": "7min 49sec",
+    "tanks": [
+      {
+        "boss_name": "Azuregos",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "69.1176",
+        "dmg_done": "100518",
+        "dmg_taken": "116660",
+        "dmg_absorbed": "0",
+        "dps": "214.2830",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 944982,
     "boss_name": "Lord Kazzak",
     "raid": "Eastern Kingdoms",
