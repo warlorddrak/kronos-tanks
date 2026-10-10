@@ -1,5 +1,269 @@
 [
   {
+    "id": 945157,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:56:24",
+    "fight_length": "56sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "65.3529",
+        "dmg_done": "34841",
+        "dmg_taken": "30485",
+        "dmg_absorbed": "0",
+        "dps": "622.6166",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945156,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:50:30",
+    "fight_length": "2min 58sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "71370",
+        "realm": "KronosV",
+        "name": "Wildchief",
+        "class": "1",
+        "avg_item_lvl": "64.5294",
+        "dmg_done": "36042",
+        "dmg_taken": "61350",
+        "dmg_absorbed": "2416",
+        "dps": "202.0224",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945155,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:49:34",
+    "fight_length": "1min 25sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "65.3529",
+        "dmg_done": "39074",
+        "dmg_taken": "52556",
+        "dmg_absorbed": "726",
+        "dps": "457.5088",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945152,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:44:27",
+    "fight_length": "51.5sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "65.3529",
+        "dmg_done": "27232",
+        "dmg_taken": "36459",
+        "dmg_absorbed": "282",
+        "dps": "528.3663",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945151,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:36:10",
+    "fight_length": "21.9sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "65.4706",
+        "dmg_done": "19635",
+        "dmg_taken": "14623",
+        "dmg_absorbed": "1142",
+        "dps": "896.7801",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945148,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:31:21",
+    "fight_length": "42.5sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "65.4706",
+        "dmg_done": "27900",
+        "dmg_taken": "30373",
+        "dmg_absorbed": "1142",
+        "dps": "657.0735",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945146,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:24:08",
+    "fight_length": "2min 5sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "20991",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "56.125",
+        "dmg_done": "25762",
+        "dmg_taken": "109203",
+        "dmg_absorbed": "2406",
+        "dps": "205.2422",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945145,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:24:04",
+    "fight_length": "29.5sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "65.4706",
+        "dmg_done": "14549",
+        "dmg_taken": "9571",
+        "dmg_absorbed": "0",
+        "dps": "493.9231",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945143,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:18:41",
+    "fight_length": "59.9sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "65.3529",
+        "dmg_done": "29010",
+        "dmg_taken": "30212",
+        "dmg_absorbed": "1142",
+        "dps": "484.0082",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945140,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:14:00",
+    "fight_length": "28sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "65.3529",
+        "dmg_done": "17682",
+        "dmg_taken": "14721",
+        "dmg_absorbed": "0",
+        "dps": "632.4713",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945139,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/10 20:13:38",
+    "fight_length": "2min 24sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "71370",
+        "realm": "KronosV",
+        "name": "Wildchief",
+        "class": "1",
+        "avg_item_lvl": "64.5294",
+        "dmg_done": "23194",
+        "dmg_taken": "43336",
+        "dmg_absorbed": "0",
+        "dps": "160.4155",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945137,
     "boss_name": "Golemagg the Incinerator",
     "raid": "Molten Core",
