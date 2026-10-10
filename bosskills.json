@@ -1,5 +1,53 @@
 [
   {
+    "id": 945159,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/10 21:05:35",
+    "fight_length": "50.4sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "class": "1",
+        "avg_item_lvl": "62.5294",
+        "dmg_done": "13473",
+        "dmg_taken": "23441",
+        "dmg_absorbed": "0",
+        "dps": "267.1200",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945158,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 21:04:30",
+    "fight_length": "1min 28sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "778",
+        "realm": "KronosV",
+        "name": "Oika",
+        "class": "1",
+        "avg_item_lvl": "64.4706",
+        "dmg_done": "14596",
+        "dmg_taken": "36223",
+        "dmg_absorbed": "0",
+        "dps": "164.2991",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945157,
     "boss_name": "Garr",
     "raid": "Molten Core",
