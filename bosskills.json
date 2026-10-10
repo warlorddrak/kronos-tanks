@@ -1,5 +1,77 @@
 [
   {
+    "id": 945169,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/10 21:15:15",
+    "fight_length": "1min 43sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "47049",
+        "dmg_taken": "54331",
+        "dmg_absorbed": "2486",
+        "dps": "455.1030",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945161,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/10 21:14:42",
+    "fight_length": "26.1sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "class": "1",
+        "avg_item_lvl": "62.5294",
+        "dmg_done": "19917",
+        "dmg_taken": "8416",
+        "dmg_absorbed": "803",
+        "dps": "764.3041",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945160,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/10 21:09:59",
+    "fight_length": "47.9sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "class": "1",
+        "avg_item_lvl": "62.5294",
+        "dmg_done": "16263",
+        "dmg_taken": "22618",
+        "dmg_absorbed": "1134",
+        "dps": "339.3427",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945159,
     "boss_name": "Lucifron",
     "raid": "Molten Core",
