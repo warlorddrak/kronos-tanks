@@ -1,5 +1,53 @@
 [
   {
+    "id": 945298,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:51:35",
+    "fight_length": "28sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "24169",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "64.2353",
+        "dmg_done": "20867",
+        "dmg_taken": "11667",
+        "dmg_absorbed": "4809",
+        "dps": "744.8244",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945295,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:50:34",
+    "fight_length": "1min 27sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "11303",
+        "realm": "KronosV",
+        "name": "Mack",
+        "class": "11",
+        "avg_item_lvl": "58",
+        "dmg_done": "19423",
+        "dmg_taken": "26099",
+        "dmg_absorbed": "0",
+        "dps": "221.7187",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945288,
     "boss_name": "Golemagg the Incinerator",
     "raid": "Molten Core",
