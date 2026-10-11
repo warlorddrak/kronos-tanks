@@ -1,5 +1,101 @@
 [
   {
+    "id": 945205,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "",
+    "realm": "KronosV",
+    "time": "2026/10/11 01:07:10",
+    "fight_length": "2min 19sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "55043",
+        "realm": "KronosV",
+        "name": "Foldor",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "17947",
+        "dmg_taken": "91307",
+        "dmg_absorbed": "1127",
+        "dps": "128.9963",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945204,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "",
+    "realm": "KronosV",
+    "time": "2026/10/11 00:55:29",
+    "fight_length": "1min 47sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "6180",
+        "realm": "KronosV",
+        "name": "Grazel",
+        "class": "1",
+        "avg_item_lvl": "63.5294",
+        "dmg_done": "14548",
+        "dmg_taken": "50098",
+        "dmg_absorbed": "1830",
+        "dps": "134.7486",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945203,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "",
+    "realm": "KronosV",
+    "time": "2026/10/11 00:35:51",
+    "fight_length": "1min 10sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "6180",
+        "realm": "KronosV",
+        "name": "Grazel",
+        "class": "1",
+        "avg_item_lvl": "63.2941",
+        "dmg_done": "15692",
+        "dmg_taken": "24960",
+        "dmg_absorbed": "2965",
+        "dps": "222.9421",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945202,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "",
+    "realm": "KronosV",
+    "time": "2026/10/11 00:20:09",
+    "fight_length": "1min 56sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "55043",
+        "realm": "KronosV",
+        "name": "Foldor",
+        "class": "1",
+        "avg_item_lvl": "53.9412",
+        "dmg_done": "6557",
+        "dmg_taken": "23628",
+        "dmg_absorbed": "4687",
+        "dps": "56.2176",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945200,
     "boss_name": "Garr",
     "raid": "Molten Core",
