@@ -1,5 +1,101 @@
 [
   {
+    "id": 945281,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:37:50",
+    "fight_length": "58.2sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "22256",
+        "realm": "KronosV",
+        "name": "Vindication",
+        "class": "1",
+        "avg_item_lvl": "61.5294",
+        "dmg_done": "10645",
+        "dmg_taken": "21446",
+        "dmg_absorbed": "0",
+        "dps": "182.9509",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945280,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:37:16",
+    "fight_length": "59.6sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "24169",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "65.0588",
+        "dmg_done": "20403",
+        "dmg_taken": "26616",
+        "dmg_absorbed": "0",
+        "dps": "342.5391",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945279,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:33:34",
+    "fight_length": "46.7sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "11958",
+        "realm": "KronosV",
+        "name": "Chubs",
+        "class": "1",
+        "avg_item_lvl": "66.9412",
+        "dmg_done": "24920",
+        "dmg_taken": "31181",
+        "dmg_absorbed": "0",
+        "dps": "533.3562",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945278,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:32:24",
+    "fight_length": "56.5sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "62.4706",
+        "dmg_done": "24170",
+        "dmg_taken": "42318",
+        "dmg_absorbed": "90",
+        "dps": "427.4396",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945277,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
