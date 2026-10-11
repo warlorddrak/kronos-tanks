@@ -1,5 +1,101 @@
 [
   {
+    "id": 945288,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:46:15",
+    "fight_length": "1min 6sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "11303",
+        "realm": "KronosV",
+        "name": "Mack",
+        "class": "11",
+        "avg_item_lvl": "56.875",
+        "dmg_done": "15961",
+        "dmg_taken": "38957",
+        "dmg_absorbed": "0",
+        "dps": "238.7406",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945286,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:43:35",
+    "fight_length": "1min 11sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "20029",
+        "realm": "KronosV",
+        "name": "Pottwall",
+        "class": "1",
+        "avg_item_lvl": "63.3529",
+        "dmg_done": "29009",
+        "dmg_taken": "36975",
+        "dmg_absorbed": "1158",
+        "dps": "405.7884",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945285,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:42:52",
+    "fight_length": "1min 4sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "24169",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "65.0588",
+        "dmg_done": "29922",
+        "dmg_taken": "28863",
+        "dmg_absorbed": "0",
+        "dps": "463.4184",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945284,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/10/11 20:42:19",
+    "fight_length": "45.8sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "26220",
+        "realm": "KronosV",
+        "name": "Zx",
+        "class": "1",
+        "avg_item_lvl": "64.3529",
+        "dmg_done": "15913",
+        "dmg_taken": "35570",
+        "dmg_absorbed": "0",
+        "dps": "347.1044",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945281,
     "boss_name": "Majordomo Executus",
     "raid": "Molten Core",
