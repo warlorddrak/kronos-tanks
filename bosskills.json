@@ -1,5 +1,29 @@
 [
   {
+    "id": 945361,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/10/13 02:40:19",
+    "fight_length": "3min 24sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "53450",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "65.4706",
+        "dmg_done": "54555",
+        "dmg_taken": "48324",
+        "dmg_absorbed": "261",
+        "dps": "266.4482",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945341,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
