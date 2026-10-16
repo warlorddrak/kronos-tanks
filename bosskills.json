@@ -1,5 +1,29 @@
 [
   {
+    "id": 945473,
+    "boss_name": "Lord Kazzak",
+    "raid": "Eastern Kingdoms",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/16 09:43:08",
+    "fight_length": "1min 34sec",
+    "tanks": [
+      {
+        "boss_name": "Lord Kazzak",
+        "guid": "106147",
+        "realm": "KronosV",
+        "name": "Cobbman",
+        "class": "1",
+        "avg_item_lvl": "63.0588",
+        "dmg_done": "21691",
+        "dmg_taken": "24782",
+        "dmg_absorbed": "3693",
+        "dps": "229.5417",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945472,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
