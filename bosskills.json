@@ -1,5 +1,53 @@
 [
   {
+    "id": 945584,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/17 21:36:30",
+    "fight_length": "55.2sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "class": "1",
+        "avg_item_lvl": "62.5294",
+        "dmg_done": "28510",
+        "dmg_taken": "54091",
+        "dmg_absorbed": "1139",
+        "dps": "516.4855",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945583,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/17 21:32:30",
+    "fight_length": "45.6sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "class": "1",
+        "avg_item_lvl": "62.5294",
+        "dmg_done": "19066",
+        "dmg_taken": "26268",
+        "dmg_absorbed": "110",
+        "dps": "417.9124",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945581,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
