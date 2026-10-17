@@ -1,5 +1,111 @@
 [
   {
+    "id": 945576,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/17 21:13:17",
+    "fight_length": "30.2sec",
+    "tanks": []
+  },
+  {
+    "id": 945575,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 21:09:41",
+    "fight_length": "1min 37sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "62.7059",
+        "dmg_done": "33010",
+        "dmg_taken": "47051",
+        "dmg_absorbed": "4578",
+        "dps": "339.0335",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945574,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/17 21:09:01",
+    "fight_length": "52.5sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "class": "1",
+        "avg_item_lvl": "62.5294",
+        "dmg_done": "23783",
+        "dmg_taken": "30301",
+        "dmg_absorbed": "1139",
+        "dps": "453.1304",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945571,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/17 21:06:37",
+    "fight_length": "33.1sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "1923",
+        "realm": "KronosV",
+        "name": "Nanohc",
+        "class": "1",
+        "avg_item_lvl": "62.5294",
+        "dmg_done": "16620",
+        "dmg_taken": "15843",
+        "dmg_absorbed": "0",
+        "dps": "502.6311",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945570,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:59:50",
+    "fight_length": "1min 27sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "778",
+        "realm": "KronosV",
+        "name": "Oika",
+        "class": "1",
+        "avg_item_lvl": "64.1176",
+        "dmg_done": "31192",
+        "dmg_taken": "36218",
+        "dmg_absorbed": "1142",
+        "dps": "356.2317",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945568,
     "boss_name": "Garr",
     "raid": "Molten Core",
