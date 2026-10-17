@@ -1,5 +1,135 @@
 [
   {
+    "id": 945610,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/18 00:45:52",
+    "fight_length": "1min 42sec",
+    "tanks": []
+  },
+  {
+    "id": 945607,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/18 00:26:53",
+    "fight_length": "1min 36sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "6180",
+        "realm": "KronosV",
+        "name": "Grazel",
+        "class": "1",
+        "avg_item_lvl": "63.8824",
+        "dmg_done": "15335",
+        "dmg_taken": "44860",
+        "dmg_absorbed": "746",
+        "dps": "159.4638",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945605,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/18 00:12:33",
+    "fight_length": "37.5sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "28822",
+        "realm": "KronosV",
+        "name": "Snima",
+        "class": "1",
+        "avg_item_lvl": "59.5294",
+        "dmg_done": "19529",
+        "dmg_taken": "18576",
+        "dmg_absorbed": "0",
+        "dps": "520.7039",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945603,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/18 00:01:54",
+    "fight_length": "1min 23sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "6180",
+        "realm": "KronosV",
+        "name": "Grazel",
+        "class": "1",
+        "avg_item_lvl": "63.8824",
+        "dmg_done": "11178",
+        "dmg_taken": "17429",
+        "dmg_absorbed": "3068",
+        "dps": "133.0889",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945598,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/17 23:48:37",
+    "fight_length": "1min 23sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "51178",
+        "realm": "KronosV",
+        "name": "Lichtstrahl",
+        "class": "1",
+        "avg_item_lvl": "60.2941",
+        "dmg_done": "21686",
+        "dmg_taken": "42983",
+        "dmg_absorbed": "0",
+        "dps": "259.1632",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945596,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/17 23:36:39",
+    "fight_length": "46.6sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "28822",
+        "realm": "KronosV",
+        "name": "Snima",
+        "class": "1",
+        "avg_item_lvl": "59.5294",
+        "dmg_done": "23338",
+        "dmg_taken": "12746",
+        "dmg_absorbed": "0",
+        "dps": "500.8477",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945594,
     "boss_name": "Magmadar",
     "raid": "Molten Core",
