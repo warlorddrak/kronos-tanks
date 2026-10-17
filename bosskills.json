@@ -1,5 +1,53 @@
 [
   {
+    "id": 945559,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 19:55:14",
+    "fight_length": "1min 53sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "60601",
+        "realm": "KronosV",
+        "name": "Shadof",
+        "class": "1",
+        "avg_item_lvl": "62.5294",
+        "dmg_done": "26844",
+        "dmg_taken": "33021",
+        "dmg_absorbed": "0",
+        "dps": "236.5235",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945558,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 19:40:59",
+    "fight_length": "1min 17sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "20991",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.4375",
+        "dmg_done": "30291",
+        "dmg_taken": "43250",
+        "dmg_absorbed": "0",
+        "dps": "392.7877",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945557,
     "boss_name": "Sulfuron Harbinger",
     "raid": "Molten Core",
