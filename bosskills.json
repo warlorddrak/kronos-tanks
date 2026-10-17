@@ -1,5 +1,15 @@
 [
   {
+    "id": 945612,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/18 00:59:09",
+    "fight_length": "2min 46sec",
+    "tanks": []
+  },
+  {
     "id": 945610,
     "boss_name": "Golemagg the Incinerator",
     "raid": "Molten Core",
