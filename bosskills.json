@@ -1,5 +1,173 @@
 [
   {
+    "id": 945557,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 19:35:44",
+    "fight_length": "53.4sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "60601",
+        "realm": "KronosV",
+        "name": "Shadof",
+        "class": "1",
+        "avg_item_lvl": "62.8235",
+        "dmg_done": "12978",
+        "dmg_taken": "25489",
+        "dmg_absorbed": "842",
+        "dps": "243.1521",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945556,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 19:26:26",
+    "fight_length": "25.4sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "20991",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "57.625",
+        "dmg_done": "15445",
+        "dmg_taken": "10680",
+        "dmg_absorbed": "2722",
+        "dps": "608.7659",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945555,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 19:24:06",
+    "fight_length": "49.9sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "20991",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.4375",
+        "dmg_done": "19627",
+        "dmg_taken": "33741",
+        "dmg_absorbed": "1123",
+        "dps": "393.4055",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945554,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 19:16:02",
+    "fight_length": "1min 4sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "60601",
+        "realm": "KronosV",
+        "name": "Shadof",
+        "class": "1",
+        "avg_item_lvl": "62.5882",
+        "dmg_done": "19954",
+        "dmg_taken": "38408",
+        "dmg_absorbed": "0",
+        "dps": "307.5524",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945553,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 19:09:50",
+    "fight_length": "43.6sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "20991",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.4375",
+        "dmg_done": "14113",
+        "dmg_taken": "15528",
+        "dmg_absorbed": "0",
+        "dps": "323.3367",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945552,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 19:04:05",
+    "fight_length": "1min 8sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "20991",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.4375",
+        "dmg_done": "24263",
+        "dmg_taken": "35672",
+        "dmg_absorbed": "3171",
+        "dps": "353.6004",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945551,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 18:59:50",
+    "fight_length": "49.4sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "20991",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59.4375",
+        "dmg_done": "16227",
+        "dmg_taken": "22259",
+        "dmg_absorbed": "0",
+        "dps": "328.3156",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945507,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
