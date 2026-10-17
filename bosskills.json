@@ -1,5 +1,101 @@
 [
   {
+    "id": 945568,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:53:05",
+    "fight_length": "53.5sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "29061",
+        "realm": "KronosV",
+        "name": "Sliggy",
+        "class": "1",
+        "avg_item_lvl": "65.2941",
+        "dmg_done": "15600",
+        "dmg_taken": "30553",
+        "dmg_absorbed": "0",
+        "dps": "291.7906",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945567,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:47:02",
+    "fight_length": "1min 20sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66.1765",
+        "dmg_done": "50913",
+        "dmg_taken": "46023",
+        "dmg_absorbed": "1142",
+        "dps": "629.0137",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945566,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:42:33",
+    "fight_length": "42.2sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66.1765",
+        "dmg_done": "21623",
+        "dmg_taken": "19362",
+        "dmg_absorbed": "1142",
+        "dps": "512.9890",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945565,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:33:58",
+    "fight_length": "20.9sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "24939",
+        "realm": "KronosV",
+        "name": "Brickerz",
+        "class": "1",
+        "avg_item_lvl": "66.6875",
+        "dmg_done": "31368",
+        "dmg_taken": "11386",
+        "dmg_absorbed": "0",
+        "dps": "1498.3520",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945564,
     "boss_name": "Baron Geddon",
     "raid": "Molten Core",
