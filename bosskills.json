@@ -1,5 +1,125 @@
 [
   {
+    "id": 945564,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:29:20",
+    "fight_length": "37.9sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66.1765",
+        "dmg_done": "30028",
+        "dmg_taken": "19385",
+        "dmg_absorbed": "1142",
+        "dps": "792.2537",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945563,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:21:21",
+    "fight_length": "25.8sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66.2941",
+        "dmg_done": "19582",
+        "dmg_taken": "12520",
+        "dmg_absorbed": "257",
+        "dps": "760.3479",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945562,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:16:29",
+    "fight_length": "51.8sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66.1765",
+        "dmg_done": "33595",
+        "dmg_taken": "32671",
+        "dmg_absorbed": "0",
+        "dps": "648.7149",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945561,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:12:50",
+    "fight_length": "21.3sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "16240",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66.2941",
+        "dmg_done": "16566",
+        "dmg_taken": "11009",
+        "dmg_absorbed": "0",
+        "dps": "777.2721",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945560,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/17 20:05:54",
+    "fight_length": "1min 37sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "20991",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "56.125",
+        "dmg_done": "36911",
+        "dmg_taken": "94327",
+        "dmg_absorbed": "4220",
+        "dps": "377.5559",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945559,
     "boss_name": "Majordomo Executus",
     "raid": "Molten Core",
