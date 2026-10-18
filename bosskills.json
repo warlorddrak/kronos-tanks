@@ -1,5 +1,149 @@
 [
   {
+    "id": 945624,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/18 19:42:03",
+    "fight_length": "19.6sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "72219",
+        "realm": "KronosV",
+        "name": "Tarkus",
+        "class": "1",
+        "avg_item_lvl": "65.2353",
+        "dmg_done": "11056",
+        "dmg_taken": "8483",
+        "dmg_absorbed": "0",
+        "dps": "562.6463",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945623,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/18 19:38:15",
+    "fight_length": "42sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "23193",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "59.2353",
+        "dmg_done": "5521",
+        "dmg_taken": "11206",
+        "dmg_absorbed": "1949",
+        "dps": "131.3023",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945622,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/18 19:31:51",
+    "fight_length": "39sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "23193",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "60.5294",
+        "dmg_done": "9833",
+        "dmg_taken": "18605",
+        "dmg_absorbed": "1083",
+        "dps": "252.2770",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945621,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/18 19:26:00",
+    "fight_length": "24sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "23193",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "60.1765",
+        "dmg_done": "5531",
+        "dmg_taken": "8296",
+        "dmg_absorbed": "0",
+        "dps": "230.5448",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945620,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/18 19:19:57",
+    "fight_length": "52.2sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "72219",
+        "realm": "KronosV",
+        "name": "Tarkus",
+        "class": "1",
+        "avg_item_lvl": "65.2353",
+        "dmg_done": "23414",
+        "dmg_taken": "36416",
+        "dmg_absorbed": "0",
+        "dps": "448.5784",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945619,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/18 19:16:14",
+    "fight_length": "28.8sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "23193",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "60.1765",
+        "dmg_done": "5301",
+        "dmg_taken": "11435",
+        "dmg_absorbed": "0",
+        "dps": "184.2032",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945612,
     "boss_name": "Majordomo Executus",
     "raid": "Molten Core",
