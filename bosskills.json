@@ -1,5 +1,293 @@
 [
   {
+    "id": 945706,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:42:56",
+    "fight_length": "4min 6sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "68.2353",
+        "dmg_done": "81809",
+        "dmg_taken": "94599",
+        "dmg_absorbed": "0",
+        "dps": "331.9510",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945705,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:42:46",
+    "fight_length": "2min 53sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "877",
+        "realm": "KronosV",
+        "name": "Conqueror",
+        "class": "1",
+        "avg_item_lvl": "65.4706",
+        "dmg_done": "91007",
+        "dmg_taken": "26081",
+        "dmg_absorbed": "2228",
+        "dps": "524.9687",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945704,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:25:10",
+    "fight_length": "1min 1sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "64.7647",
+        "dmg_done": "30686",
+        "dmg_taken": "42700",
+        "dmg_absorbed": "0",
+        "dps": "498.3030",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945703,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:20:57",
+    "fight_length": "46.7sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "68.1176",
+        "dmg_done": "25298",
+        "dmg_taken": "29193",
+        "dmg_absorbed": "0",
+        "dps": "541.1800",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945702,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:18:29",
+    "fight_length": "43.3sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "68.1176",
+        "dmg_done": "30015",
+        "dmg_taken": "30892",
+        "dmg_absorbed": "0",
+        "dps": "692.9790",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945701,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:16:24",
+    "fight_length": "34.8sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "68.1176",
+        "dmg_done": "15567",
+        "dmg_taken": "9940",
+        "dmg_absorbed": "0",
+        "dps": "447.1734",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945700,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:13:12",
+    "fight_length": "19.8sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "68.1176",
+        "dmg_done": "19510",
+        "dmg_taken": "8417",
+        "dmg_absorbed": "0",
+        "dps": "984.4089",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945699,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:12:03",
+    "fight_length": "30.7sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "68.1176",
+        "dmg_done": "18094",
+        "dmg_taken": "17223",
+        "dmg_absorbed": "0",
+        "dps": "588.8441",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945698,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:09:04",
+    "fight_length": "34.7sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "69.9412",
+        "dmg_done": "30231",
+        "dmg_taken": "51548",
+        "dmg_absorbed": "0",
+        "dps": "870.6584",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945697,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:06:30",
+    "fight_length": "23.9sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "8429",
+        "realm": "KronosV",
+        "name": "Honeybunny",
+        "class": "1",
+        "avg_item_lvl": "63.8235",
+        "dmg_done": "12350",
+        "dmg_taken": "8234",
+        "dmg_absorbed": "0",
+        "dps": "516.4771",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945696,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:02:49",
+    "fight_length": "39.8sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "18281",
+        "realm": "KronosV",
+        "name": "Esailu",
+        "class": "1",
+        "avg_item_lvl": "68.1176",
+        "dmg_done": "24033",
+        "dmg_taken": "27078",
+        "dmg_absorbed": "0",
+        "dps": "603.4955",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945695,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "No Shoes",
+    "realm": "KronosV",
+    "time": "2026/10/19 19:01:15",
+    "fight_length": "25.7sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "8429",
+        "realm": "KronosV",
+        "name": "Honeybunny",
+        "class": "1",
+        "avg_item_lvl": "63.8235",
+        "dmg_done": "12570",
+        "dmg_taken": "11945",
+        "dmg_absorbed": "0",
+        "dps": "489.5813",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945684,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
