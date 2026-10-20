@@ -1,5 +1,29 @@
 [
   {
+    "id": 945719,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/19 22:10:01",
+    "fight_length": "2min 18sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "72219",
+        "realm": "KronosV",
+        "name": "Tarkus",
+        "class": "1",
+        "avg_item_lvl": "64.7059",
+        "dmg_done": "48573",
+        "dmg_taken": "47210",
+        "dmg_absorbed": "1992",
+        "dps": "350.9610",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945706,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
