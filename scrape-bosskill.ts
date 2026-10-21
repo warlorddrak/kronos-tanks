@@ -43,8 +43,53 @@ export interface BosskillListItem {
 }
 
 export const BOSS_KILLS_FILE = "bosskills.json";
+export const BASE_URL = "https://bosskills.twinstar-wow.com";
+export const DEFAULT_REALM = "KronosV";
+export const DEFAULT_REALM_ID = "26";
+export const DEFAULT_PAGES_TO_SCAN = 11; // page 0 to 10 inclusive
+export const IGNORED_RAIDS = new Set(["blackrock spire"]);
 
-export async function fetchHtml(url: string, referrer = "https://vanilla-twinhead.twinstar.cz/"): Promise<string> {
+const CLASS_NAME_TO_ID: Record<string, string> = {
+    warrior: "1",
+    paladin: "2",
+    hunter: "3",
+    rogue: "4",
+    priest: "5",
+    "death knight": "6",
+    deathknight: "6",
+    shaman: "7",
+    mage: "8",
+    warlock: "9",
+    druid: "11",
+};
+
+export function decodeHtmlEntities(str: string): string {
+    if (!str) return "";
+    return str
+        .replace(/&#(\d+);/g, (_, dec) => String.fromCharCode(Number(dec)))
+        .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&apos;/g, "'")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&amp;/g, "&");
+}
+
+function stripTags(html: string): string {
+    return decodeHtmlEntities(html.replace(/<[^>]*>/g, "")).trim();
+}
+
+export function isIgnoredRaid(raid: string | undefined | null): boolean {
+    if (!raid) return false;
+    const cleaned = decodeHtmlEntities(raid)
+        .replace(/\s*\(\d+\)\s*$/, "")
+        .trim()
+        .toLowerCase();
+    return IGNORED_RAIDS.has(cleaned);
+}
+
+export async function fetchHtml(url: string, referrer = `${BASE_URL}/`): Promise<string> {
     const headers: Record<string, string> = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:130.0) Gecko/20100101 Firefox/130.0",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -98,9 +143,37 @@ export async function fetchHtml(url: string, referrer = "https://vanilla-twinhea
     return html;
 }
 
+export function parseDurationToMs(durStr: string): number {
+    if (!durStr) return 0;
+    const trimmed = durStr.trim();
+    const colonParts = trimmed.split(":").map(Number);
+    if (colonParts.length >= 2 && !colonParts.some(isNaN)) {
+        if (colonParts.length === 2) {
+            return (colonParts[0] * 60 + colonParts[1]) * 1000;
+        }
+        if (colonParts.length === 3) {
+            return (colonParts[0] * 3600 + colonParts[1] * 60 + colonParts[2]) * 1000;
+        }
+    }
+    const minMatch = trimmed.match(/(\d+)\s*min/i);
+    const secMatch = trimmed.match(/(\d+(?:\.\d+)?)\s*sec/i);
+    if (minMatch || secMatch) {
+        const mins = minMatch ? Number(minMatch[1]) : 0;
+        const secs = secMatch ? Number(secMatch[1]) : 0;
+        return Math.round((mins * 60 + secs) * 1000);
+    }
+    return 0;
+}
+
 export function formatFightLength(msOrStr: number | string | undefined | null): string | undefined {
     if (msOrStr === undefined || msOrStr === null || msOrStr === "") return undefined;
-    if (typeof msOrStr === "string") return msOrStr.trim();
+    if (typeof msOrStr === "string") {
+        const parsedMs = parseDurationToMs(msOrStr);
+        if (parsedMs > 0) {
+            return formatFightLength(parsedMs);
+        }
+        return msOrStr.trim();
+    }
     const ms = Number(msOrStr);
     if (isNaN(ms) || ms <= 0) return undefined;
     const totalSec = Math.floor(ms / 1000);
@@ -129,70 +202,191 @@ export function normalizeDate(dateStr: string): string {
 }
 
 /**
- * Fetches the latest bosskills catalog list from Twinhead.
+ * Parses a single bosskills list HTML page into BosskillListItem records.
+ * Returns both raw row count (before raid filtering) and filtered items.
  */
-export async function fetchBosskillsList(): Promise<BosskillListItem[]> {
-    const html = await fetchHtml(
-        "https://vanilla-twinhead.twinstar.cz/?latest=bosskills",
-        "https://vanilla-twinhead.twinstar.cz/"
+export function parseBosskillsListPage(
+    html: string,
+    defaultRealm = DEFAULT_REALM
+): { rawRowCount: number; items: BosskillListItem[] } {
+    const tbodyMatch = html.match(/<tbody[^>]*>([\s\S]*?)<\/tbody>/i);
+    if (!tbodyMatch) {
+        if (!html.includes("kills-table") && !html.includes("Latest kills")) {
+            throw new Error(
+                `Could not find bosskills table on page. HTML snippet: ${html.slice(0, 300)}`
+            );
+        }
+        return { rawRowCount: 0, items: [] };
+    }
+
+    const tbody = tbodyMatch[1];
+    const items: BosskillListItem[] = [];
+    let rawRowCount = 0;
+
+    for (const rowMatch of tbody.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)) {
+        const rowHtml = rowMatch[1];
+        const tds = [...rowHtml.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => m[1]);
+        if (tds.length < 7) continue;
+
+        rawRowCount++;
+
+        const bossname = stripTags(tds[0]);
+        const entryMatch = tds[0].match(/\/boss\/(\d+)/i);
+        const entry = entryMatch ? Number(entryMatch[1]) : 0;
+
+        const raid = stripTags(tds[1]).replace(/\s*\(\d+\)\s*$/, "").trim();
+        if (isIgnoredRaid(raid)) {
+            continue;
+        }
+
+        const mode = Number(stripTags(tds[2])) || 0;
+        const guild = stripTags(tds[3]);
+        const length = parseDurationToMs(stripTags(tds[4]));
+        const timeRaw = stripTags(tds[5]);
+        const time = timeRaw.replace(/-/g, "/");
+
+        const detailMatch = tds[6].match(/href="\/([^/]+)\/boss-kills\/(?:(\d+)_)?(\d+)"/i)
+            ?? tds[6].match(/boss-kill=(\d+)/i);
+        if (!detailMatch) continue;
+
+        let realm = defaultRealm;
+        let realmid = DEFAULT_REALM_ID;
+        let id = 0;
+
+        if (detailMatch.length >= 4) {
+            realm = decodeHtmlEntities(detailMatch[1]) || defaultRealm;
+            realmid = detailMatch[2] || DEFAULT_REALM_ID;
+            id = Number(detailMatch[3]);
+        } else {
+            id = Number(detailMatch[1]);
+        }
+
+        if (!id || isNaN(id)) continue;
+
+        items.push({
+            id,
+            entry,
+            bossname,
+            raid,
+            guildrealm: realm,
+            map: raid,
+            realm,
+            realmid,
+            mode,
+            guild,
+            hasDetail: 1,
+            time,
+            length,
+        });
+    }
+
+    return { rawRowCount, items };
+}
+
+/**
+ * Fetches the latest bosskills catalog list from bosskills.twinstar-wow.com.
+ * Scans at least pages 0 to 10 (11 pages) by default and filters out ignored raids (e.g. Blackrock Spire).
+ */
+export async function fetchBosskillsList(
+    options: { startPage?: number; endPage?: number; realm?: string; concurrency?: number } = {}
+): Promise<BosskillListItem[]> {
+    const startPage = options.startPage ?? 0;
+    const endPage = options.endPage ?? (DEFAULT_PAGES_TO_SCAN - 1);
+    const realm = options.realm ?? DEFAULT_REALM;
+    const concurrency = options.concurrency ?? 4;
+
+    const pages: number[] = [];
+    for (let p = startPage; p <= endPage; p++) {
+        pages.push(p);
+    }
+
+    const pageResults = new Array<BosskillListItem[]>(pages.length);
+    let currentIndex = 0;
+
+    async function worker() {
+        while (currentIndex < pages.length) {
+            const idx = currentIndex++;
+            const page = pages[idx];
+            const url = `${BASE_URL}/${realm}/boss-kills?page=${page}`;
+            const referrer = page === startPage
+                ? `${BASE_URL}/${realm}/boss-kills`
+                : `${BASE_URL}/${realm}/boss-kills?page=${page - 1}`;
+
+            const html = await fetchHtml(url, referrer);
+            const { items } = parseBosskillsListPage(html, realm);
+            pageResults[idx] = items;
+        }
+    }
+
+    const workers = Array.from(
+        { length: Math.min(concurrency, pages.length) },
+        () => worker()
     );
+    await Promise.all(workers);
 
-    let start = html.indexOf("new Listview");
-    if (start === -1) {
-        start = html.indexOf("id: 'kills'");
-    }
-    if (start === -1) {
-        start = html.indexOf('id: "kills"');
-    }
-    if (start === -1) {
-        throw new Error(
-            `Could not find bosskills Listview data on latest=bosskills page. HTML snippet: ${html.slice(0, 300)}`
-        );
-    }
-
-    const arrayStart = html.indexOf("[", start);
-    const arrayEnd = html.indexOf("}]", arrayStart);
-    if (arrayStart === -1 || arrayEnd === -1) {
-        throw new Error(`Could not find bosskills data array bounds in page (start at ${start})`);
+    const allItems: BosskillListItem[] = [];
+    const seenIds = new Set<number>();
+    for (const items of pageResults) {
+        if (!items) continue;
+        for (const item of items) {
+            if (!seenIds.has(item.id)) {
+                seenIds.add(item.id);
+                allItems.push(item);
+            }
+        }
     }
 
-    const arrayStr = html.slice(arrayStart, arrayEnd + 2);
-    return new Function("return " + arrayStr)();
+    return allItems;
 }
 
 /**
  * Fetches and extracts surviving primary tanks for a single bosskill encounter.
  */
-export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
+export async function getTanks(
+    bosskillId: number | string,
+    realm = DEFAULT_REALM,
+    realmId = DEFAULT_REALM_ID
+): Promise<Tank[]> {
+    const rawId = String(bosskillId).trim();
+    const slug = rawId.includes("_") ? rawId : `${realmId}_${rawId}`;
     const html = await fetchHtml(
-        `https://vanilla-twinhead.twinstar.cz/?boss-kill=${bosskillId}`,
-        "https://vanilla-twinhead.twinstar.cz/?latest=bosskills"
+        `${BASE_URL}/${realm}/boss-kills/${slug}`,
+        `${BASE_URL}/${realm}/boss-kills?page=0`
     );
 
-    const bossMatch = html.match(/<td>Boss<\/td>\s*<td><a[^>]*\?npc=[^>]*>([^<]+)<\/a><\/td>/i)
-        ?? html.match(/<a[^>]*\?npc=\d+[^>]*>([^<]+)<\/a>/i);
-    const bossName = bossMatch ? bossMatch[1].trim() : "Unknown";
-
-    const line = html.split("\n").find((l) => l.includes("var bosskillData"));
-    if (!line) {
-        throw new Error(`Could not find 'var bosskillData' for bosskill ${bosskillId}`);
+    // Check raid and filter out ignored raids (e.g. Blackrock Spire)
+    const raidMatch = html.match(/<dt[^>]*>\s*Raid\s*<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/i);
+    if (raidMatch) {
+        const raidName = stripTags(raidMatch[1]);
+        if (isIgnoredRaid(raidName)) {
+            return [];
+        }
     }
 
-    const jsonStr = line.slice(line.indexOf("["), line.lastIndexOf("]") + 1);
-    const bosskillData: any[] = JSON.parse(jsonStr);
+    const bossMatch = html.match(/<dt[^>]*>\s*Boss\s*<\/dt>\s*<dd[^>]*>\s*<a[^>]*>([^<]+)<\/a>/i)
+        ?? html.match(/<title>([^<]+?)\s+kill\s+-/i)
+        ?? html.match(/<td>Boss<\/td>\s*<td><a[^>]*\?npc=[^>]*>([^<]+)<\/a><\/td>/i);
+    const bossName = bossMatch ? decodeHtmlEntities(bossMatch[1]).trim() : "Unknown";
 
-    // Extract deaths per player from chart_data
+    const realmMatch = html.match(/<dt[^>]*>\s*Realm\s*<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/i);
+    const defaultRealm = realmMatch ? stripTags(realmMatch[1]) || realm : realm;
+
+    // Extract deaths per player from <bk-chart data-config="..."> (or legacy var chart_data)
     const deathCounts = new Map<string, number>();
-    const chartLine = html.split("\n").find((l) => l.includes("var chart_data"));
-    if (chartLine) {
+    const chartAttrMatch = html.match(/<bk-chart[^>]*data-config="([^"]+)"/i);
+    if (chartAttrMatch) {
         try {
-            const cJson = chartLine.slice(chartLine.indexOf("["), chartLine.lastIndexOf("]") + 1);
-            const chartData = JSON.parse(cJson);
-            // Series index 4 is the Deaths series on Twinhead fight timeline
-            const deathsSeries = chartData[4] || [];
-            for (const entry of deathsSeries) {
-                if (entry && entry[2]) {
-                    const deadNames = String(entry[2])
+            const decodedJson = decodeHtmlEntities(chartAttrMatch[1]);
+            const chartConfig = JSON.parse(decodedJson);
+            const series = Array.isArray(chartConfig?.series) ? chartConfig.series : [];
+            const deathsSeries = series.find((s: any) => s?.name === "Deaths") ?? series[4];
+            const deathsData = Array.isArray(deathsSeries?.data) ? deathsSeries.data : [];
+            for (const entry of deathsData) {
+                const rawName = typeof entry === "object" && entry !== null
+                    ? (entry.name ?? entry[2])
+                    : undefined;
+                if (rawName) {
+                    const deadNames = String(rawName)
                         .split(",")
                         .map((s) => s.trim().toLowerCase())
                         .filter(Boolean);
@@ -204,9 +398,115 @@ export async function getTanks(bosskillId: number | string): Promise<Tank[]> {
         } catch (_) {}
     }
 
+    // Parse participant stats from #stats-table
+    const statsSectionMatch = html.match(/<div id="stats-table">([\s\S]*?)<\/table>/i);
+    if (!statsSectionMatch) {
+        throw new Error(`Could not find '#stats-table' for bosskill ${bosskillId}`);
+    }
+
+    const tableHtml = statsSectionMatch[1];
+    const tbodyMatch = tableHtml.match(/<tbody[^>]*>([\s\S]*?)<\/tbody>/i);
+    if (!tbodyMatch) {
+        throw new Error(`Could not find stats tbody for bosskill ${bosskillId}`);
+    }
+
+    // Determine column indices from thead (with standard fallback indices)
+    let colName = 0;
+    let colClass = 2;
+    let colDps = 3;
+    let colDmgDone = 4;
+    let colDmgTaken = 5;
+    let colDmgAbsorb = 6;
+    let colIlvl = 13;
+
+    const theadMatch = tableHtml.match(/<thead[^>]*>([\s\S]*?)<\/thead>/i);
+    if (theadMatch) {
+        const ths = [...theadMatch[1].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/gi)].map((m) =>
+            stripTags(m[1]).toLowerCase()
+        );
+        ths.forEach((h, idx) => {
+            if (h.startsWith("name")) colName = idx;
+            else if (h.startsWith("class")) colClass = idx;
+            else if (h.startsWith("dps")) colDps = idx;
+            else if (h.startsWith("dmg done") || h.startsWith("damage done")) colDmgDone = idx;
+            else if (h.startsWith("dmg taken") || h.startsWith("damage taken")) colDmgTaken = idx;
+            else if (h.startsWith("dmg absorb") || h.startsWith("damage absorb")) colDmgAbsorb = idx;
+            else if (h.startsWith("ilvl") || h.startsWith("item level")) colIlvl = idx;
+        });
+    }
+
+    const bosskillData: Array<{
+        guid: string;
+        realm: string;
+        name: string;
+        class: string;
+        avg_item_lvl: string;
+        dmg_done: string;
+        dmg_taken: string;
+        dmg_absorbed: string;
+        dps: string;
+    }> = [];
+
+    const cleanNumberStr = (val: string | undefined): string => {
+        if (!val) return "0";
+        const cleaned = stripTags(val).replace(/,/g, "").trim();
+        return cleaned || "0";
+    };
+
+    for (const rowMatch of tbodyMatch[1].matchAll(/<tr([^>]*)>([\s\S]*?)<\/tr>/gi)) {
+        const trAttrs = rowMatch[1] ?? "";
+        const rowHtml = rowMatch[2];
+        const tds = [...rowHtml.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => m[1]);
+        if (tds.length <= Math.max(colName, colClass, colDps, colDmgDone, colDmgTaken, colDmgAbsorb)) {
+            continue;
+        }
+
+        const nameCell = tds[colName] ?? "";
+        const name = stripTags(nameCell);
+        if (!name) continue;
+
+        const charRealmMatch = nameCell.match(/href="\/([^/]+)\/character\//i);
+        const playerRealm = charRealmMatch ? decodeHtmlEntities(charRealmMatch[1]) : defaultRealm;
+
+        const classCell = tds[colClass] ?? "";
+        const classIdMatch = classCell.match(/type=class(?:&amp;|&)id=(\d+)/i);
+        const classLabelMatch = classCell.match(/data-label="([^"]+)"/i);
+        let playerClass = classIdMatch ? classIdMatch[1] : "";
+        if (!playerClass && classLabelMatch) {
+            const label = decodeHtmlEntities(classLabelMatch[1]).trim().toLowerCase();
+            playerClass = CLASS_NAME_TO_ID[label] ?? classLabelMatch[1];
+        }
+
+        const dps = cleanNumberStr(tds[colDps]);
+        const dmg_done = cleanNumberStr(tds[colDmgDone]);
+        const dmg_taken = cleanNumberStr(tds[colDmgTaken]);
+        const dmg_absorbed = cleanNumberStr(tds[colDmgAbsorb]);
+        const avg_item_lvl = cleanNumberStr(tds[colIlvl] ?? tds[tds.length - 1]);
+
+        // Rows with text-red indicate player death in the encounter
+        if (/text-red/i.test(trAttrs)) {
+            const nameKey = name.toLowerCase();
+            if (!deathCounts.has(nameKey)) {
+                deathCounts.set(nameKey, 1);
+            }
+        }
+
+        bosskillData.push({
+            guid: "",
+            realm: playerRealm,
+            name,
+            class: playerClass,
+            avg_item_lvl,
+            dmg_done,
+            dmg_taken,
+            dmg_absorbed,
+            dps,
+        });
+    }
+
     // Rank all players by total mitigated damage (dmg_taken + dmg_absorbed) to identify the tank
     const allCandidates = bosskillData
-        .map((player: any) => {
+        .map((player) => {
             const taken = Number(player.dmg_taken) || 0;
             const absorbed = Number(player.dmg_absorbed) || 0;
             const deaths = deathCounts.get(String(player.name).trim().toLowerCase()) ?? 0;
@@ -253,7 +553,8 @@ export async function scrapeBosskillItem(kill: BosskillListItem): Promise<Stored
     let errorMsg: string | undefined;
 
     try {
-        tanks = await getTanks(kill.id);
+        const slug = kill.realmid ? `${kill.realmid}_${kill.id}` : kill.id;
+        tanks = await getTanks(slug, kill.realm || DEFAULT_REALM, kill.realmid || DEFAULT_REALM_ID);
     } catch (err: any) {
         errorMsg = err?.message ?? String(err);
     }
@@ -320,7 +621,9 @@ export async function getBosskillsForDay(
 ): Promise<BosskillListItem[]> {
     const list = allKills ?? (await fetchBosskillsList());
     const normalized = normalizeDate(dateStr);
-    return list.filter((k) => k.time && k.time.startsWith(normalized));
+    return list.filter(
+        (k) => !isIgnoredRaid(k.raid) && k.time && normalizeDate(k.time.split(" ")[0]) === normalized
+    );
 }
 
 /**
@@ -343,9 +646,8 @@ if (import.meta.main) {
 
     if (isDate) {
         const targetDate = normalizeDate(arg);
-        console.error(`Fetching latest bosskills catalog from Twinhead for ${targetDate}...`);
-        const allKills = await fetchBosskillsList();
-        const dayKills = allKills.filter((k) => k.time && k.time.startsWith(targetDate));
+        console.error(`Fetching latest bosskills catalog for ${targetDate}...`);
+        const dayKills = await getBosskillsForDay(targetDate);
         console.error(`Found ${dayKills.length} bosskill(s) for ${targetDate}.`);
 
         if (dayKills.length === 0) {
@@ -362,7 +664,7 @@ if (import.meta.main) {
         });
         console.log(JSON.stringify(results, null, 2));
     } else {
-        const bosskillId = arg ?? 944440;
+        const bosskillId = arg ?? "26_945819";
         const tanks = await getTanks(bosskillId);
         console.log(tanks);
     }

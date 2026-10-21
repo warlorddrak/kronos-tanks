@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from "fs";
-import { BOSS_KILLS_FILE, type StoredBosskill } from "./scrape-bosskill.ts";
+import { BOSS_KILLS_FILE, isIgnoredRaid, type StoredBosskill } from "./scrape-bosskill.ts";
 
 export interface Top50Placement {
     boss_name: string;
@@ -252,8 +252,10 @@ export function generateHtml(
         ? options.faqHtml
         : loadFaqHtml(options.faqFile ?? "faq.md");
 
+    const validBosskills = bosskills.filter((k) => !isIgnoredRaid(k.raid));
+
     // All available servers in the dataset
-    const allServers = Array.from(new Set(bosskills.map((k) => k.realm))).filter(Boolean).sort();
+    const allServers = Array.from(new Set(validBosskills.map((k) => k.realm))).filter(Boolean).sort();
 
     // Server filtering
     const serverFilter = options.server && options.server.toLowerCase() !== "all"
@@ -261,8 +263,8 @@ export function generateHtml(
         : undefined;
 
     const filteredKills = serverFilter
-        ? bosskills.filter((k) => k.realm.toLowerCase() === serverFilter.toLowerCase())
-        : bosskills;
+        ? validBosskills.filter((k) => k.realm.toLowerCase() === serverFilter.toLowerCase())
+        : validBosskills;
 
     // 1. Process each bosskill: sort tanks by DPS descending (takes the top tanks, up to 10)
     const processedKills = filteredKills.map((k) => {

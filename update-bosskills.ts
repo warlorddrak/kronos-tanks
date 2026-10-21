@@ -3,6 +3,7 @@ import {
     BOSS_KILLS_FILE,
     fetchBosskillsList,
     formatFightLength,
+    isIgnoredRaid,
     scrapeBosskillsBatch,
     type StoredBosskill,
     type Tank,
@@ -21,10 +22,13 @@ export async function updateBosskills(options: {
     const concurrency = options.concurrency ?? 4;
 
     let existingKills: StoredBosskill[] = [];
+    let removedIgnoredCount = 0;
     if (existsSync(filePath)) {
         try {
             const raw = readFileSync(filePath, "utf-8");
-            existingKills = JSON.parse(raw);
+            const parsed: StoredBosskill[] = JSON.parse(raw);
+            existingKills = parsed.filter((k) => !isIgnoredRaid(k.raid));
+            removedIgnoredCount = parsed.length - existingKills.length;
         } catch (e) {
             console.error(`Warning: Failed to parse ${filePath}, starting fresh.`, e);
         }
@@ -37,16 +41,16 @@ export async function updateBosskills(options: {
 
     console.log(`Loaded ${existingKills.length} existing bosskills from ${filePath} (max ID: ${maxExistingId || "none"})`);
 
-    console.log("Fetching latest bosskills catalog from Twinhead...");
+    console.log("Fetching latest bosskills catalog (pages 0-10)...");
     let latestList;
     try {
-        latestList = await fetchBosskillsList();
+        latestList = (await fetchBosskillsList()).filter((k) => !isIgnoredRaid(k.raid));
     } catch (err: any) {
         console.error(`Warning: Could not fetch bosskills catalog: ${err?.message ?? err}`);
         console.log("Skipping update for this cycle; existing records remain untouched.");
         return { added: 0, total: existingKills.length };
     }
-    console.log("Fetched first page of bosskills catalog.");
+    console.log(`Fetched ${latestList.length} bosskills from catalog (pages 0-10).`);
 
     const catalogMap = new Map(latestList.map((k) => [k.id, k]));
     let backfilledCount = 0;
@@ -69,7 +73,7 @@ export async function updateBosskills(options: {
         : latestList.slice(0, maxInitial);
 
     if (newKillsToScrape.length === 0) {
-        if (backfilledCount > 0) {
+        if (backfilledCount > 0 || removedIgnoredCount > 0) {
             writeFileSync(filePath, JSON.stringify(existingKills, null, 2) + "\n", "utf-8");
             console.log(`Saved ${existingKills.length} bosskills with updated records to ${filePath}.`);
             render(filePath, "index.html");
