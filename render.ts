@@ -50,6 +50,13 @@ function formatIlvl(ilvl: string | number): string {
     return isNaN(n) ? "0.0" : n.toFixed(1);
 }
 
+export function getBosskillUrl(id: number | string, realm = "KronosV"): string {
+    const cleanRealm = (realm || "KronosV").trim();
+    const realmId = cleanRealm.toLowerCase() === "kronos" ? "4" : "26";
+    const slug = String(id).includes("_") ? String(id) : `${realmId}_${id}`;
+    return `https://bosskills.twinstar-wow.com/${encodeURIComponent(cleanRealm)}/boss-kills/${slug}`;
+}
+
 export const WOW_CLASS_COLORS: Record<string, string> = {
     "1": "#C79C6E", // Warrior
     "2": "#F58CBA", // Paladin
@@ -1081,7 +1088,7 @@ export function generateHtml(
                     <span class="realm-tag">${escapeHtml(kill.realm)}</span>
                     ${kill.fight_length ? `<span class="duration-tag" title="Fight Length">⏱️ ${escapeHtml(kill.fight_length)}</span>` : ""}
                     <span>${escapeHtml(kill.time)}</span>
-                    <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=${kill.id}" target="_blank">Kill #${kill.id} ↗</a>
+                    <a href="${getBosskillUrl(kill.id, kill.realm)}" target="_blank">Kill #${kill.id} ↗</a>
                 </div>
             </div>
 
@@ -1170,7 +1177,7 @@ export function generateHtml(
                             <td>${escapeHtml(tank.guild || "No Guild")}</td>
                             <td style="color: var(--text-muted); font-size: 0.8rem;">${escapeHtml(tank.time ? tank.time.split(' ')[0] : "")}</td>
                             <td>
-                                <a href="https://vanilla-twinhead.twinstar.cz/?boss-kill=${tank.bosskill_id}" target="_blank">
+                                <a href="${getBosskillUrl(tank.bosskill_id, tank.realm)}" target="_blank">
                                     #${tank.bosskill_id} ↗
                                 </a>
                             </td>
