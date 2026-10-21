@@ -1,5 +1,39 @@
 [
   {
+    "id": 945819,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/21 18:11",
+    "fight_length": "3min 18sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "59476",
+        "dmg_taken": "56420",
+        "dmg_absorbed": "3221",
+        "dps": "299",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945818,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/10/21 17:20",
+    "fight_length": "7min 32sec",
+    "tanks": []
+  },
+  {
     "id": 945767,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
