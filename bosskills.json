@@ -1,5 +1,101 @@
 [
   {
+    "id": 945874,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/10/23 00:54",
+    "fight_length": "48sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "28445",
+        "dmg_taken": "37852",
+        "dmg_absorbed": "1006",
+        "dps": "581",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945873,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/10/23 00:49",
+    "fight_length": "32sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "15585",
+        "dmg_taken": "11032",
+        "dmg_absorbed": "0",
+        "dps": "475",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945872,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/10/23 00:44",
+    "fight_length": "48sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "30965",
+        "dmg_taken": "27181",
+        "dmg_absorbed": "0",
+        "dps": "637",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945871,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/10/23 00:40",
+    "fight_length": "36sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "22428",
+        "dmg_taken": "21908",
+        "dmg_absorbed": "0",
+        "dps": "615",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945862,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
