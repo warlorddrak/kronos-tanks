@@ -1,5 +1,317 @@
 [
   {
+    "id": 945925,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/23 19:38",
+    "fight_length": "3min 35sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Caesar",
+        "class": "1",
+        "avg_item_lvl": "71",
+        "dmg_done": "70180",
+        "dmg_taken": "44477",
+        "dmg_absorbed": "1729",
+        "dps": "326",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945919,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 19:14",
+    "fight_length": "3min 20sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vibe",
+        "class": "1",
+        "avg_item_lvl": "62",
+        "dmg_done": "64351",
+        "dmg_taken": "65755",
+        "dmg_absorbed": "1129",
+        "dps": "320",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945915,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:52",
+    "fight_length": "1min 33sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opierogi",
+        "class": "11",
+        "avg_item_lvl": "59",
+        "dmg_done": "30845",
+        "dmg_taken": "72357",
+        "dmg_absorbed": "3101",
+        "dps": "328",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945914,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:44",
+    "fight_length": "1min 22sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vibe",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "33626",
+        "dmg_taken": "37836",
+        "dmg_absorbed": "353",
+        "dps": "405",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945912,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:39",
+    "fight_length": "1min 0sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opierogi",
+        "class": "11",
+        "avg_item_lvl": "59",
+        "dmg_done": "15266",
+        "dmg_taken": "47098",
+        "dmg_absorbed": "0",
+        "dps": "251",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945911,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:36",
+    "fight_length": "47sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vindication",
+        "class": "1",
+        "avg_item_lvl": "60",
+        "dmg_done": "9753",
+        "dmg_taken": "20809",
+        "dmg_absorbed": "0",
+        "dps": "206",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945909,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:29",
+    "fight_length": "21sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vindication",
+        "class": "1",
+        "avg_item_lvl": "59",
+        "dmg_done": "14106",
+        "dmg_taken": "12451",
+        "dmg_absorbed": "0",
+        "dps": "654",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945908,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:28",
+    "fight_length": "6min 15sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Crowfeast",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "53344",
+        "dmg_taken": "51356",
+        "dmg_absorbed": "1001",
+        "dps": "142",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945897,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:26",
+    "fight_length": "40sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vindication",
+        "class": "1",
+        "avg_item_lvl": "59",
+        "dmg_done": "21080",
+        "dmg_taken": "22698",
+        "dmg_absorbed": "2308",
+        "dps": "524",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945895,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:20",
+    "fight_length": "45sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vindication",
+        "class": "1",
+        "avg_item_lvl": "60",
+        "dmg_done": "16790",
+        "dmg_taken": "40413",
+        "dmg_absorbed": "1026",
+        "dps": "366",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945894,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:15",
+    "fight_length": "29sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vindication",
+        "class": "1",
+        "avg_item_lvl": "59",
+        "dmg_done": "12722",
+        "dmg_taken": "11324",
+        "dmg_absorbed": "0",
+        "dps": "426",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945893,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:10",
+    "fight_length": "57sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vibe",
+        "class": "1",
+        "avg_item_lvl": "60",
+        "dmg_done": "28595",
+        "dmg_taken": "35735",
+        "dmg_absorbed": "0",
+        "dps": "496",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945892,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/10/23 18:07",
+    "fight_length": "34sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opierogi",
+        "class": "11",
+        "avg_item_lvl": "56",
+        "dmg_done": "13990",
+        "dmg_taken": "14459",
+        "dmg_absorbed": "0",
+        "dps": "402",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945881,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
