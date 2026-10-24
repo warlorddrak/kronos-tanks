@@ -1,5 +1,77 @@
 [
   {
+    "id": 945985,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/24 19:14",
+    "fight_length": "55sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "24484",
+        "dmg_taken": "33495",
+        "dmg_absorbed": "0",
+        "dps": "440",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945984,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/24 19:11",
+    "fight_length": "35sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "class": "1",
+        "avg_item_lvl": "63",
+        "dmg_done": "12598",
+        "dmg_taken": "16914",
+        "dmg_absorbed": "0",
+        "dps": "354",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 945983,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/24 19:05",
+    "fight_length": "1min 22sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "63",
+        "dmg_done": "26465",
+        "dmg_taken": "40659",
+        "dmg_absorbed": "2145",
+        "dps": "319",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 945982,
     "boss_name": "Majordomo Executus",
     "raid": "Molten Core",
