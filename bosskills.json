@@ -1,5 +1,29 @@
 [
   {
+    "id": 946012,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/10/24 23:38",
+    "fight_length": "5min 15sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Grazel",
+        "class": "1",
+        "avg_item_lvl": "60",
+        "dmg_done": "37525",
+        "dmg_taken": "140331",
+        "dmg_absorbed": "6696",
+        "dps": "118",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946011,
     "boss_name": "Majordomo Executus",
     "raid": "Molten Core",
