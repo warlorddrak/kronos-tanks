@@ -1,5 +1,101 @@
 [
   {
+    "id": 946042,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/25 18:42",
+    "fight_length": "46sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "61",
+        "dmg_done": "11579",
+        "dmg_taken": "43352",
+        "dmg_absorbed": "1685",
+        "dps": "251",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946037,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/25 18:33",
+    "fight_length": "32sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Runekeeper",
+        "class": "2",
+        "avg_item_lvl": "61",
+        "dmg_done": "5324",
+        "dmg_taken": "9248",
+        "dmg_absorbed": "0",
+        "dps": "163",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946035,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/25 18:25",
+    "fight_length": "1min 1sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Budge",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "29668",
+        "dmg_taken": "35659",
+        "dmg_absorbed": "3076",
+        "dps": "481",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946029,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Rage Quit",
+    "realm": "KronosV",
+    "time": "2026/10/25 18:20",
+    "fight_length": "38sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Trothgarr",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "44931",
+        "dmg_taken": "12312",
+        "dmg_absorbed": "0",
+        "dps": "1154",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946012,
     "boss_name": "Ragnaros",
     "raid": "Molten Core",
