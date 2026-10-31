@@ -1,5 +1,293 @@
 [
   {
+    "id": 946361,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 21:14",
+    "fight_length": "2min 32sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "41248",
+        "dmg_taken": "35828",
+        "dmg_absorbed": "2717",
+        "dps": "269",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946359,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:54",
+    "fight_length": "1min 46sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "24022",
+        "dmg_taken": "48595",
+        "dmg_absorbed": "3548",
+        "dps": "226",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946358,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:48",
+    "fight_length": "1min 14sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Quietden",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "21078",
+        "dmg_taken": "25212",
+        "dmg_absorbed": "1133",
+        "dps": "283",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946357,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:42",
+    "fight_length": "1min 4sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "28956",
+        "dmg_taken": "42846",
+        "dmg_absorbed": "1133",
+        "dps": "450",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946356,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:37",
+    "fight_length": "54sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Quietden",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "18504",
+        "dmg_taken": "27846",
+        "dmg_absorbed": "0",
+        "dps": "341",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946355,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:30",
+    "fight_length": "38sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "10687",
+        "dmg_taken": "9981",
+        "dmg_absorbed": "2447",
+        "dps": "278",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946354,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:29",
+    "fight_length": "47sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "20541",
+        "dmg_taken": "17659",
+        "dmg_absorbed": "2715",
+        "dps": "435",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946352,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:24",
+    "fight_length": "1min 0sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Quietden",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "30289",
+        "dmg_taken": "52366",
+        "dmg_absorbed": "1139",
+        "dps": "497",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946351,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:19",
+    "fight_length": "31sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vindication",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "28572",
+        "dmg_taken": "8851",
+        "dmg_absorbed": "1133",
+        "dps": "917",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946350,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:16",
+    "fight_length": "1min 46sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "43475",
+        "dmg_taken": "32427",
+        "dmg_absorbed": "1142",
+        "dps": "407",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946349,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:14",
+    "fight_length": "55sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Agaanii",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "24749",
+        "dmg_taken": "34066",
+        "dmg_absorbed": "0",
+        "dps": "443",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946348,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Final Fresh",
+    "realm": "KronosV",
+    "time": "2026/10/31 20:10",
+    "fight_length": "38sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Vindication",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "38206",
+        "dmg_taken": "11658",
+        "dmg_absorbed": "1135",
+        "dps": "1004",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946347,
     "boss_name": "Ragnaros",
     "raid": "Molten Core",
