@@ -1,5 +1,173 @@
 [
   {
+    "id": 946347,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/31 19:58",
+    "fight_length": "1min 26sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "63",
+        "dmg_done": "42011",
+        "dmg_taken": "51662",
+        "dmg_absorbed": "2348",
+        "dps": "487",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946346,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/31 19:48",
+    "fight_length": "1min 11sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Toncho",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "12186",
+        "dmg_taken": "26336",
+        "dmg_absorbed": "0",
+        "dps": "171",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946345,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/31 19:41",
+    "fight_length": "47sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "36968",
+        "dmg_taken": "31380",
+        "dmg_absorbed": "0",
+        "dps": "779",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946344,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/31 19:35",
+    "fight_length": "1min 6sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "67",
+        "dmg_done": "32004",
+        "dmg_taken": "50725",
+        "dmg_absorbed": "0",
+        "dps": "480",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946343,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/31 19:31",
+    "fight_length": "44sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "22411",
+        "dmg_taken": "19099",
+        "dmg_absorbed": "0",
+        "dps": "500",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946342,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/31 19:24",
+    "fight_length": "18sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "12214",
+        "dmg_taken": "7734",
+        "dmg_absorbed": "0",
+        "dps": "649",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946341,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/10/31 19:21",
+    "fight_length": "41sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "17573",
+        "dmg_taken": "24621",
+        "dmg_absorbed": "2284",
+        "dps": "418",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946340,
     "boss_name": "Gehennas",
     "raid": "Molten Core",
