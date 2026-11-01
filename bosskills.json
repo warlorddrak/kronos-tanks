@@ -1,5 +1,433 @@
 [
   {
+    "id": 946459,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/11/01 21:44",
+    "fight_length": "4min 30sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "69175",
+        "dmg_taken": "65707",
+        "dmg_absorbed": "3408",
+        "dps": "255",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946458,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/11/01 21:19",
+    "fight_length": "3min 28sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Snima",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "33432",
+        "dmg_taken": "51003",
+        "dmg_absorbed": "2448",
+        "dps": "160",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946457,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/11/01 21:13",
+    "fight_length": "2min 12sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "58",
+        "dmg_done": "32916",
+        "dmg_taken": "86774",
+        "dmg_absorbed": "3418",
+        "dps": "247",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946456,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:52",
+    "fight_length": "2min 31sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moomooman",
+        "class": "11",
+        "avg_item_lvl": "57",
+        "dmg_done": "8680",
+        "dmg_taken": "31986",
+        "dmg_absorbed": "0",
+        "dps": "57",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946455,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:40",
+    "fight_length": "1min 56sec",
+    "tanks": []
+  },
+  {
+    "id": 946454,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:39",
+    "fight_length": "2min 15sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Valhon",
+        "class": "1",
+        "avg_item_lvl": "60",
+        "dmg_done": "50503",
+        "dmg_taken": "112039",
+        "dmg_absorbed": "6467",
+        "dps": "373",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946453,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:32",
+    "fight_length": "2min 18sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Mack",
+        "class": "11",
+        "avg_item_lvl": "57",
+        "dmg_done": "36294",
+        "dmg_taken": "43974",
+        "dmg_absorbed": "0",
+        "dps": "262",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946452,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:31",
+    "fight_length": "2min 55sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Speedbump",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "37258",
+        "dmg_taken": "61325",
+        "dmg_absorbed": "1811",
+        "dps": "211",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946451,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:31",
+    "fight_length": "1min 23sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moomooman",
+        "class": "11",
+        "avg_item_lvl": "57",
+        "dmg_done": "10584",
+        "dmg_taken": "52472",
+        "dmg_absorbed": "2278",
+        "dps": "126",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946449,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:26",
+    "fight_length": "1min 59sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Valhon",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "47684",
+        "dmg_taken": "33665",
+        "dmg_absorbed": "180",
+        "dps": "398",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946447,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:20",
+    "fight_length": "52sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "20010",
+        "dmg_taken": "24506",
+        "dmg_absorbed": "4238",
+        "dps": "381",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946443,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:19",
+    "fight_length": "1min 30sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Snima",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "24673",
+        "dmg_taken": "53742",
+        "dmg_absorbed": "1139",
+        "dps": "272",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946432,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:14",
+    "fight_length": "1min 30sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Mack",
+        "class": "11",
+        "avg_item_lvl": "56",
+        "dmg_done": "28776",
+        "dmg_taken": "96875",
+        "dmg_absorbed": "2432",
+        "dps": "316",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946428,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:12",
+    "fight_length": "1min 22sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Snima",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "11967",
+        "dmg_taken": "34266",
+        "dmg_absorbed": "0",
+        "dps": "144",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946427,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:06",
+    "fight_length": "1min 32sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Crowfeast",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "10733",
+        "dmg_taken": "50548",
+        "dmg_absorbed": "0",
+        "dps": "116",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946426,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:05",
+    "fight_length": "1min 25sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Mulkfist",
+        "class": "1",
+        "avg_item_lvl": "63",
+        "dmg_done": "38379",
+        "dmg_taken": "29494",
+        "dmg_absorbed": "0",
+        "dps": "446",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946425,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "The Carebear Union V",
+    "realm": "KronosV",
+    "time": "2026/11/01 20:00",
+    "fight_length": "1min 34sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Speedbump",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "32852",
+        "dmg_taken": "85721",
+        "dmg_absorbed": "0",
+        "dps": "349",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946424,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/11/01 19:59",
+    "fight_length": "1min 15sec",
+    "tanks": []
+  },
+  {
+    "id": 946423,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "House Amber",
+    "realm": "KronosV",
+    "time": "2026/11/01 19:59",
+    "fight_length": "33sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Valhon",
+        "class": "1",
+        "avg_item_lvl": "61",
+        "dmg_done": "16408",
+        "dmg_taken": "23394",
+        "dmg_absorbed": "2662",
+        "dps": "491",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946422,
     "boss_name": "Sulfuron Harbinger",
     "raid": "Molten Core",
