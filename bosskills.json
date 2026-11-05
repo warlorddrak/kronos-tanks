@@ -1,5 +1,29 @@
 [
   {
+    "id": 946611,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "The Agency",
+    "realm": "KronosV",
+    "time": "2026/11/04 20:26",
+    "fight_length": "4min 39sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Chubs",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "75471",
+        "dmg_taken": "95029",
+        "dmg_absorbed": "1142",
+        "dps": "270",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946606,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
