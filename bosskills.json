@@ -1,5 +1,29 @@
 [
   {
+    "id": 946643,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/06 01:45",
+    "fight_length": "40sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "22580",
+        "dmg_taken": "26013",
+        "dmg_absorbed": "0",
+        "dps": "559",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946635,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
