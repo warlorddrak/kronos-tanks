@@ -1,5 +1,29 @@
 [
   {
+    "id": 946806,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/11/07 20:05",
+    "fight_length": "1min 18sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "63",
+        "dmg_done": "43189",
+        "dmg_taken": "44839",
+        "dmg_absorbed": "2023",
+        "dps": "547",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946804,
     "boss_name": "Majordomo Executus",
     "raid": "Molten Core",
