@@ -1,5 +1,53 @@
 [
   {
+    "id": 946804,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/11/07 19:58",
+    "fight_length": "1min 11sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Toncho",
+        "class": "1",
+        "avg_item_lvl": "63",
+        "dmg_done": "23591",
+        "dmg_taken": "42053",
+        "dmg_absorbed": "1498",
+        "dps": "328",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946803,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/11/07 19:51",
+    "fight_length": "42sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Toncho",
+        "class": "1",
+        "avg_item_lvl": "63",
+        "dmg_done": "17386",
+        "dmg_taken": "30269",
+        "dmg_absorbed": "616",
+        "dps": "410",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946802,
     "boss_name": "Golemagg the Incinerator",
     "raid": "Molten Core",
