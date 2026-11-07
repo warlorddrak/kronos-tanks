@@ -1,5 +1,269 @@
 [
   {
+    "id": 946788,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/11/07 19:12",
+    "fight_length": "20sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "67",
+        "dmg_done": "16987",
+        "dmg_taken": "14098",
+        "dmg_absorbed": "0",
+        "dps": "823",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946782,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 18:18",
+    "fight_length": "2min 1sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "56",
+        "dmg_done": "30015",
+        "dmg_taken": "102620",
+        "dmg_absorbed": "2884",
+        "dps": "246",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946779,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 18:06",
+    "fight_length": "2min 58sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Adzemawg",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "19758",
+        "dmg_taken": "45661",
+        "dmg_absorbed": "0",
+        "dps": "110",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946777,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 17:59",
+    "fight_length": "1min 25sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "59",
+        "dmg_done": "29375",
+        "dmg_taken": "47178",
+        "dmg_absorbed": "0",
+        "dps": "342",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946775,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 17:53",
+    "fight_length": "1min 10sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Adzemawg",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "14054",
+        "dmg_taken": "41301",
+        "dmg_absorbed": "0",
+        "dps": "199",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946773,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 17:43",
+    "fight_length": "28sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "58",
+        "dmg_done": "11822",
+        "dmg_taken": "14331",
+        "dmg_absorbed": "2501",
+        "dps": "411",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946771,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 17:38",
+    "fight_length": "1min 2sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "58",
+        "dmg_done": "18801",
+        "dmg_taken": "30025",
+        "dmg_absorbed": "2972",
+        "dps": "301",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946770,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 17:27",
+    "fight_length": "1min 9sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "58",
+        "dmg_done": "23689",
+        "dmg_taken": "34788",
+        "dmg_absorbed": "0",
+        "dps": "340",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946768,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 17:17",
+    "fight_length": "48sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Adzemawg",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "14592",
+        "dmg_taken": "11774",
+        "dmg_absorbed": "0",
+        "dps": "302",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946762,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 17:11",
+    "fight_length": "1min 24sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Furunculus",
+        "class": "11",
+        "avg_item_lvl": "57",
+        "dmg_done": "27081",
+        "dmg_taken": "44169",
+        "dmg_absorbed": "0",
+        "dps": "319",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 946761,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/07 17:07",
+    "fight_length": "49sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Adzemawg",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "10105",
+        "dmg_taken": "10899",
+        "dmg_absorbed": "0",
+        "dps": "204",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 946704,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
