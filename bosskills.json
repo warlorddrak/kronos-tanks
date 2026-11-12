@@ -1,5 +1,269 @@
 [
   {
+    "id": 947178,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 02:58",
+    "fight_length": "2min 4sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "31747",
+        "dmg_taken": "72464",
+        "dmg_absorbed": "5915",
+        "dps": "255",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947177,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 02:51",
+    "fight_length": "1min 21sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "25672",
+        "dmg_taken": "44385",
+        "dmg_absorbed": "0",
+        "dps": "316",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947176,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 02:47",
+    "fight_length": "1min 14sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "32464",
+        "dmg_taken": "56516",
+        "dmg_absorbed": "0",
+        "dps": "435",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947175,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 02:44",
+    "fight_length": "1min 2sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "20257",
+        "dmg_taken": "48009",
+        "dmg_absorbed": "0",
+        "dps": "325",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947173,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 02:36",
+    "fight_length": "21sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "11524",
+        "dmg_taken": "11914",
+        "dmg_absorbed": "896",
+        "dps": "525",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947172,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 02:32",
+    "fight_length": "57sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "19770",
+        "dmg_taken": "24559",
+        "dmg_absorbed": "2701",
+        "dps": "342",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947171,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 02:01",
+    "fight_length": "1min 18sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "18879",
+        "dmg_taken": "74139",
+        "dmg_absorbed": "0",
+        "dps": "239",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947168,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 01:58",
+    "fight_length": "25sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "15698",
+        "dmg_taken": "14870",
+        "dmg_absorbed": "0",
+        "dps": "616",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947167,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 01:53",
+    "fight_length": "51sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "25762",
+        "dmg_taken": "27963",
+        "dmg_absorbed": "1049",
+        "dps": "501",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947166,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 01:50",
+    "fight_length": "34sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "20029",
+        "dmg_taken": "10558",
+        "dmg_absorbed": "0",
+        "dps": "584",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947165,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/12 01:32",
+    "fight_length": "2min 18sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "41897",
+        "dmg_taken": "44486",
+        "dmg_absorbed": "1142",
+        "dps": "301",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 947147,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
