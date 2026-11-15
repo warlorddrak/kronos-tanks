@@ -1,5 +1,77 @@
 [
   {
+    "id": 947330,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/11/14 20:30",
+    "fight_length": "2min 49sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "67",
+        "dmg_done": "55115",
+        "dmg_taken": "48267",
+        "dmg_absorbed": "1452",
+        "dps": "324",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947327,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/11/14 20:10",
+    "fight_length": "1min 36sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Draka",
+        "class": "1",
+        "avg_item_lvl": "63",
+        "dmg_done": "43478",
+        "dmg_taken": "31724",
+        "dmg_absorbed": "7373",
+        "dps": "451",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947325,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Sixth Sunder",
+    "realm": "KronosV",
+    "time": "2026/11/14 20:03",
+    "fight_length": "1min 22sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Toncho",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "33813",
+        "dmg_taken": "49759",
+        "dmg_absorbed": "119",
+        "dps": "409",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 947324,
     "boss_name": "Garr",
     "raid": "Molten Core",
