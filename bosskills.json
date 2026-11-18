@@ -1,5 +1,29 @@
 [
   {
+    "id": 947523,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Endragon",
+    "realm": "KronosV",
+    "time": "2026/11/18 17:23",
+    "fight_length": "4min 22sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Wildchief",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "70277",
+        "dmg_taken": "83875",
+        "dmg_absorbed": "4142",
+        "dps": "267",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 947514,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
