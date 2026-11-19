@@ -1,5 +1,245 @@
 [
   {
+    "id": 947533,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 02:29",
+    "fight_length": "1min 12sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "35414",
+        "dmg_taken": "52696",
+        "dmg_absorbed": "678",
+        "dps": "491",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947532,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 02:25",
+    "fight_length": "1min 3sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Cobbman",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "19732",
+        "dmg_taken": "43038",
+        "dmg_absorbed": "0",
+        "dps": "312",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947531,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 02:21",
+    "fight_length": "51sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "27260",
+        "dmg_taken": "37890",
+        "dmg_absorbed": "0",
+        "dps": "532",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947530,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 02:15",
+    "fight_length": "19sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "16674",
+        "dmg_taken": "10250",
+        "dmg_absorbed": "3115",
+        "dps": "874",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947529,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 02:11",
+    "fight_length": "42sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "24694",
+        "dmg_taken": "17940",
+        "dmg_absorbed": "0",
+        "dps": "575",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947528,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 02:05",
+    "fight_length": "38sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "12702",
+        "dmg_taken": "42238",
+        "dmg_absorbed": "0",
+        "dps": "327",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947527,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 02:00",
+    "fight_length": "22sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "24908",
+        "dmg_taken": "13981",
+        "dmg_absorbed": "0",
+        "dps": "1099",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947526,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 01:55",
+    "fight_length": "54sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "27216",
+        "dmg_taken": "28967",
+        "dmg_absorbed": "0",
+        "dps": "499",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947525,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 01:52",
+    "fight_length": "38sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "16191",
+        "dmg_taken": "16375",
+        "dmg_absorbed": "1142",
+        "dps": "425",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947524,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 01:35",
+    "fight_length": "2min 18sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "66",
+        "dmg_done": "34594",
+        "dmg_taken": "37981",
+        "dmg_absorbed": "296",
+        "dps": "249",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 947523,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
