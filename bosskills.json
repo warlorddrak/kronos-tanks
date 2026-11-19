@@ -1,5 +1,29 @@
 [
   {
+    "id": 947534,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "NA Homeless",
+    "realm": "KronosV",
+    "time": "2026/11/19 02:35",
+    "fight_length": "1min 34sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Opposed",
+        "class": "1",
+        "avg_item_lvl": "63",
+        "dmg_done": "37124",
+        "dmg_taken": "50831",
+        "dmg_absorbed": "2071",
+        "dps": "392",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 947533,
     "boss_name": "Majordomo Executus",
     "raid": "Molten Core",
