@@ -1,5 +1,29 @@
 [
   {
+    "id": 947553,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/20 01:57",
+    "fight_length": "3min 8sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "73681",
+        "dmg_taken": "51748",
+        "dmg_absorbed": "2289",
+        "dps": "390",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 947540,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
