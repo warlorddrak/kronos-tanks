@@ -1,5 +1,245 @@
 [
   {
+    "id": 947848,
+    "boss_name": "Ragnaros",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 02:43",
+    "fight_length": "2min 0sec",
+    "tanks": [
+      {
+        "boss_name": "Ragnaros",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "32115",
+        "dmg_taken": "52419",
+        "dmg_absorbed": "0",
+        "dps": "266",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947846,
+    "boss_name": "Majordomo Executus",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 02:33",
+    "fight_length": "1min 59sec",
+    "tanks": [
+      {
+        "boss_name": "Majordomo Executus",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Gotnomilk",
+        "class": "11",
+        "avg_item_lvl": "58",
+        "dmg_done": "20993",
+        "dmg_taken": "60102",
+        "dmg_absorbed": "0",
+        "dps": "175",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947845,
+    "boss_name": "Golemagg the Incinerator",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 02:27",
+    "fight_length": "1min 32sec",
+    "tanks": [
+      {
+        "boss_name": "Golemagg the Incinerator",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "29351",
+        "dmg_taken": "56220",
+        "dmg_absorbed": "2290",
+        "dps": "316",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947843,
+    "boss_name": "Sulfuron Harbinger",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 02:21",
+    "fight_length": "1min 13sec",
+    "tanks": [
+      {
+        "boss_name": "Sulfuron Harbinger",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "17421",
+        "dmg_taken": "44862",
+        "dmg_absorbed": "0",
+        "dps": "238",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947842,
+    "boss_name": "Shazzrah",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 02:13",
+    "fight_length": "27sec",
+    "tanks": [
+      {
+        "boss_name": "Shazzrah",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "14615",
+        "dmg_taken": "14543",
+        "dmg_absorbed": "0",
+        "dps": "522",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947841,
+    "boss_name": "Baron Geddon",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 02:09",
+    "fight_length": "52sec",
+    "tanks": [
+      {
+        "boss_name": "Baron Geddon",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "64",
+        "dmg_done": "17689",
+        "dmg_taken": "19285",
+        "dmg_absorbed": "0",
+        "dps": "333",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947840,
+    "boss_name": "Garr",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 01:56",
+    "fight_length": "51sec",
+    "tanks": [
+      {
+        "boss_name": "Garr",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Gotnomilk",
+        "class": "11",
+        "avg_item_lvl": "58",
+        "dmg_done": "13075",
+        "dmg_taken": "26179",
+        "dmg_absorbed": "0",
+        "dps": "254",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947838,
+    "boss_name": "Gehennas",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 01:50",
+    "fight_length": "33sec",
+    "tanks": [
+      {
+        "boss_name": "Gehennas",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "21752",
+        "dmg_taken": "8304",
+        "dmg_absorbed": "0",
+        "dps": "640",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947837,
+    "boss_name": "Magmadar",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 01:43",
+    "fight_length": "54sec",
+    "tanks": [
+      {
+        "boss_name": "Magmadar",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "33095",
+        "dmg_taken": "35955",
+        "dmg_absorbed": "1014",
+        "dps": "602",
+        "deaths": 0
+      }
+    ]
+  },
+  {
+    "id": 947836,
+    "boss_name": "Lucifron",
+    "raid": "Molten Core",
+    "guild": "Vibe",
+    "realm": "KronosV",
+    "time": "2026/11/25 01:39",
+    "fight_length": "41sec",
+    "tanks": [
+      {
+        "boss_name": "Lucifron",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Moderation",
+        "class": "1",
+        "avg_item_lvl": "65",
+        "dmg_done": "29653",
+        "dmg_taken": "26207",
+        "dmg_absorbed": "0",
+        "dps": "713",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 947818,
     "boss_name": "Onyxia",
     "raid": "Onyxia's Lair",
