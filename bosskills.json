@@ -1,5 +1,29 @@
 [
   {
+    "id": 947892,
+    "boss_name": "Onyxia",
+    "raid": "Onyxia's Lair",
+    "guild": "Dead by Dawn",
+    "realm": "KronosV",
+    "time": "2026/11/26 19:32",
+    "fight_length": "8min 3sec",
+    "tanks": [
+      {
+        "boss_name": "Onyxia",
+        "guid": "",
+        "realm": "KronosV",
+        "name": "Shiet",
+        "class": "1",
+        "avg_item_lvl": "67",
+        "dmg_done": "89092",
+        "dmg_taken": "87726",
+        "dmg_absorbed": "2288",
+        "dps": "184",
+        "deaths": 0
+      }
+    ]
+  },
+  {
     "id": 947882,
     "boss_name": "Ragnaros",
     "raid": "Molten Core",
