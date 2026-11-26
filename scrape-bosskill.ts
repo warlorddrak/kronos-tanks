@@ -223,30 +223,80 @@ export function parseBosskillsListPage(
     const items: BosskillListItem[] = [];
     let rawRowCount = 0;
 
+    // Determine column indices from thead (with fallback to 8-column layout)
+    let colBoss = 0;
+    let colRaid = 1;
+    let colDiff = 2;
+    let colGuild = 3;
+    let colLength = 4;
+    let colKilled = 6;
+    let colDetails = 7;
+    let hasThead = false;
+
+    const theadMatch = html.match(/<thead[^>]*>([\s\S]*?)<\/thead>/i);
+    if (theadMatch) {
+        const ths = [...theadMatch[1].matchAll(/<th[^>]*>([\s\S]*?)<\/th>/gi)].map((m) =>
+            stripTags(m[1]).toLowerCase()
+        );
+        if (ths.length >= 7) {
+            hasThead = true;
+            ths.forEach((h, idx) => {
+                if (h.startsWith("boss")) colBoss = idx;
+                else if (h.startsWith("raid")) colRaid = idx;
+                else if (h.startsWith("difficulty") || h.startsWith("mode")) colDiff = idx;
+                else if (h.startsWith("guild")) colGuild = idx;
+                else if (h.startsWith("length")) colLength = idx;
+                else if (h.startsWith("killed") || h.startsWith("time")) colKilled = idx;
+                else if (h.startsWith("detail")) colDetails = idx;
+            });
+        }
+    }
+
     for (const rowMatch of tbody.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)) {
         const rowHtml = rowMatch[1];
         const tds = [...rowHtml.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => m[1]);
         if (tds.length < 7) continue;
 
+        // Fallback if no thead was found and row uses legacy 7-column layout
+        const rowColKilled = !hasThead && tds.length === 7 ? 5 : colKilled;
+        const rowColDetails = !hasThead && tds.length === 7 ? 6 : colDetails;
+        if (tds.length <= Math.max(colBoss, colRaid, colDiff, colGuild, colLength, rowColKilled, rowColDetails)) {
+            continue;
+        }
+
         rawRowCount++;
 
-        const bossname = stripTags(tds[0]);
-        const entryMatch = tds[0].match(/\/boss\/(\d+)/i);
+        const bossname = stripTags(tds[colBoss]);
+        const entryMatch = tds[colBoss].match(/\/boss\/(\d+)/i);
         const entry = entryMatch ? Number(entryMatch[1]) : 0;
 
-        const raid = stripTags(tds[1]).replace(/\s*\(\d+\)\s*$/, "").trim();
+        const raidCell = tds[colRaid];
+        const raidTipMatch = raidCell.match(/data-tip="([^"]+)"/i);
+        const raidSrMatch = raidCell.match(/<span[^>]*class="[^"]*sr-only[^"]*"[^>]*>\s*\(([^)]+)\)\s*<\/span>/i);
+        const rawRaid = raidTipMatch
+            ? decodeHtmlEntities(raidTipMatch[1])
+            : raidSrMatch
+                ? decodeHtmlEntities(raidSrMatch[1])
+                : stripTags(raidCell);
+        const raid = rawRaid.replace(/\s*\(\d+\)\s*$/, "").trim();
         if (isIgnoredRaid(raid)) {
             continue;
         }
 
-        const mode = Number(stripTags(tds[2])) || 0;
-        const guild = stripTags(tds[3]);
-        const length = parseDurationToMs(stripTags(tds[4]));
-        const timeRaw = stripTags(tds[5]);
-        const time = timeRaw.replace(/-/g, "/");
+        const mode = Number(stripTags(tds[colDiff])) || 0;
+        const rawGuild = stripTags(tds[colGuild]);
+        const guild = rawGuild === "-" ? "" : rawGuild;
+        const length = parseDurationToMs(stripTags(tds[colLength]));
 
-        const detailMatch = tds[6].match(/href="\/([^/]+)\/boss-kills\/(?:(\d+)_)?(\d+)"/i)
-            ?? tds[6].match(/boss-kill=(\d+)/i);
+        const killedCell = tds[rowColKilled];
+        const datetimeMatch = killedCell.match(/datetime="(\d{4}-\d{2}-\d{2})T(\d{2}:\d{2})/i)
+            ?? killedCell.match(/title="(\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2})/i);
+        const time = datetimeMatch
+            ? `${datetimeMatch[1].replace(/-/g, "/")} ${datetimeMatch[2]}`
+            : stripTags(killedCell).replace(/-/g, "/");
+
+        const detailMatch = tds[rowColDetails].match(/href="\/([^/]+)\/boss-kills\/(?:(\d+)_)?(\d+)"/i)
+            ?? tds[rowColDetails].match(/boss-kill=(\d+)/i);
         if (!detailMatch) continue;
 
         let realm = defaultRealm;
