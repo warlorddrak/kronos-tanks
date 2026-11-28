@@ -477,7 +477,7 @@ export async function getTanks(
         ths.forEach((h, idx) => {
             if (h.startsWith("name")) colName = idx;
             else if (h.startsWith("class")) colClass = idx;
-            else if (h.startsWith("dps")) colDps = idx;
+            else if (/^dps(?:\s*[↑↓▲▼])?$/.test(h)) colDps = idx;
             else if (h.startsWith("dmg done") || h.startsWith("damage done")) colDmgDone = idx;
             else if (h.startsWith("dmg taken") || h.startsWith("damage taken")) colDmgTaken = idx;
             else if (h.startsWith("dmg absorb") || h.startsWith("damage absorb")) colDmgAbsorb = idx;
